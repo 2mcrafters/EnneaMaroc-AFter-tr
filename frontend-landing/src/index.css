@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-slate-700 bg-white antialiased;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-slate-900 tracking-tight;
+    margin-bottom: 0.75em;
+    line-height: 1.2;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 5vw + 1rem, 3.75rem); /* 32px - 60px */
+  }
+
+  h2 {
+    font-size: clamp(1.75rem, 4vw + 1rem, 3rem); /* 28px - 48px */
+  }
+
+  h3 {
+    font-size: clamp(1.5rem, 3vw + 1rem, 2.25rem); /* 24px - 36px */
+  }
+
+  h4 {
+    font-size: clamp(1.25rem, 2vw + 1rem, 1.875rem); /* 20px - 30px */
+  }
+
+  h5 {
+    font-size: clamp(1.125rem, 1.5vw + 1rem, 1.5rem); /* 18px - 24px */
+  }
+
+  h6 {
+    font-size: clamp(1rem, 1vw + 1rem, 1.25rem); /* 16px - 20px */
+  }
+
+  p {
+    margin-bottom: 1.25em;
+  }
+
+  /* Consistent container padding */
+  .container {
+    @apply px-4 mx-auto;
+    max-width: 1280px;
+  }
+}
+
+/* Minimal base styles for landing dev */
+:root { color-scheme: light; }
+html, body { height: 100%; }
+body { margin: 0; background: #fff; color: #0f172a; }

@@ -1,0 +1,157 @@
+/* Global hover effects using brand color #e13734 */
+
+/* Button hover effects */
+.btn-hover:hover {
+  background-color: #e13734 !important;
+  color: white !important;
+  transform: translateY(-1px);
+  transition: all 0.2s ease;
+}
+
+/* Text hover effects */
+.text-hover:hover {
+  color: #e13734 !important;
+  transition: color 0.2s ease;
+}
+
+/* Background hover effects */
+.bg-hover:hover {
+  background-color: rgba(225, 55, 52, 0.1) !important;
+  transition: background-color 0.2s ease;
+}
+
+/* Border hover effects */
+.border-hover:hover {
+  border-color: #e13734 !important;
+  transition: border-color 0.2s ease;
+}
+
+/* Custom utility classes for consistent brand hover effects */
+.hover-brand:hover {
+  background-color: #e13734 !important;
+  color: white !important;
+}
+
+.hover-brand-text:hover {
+  color: #e13734 !important;
+}
+
+.hover-brand-bg:hover {
+  background-color: rgba(225, 55, 52, 0.1) !important;
+}
+
+/* Focus ring using brand color */
+.focus-brand:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(225, 55, 52, 0.5);
+}
+
+/* Scale effect on hover */
+.hover-scale:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
+}
+
+/* Combined hover effect for cards */
+.card-hover:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-color: rgba(225, 55, 52, 0.5);
+  transition: all 0.3s ease;
+}
+
+/* Progress bar with dynamic width */
+.progress-bar {
+  width: var(--progress-width, 0%);
+}
+
+.landing-hero-title {
+  animation-delay: 0.4s;
+}
+
+.landing-hero-subtitle {
+  animation-delay: 0.6s;
+}
+
+.landing-card-grid {
+  animation-delay: 0.8s;
+}
+
+/* Loading Animation */
+@keyframes loading-bar {
+  0% { left: -40%; width: 40%; }
+  50% { left: 30%; width: 60%; }
+  100% { left: 100%; width: 40%; }
+}
+
+.animate-loading-bar {
+  animation: loading-bar 1.5s infinite ease-in-out;
+}
+
+/* Toast Animations */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.animate-slide-in {
+  animation: slideInRight 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-out {
+  animation: fadeOut 0.3s ease-out forwards;
+}
+
+/* SweetAlert2 Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -20px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeOutUp {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(0, -20px, 0);
+  }
+}
+
+.animate__animated {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+
+.animate__faster {
+  animation-duration: 0.3s;
+}
+
+.animate__fadeInDown {
+  animation-name: fadeInDown;
+}
+
+.animate__fadeOutUp {
+  animation-name: fadeOutUp;
+}

@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-slate-700 bg-white antialiased;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+
+
+  /* Reset for titles/subtitles/utilities */
+  p.subtitle, p.sub-title, .text-center p, .text-left p, .text-right p {
+    text-align: inherit;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-slate-900 tracking-tight;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin-bottom: 0.75em;
+    line-height: 1.2;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 5vw + 1rem, 3.75rem); /* 32px - 60px */
+  }
+
+  h2 {
+    font-size: clamp(1.75rem, 4vw + 1rem, 3rem); /* 28px - 48px */
+  }
+
+  h3 {
+    font-size: clamp(1.5rem, 3vw + 1rem, 2.25rem); /* 24px - 36px */
+  }
+
+  h4 {
+    font-size: clamp(1.25rem, 2vw + 1rem, 1.875rem); /* 20px - 30px */
+  }
+
+  h5 {
+    font-size: clamp(1.125rem, 1.5vw + 1rem, 1.5rem); /* 18px - 24px */
+  }
+
+  h6 {
+    font-size: clamp(1rem, 1vw + 1rem, 1.25rem); /* 16px - 20px */
+  }
+
+  p {
+    margin-bottom: 1.25em;
+  }
+
+  /* Consistent container padding */
+  .container {
+    @apply px-4 mx-auto;
+    max-width: 1280px;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold transition-all duration-200;
+  }
+  
+  .btn-primary {
+    @apply bg-brand text-white hover:bg-brand-dark hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-brand border-2 border-brand hover:bg-brand-light;
+  }
+}

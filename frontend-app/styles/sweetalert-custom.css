@@ -1,0 +1,132 @@
+/* Custom SweetAlert2 Styles for Brand Theme */
+
+/* Main container styling */
+.swal2-popup {
+  border-radius: 12px !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Title styling */
+.swal2-title {
+  color: #1e293b !important;
+  font-weight: 700 !important;
+  font-size: 1.25rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* Content text styling */
+.swal2-html-container {
+  color: #475569 !important;
+  font-size: 0.9rem !important;
+  line-height: 1.5 !important;
+}
+
+/* Button styling */
+.swal2-confirm {
+  background-color: #e13734 !important;
+  border: none !important;
+  border-radius: 9999px !important;
+  padding: 0.5rem 1.5rem !important;
+  font-weight: 600 !important;
+  font-size: 0.875rem !important;
+  transition: all 0.2s ease !important;
+}
+
+.swal2-confirm:hover {
+  background-color: #c12e2c !important;
+  transform: translateY(-1px) !important;
+}
+
+.swal2-cancel {
+  background-color: #6b7280 !important;
+  border: none !important;
+  border-radius: 9999px !important;
+  padding: 0.5rem 1.5rem !important;
+  font-weight: 600 !important;
+  font-size: 0.875rem !important;
+  transition: all 0.2s ease !important;
+}
+
+.swal2-cancel:hover {
+  background-color: #4b5563 !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Success icon customization */
+.swal2-success .swal2-success-ring {
+  border-color: #059669 !important;
+}
+
+.swal2-success .swal2-success-fix {
+  background-color: #059669 !important;
+}
+
+/* Error icon customization */
+.swal2-error .swal2-x-mark-line-left,
+.swal2-error .swal2-x-mark-line-right {
+  background-color: #dc2626 !important;
+}
+
+/* Warning icon customization */
+.swal2-warning .swal2-warning-icon {
+  color: #d97706 !important;
+}
+
+/* Progress bar styling for timer */
+.swal2-timer-progress-bar {
+  background-color: #e13734 !important;
+}
+
+/* Backdrop styling */
+.swal2-backdrop {
+  background-color: rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(2px) !important;
+}
+
+/* Modal animation */
+.swal2-show {
+  animation: swal2-show 0.3s ease-out !important;
+}
+
+.swal2-hide {
+  animation: swal2-hide 0.15s ease-in !important;
+}
+
+@keyframes swal2-show {
+  0% {
+    transform: scale(0.7) translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes swal2-hide {
+  0% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.9) translateY(10px);
+    opacity: 0;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .swal2-popup {
+    width: 90% !important;
+    margin: 1rem !important;
+  }
+  
+  .swal2-title {
+    font-size: 1.1rem !important;
+  }
+  
+  .swal2-html-container {
+    font-size: 0.85rem !important;
+  }
+}

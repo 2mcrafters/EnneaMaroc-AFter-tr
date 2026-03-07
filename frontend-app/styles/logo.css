@@ -1,0 +1,27 @@
+.logoImage {
+	width: 92px !important;
+	height: 32px !important;
+	object-fit: contain !important;
+}
+
+@media (min-width: 768px) {
+	.logoImage {
+		width: 118px !important;
+		height: 48px !important;
+	}
+}
+
+@media (min-width: 1024px) {
+	.logoImage {
+		width: 124px !important;
+		height: 64px !important;
+	}
+}
+
+@media (min-width: 1280px) {
+	.logoImage {
+		width: 156px !important;
+		height: 96px !important;
+	}
+}
+

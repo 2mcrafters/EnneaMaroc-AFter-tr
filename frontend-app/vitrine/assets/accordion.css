@@ -1,0 +1,217 @@
+﻿/* ===== OUTLINED ACCORDION STYLES (High Specificity Fix) ===== */
+
+/* Force reset of container styles */
+html body .pro-accordion-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Card Styles - High Specificity */
+html body .pro-accordion-card {
+    background: #ffffff !important;
+    border: 1px solid #0a83ca !important;
+    border-radius: 16px !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+    position: relative !important;
+    width: 100% !important;
+    margin: 0 0 16px 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
+}
+
+html body .pro-accordion-card.active {
+    border-width: 2px !important;
+    background: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(10, 131, 202, 0.1) !important;
+}
+
+/* Header Button Reset */
+html body button.pro-accordion-header {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important; /* Force row */
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 20px 24px !important;
+    background: transparent !important;
+    border: none !important;
+    cursor: pointer !important;
+    text-align: left !important;
+    outline: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    height: auto !important;
+}
+
+html body button.pro-accordion-header:hover {
+    background: rgba(10, 131, 202, 0.03) !important;
+}
+
+/* Content Group Layout */
+html body .pro-accordion-header-content {
+    display: flex !important;
+    flex-direction: row !important; /* Force row */
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 16px !important;
+    flex: 1 !important;
+    text-align: left !important;
+}
+
+/* Icon Box Reset */
+html body .pro-accordion-icon-box {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+    color: #0a83ca !important;
+    font-size: 20px !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+html body .pro-accordion-icon-box svg {
+    width: 20px !important;
+    height: 20px !important;
+    fill: currentColor !important;
+}
+
+/* Text Group Reset */
+html body .pro-accordion-text-group {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    text-align: left !important;
+    width: auto !important;
+}
+
+/* Title Reset - Aggressive */
+html body h3.pro-accordion-title {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+    font-size: 17px !important;
+    font-weight: 600 !important;
+    color: #334155 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.4 !important;
+    text-align: left !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    border: none !important;
+    background: none !important;
+    width: auto !important;
+}
+
+html body .pro-accordion-card.active h3.pro-accordion-title {
+    color: #0a83ca !important;
+}
+
+/* Meta/Duration Reset */
+html body .pro-accordion-meta {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+html body .pro-accordion-duration {
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    color: #64748b !important;
+    background: #f1f5f9 !important;
+    padding: 2px 8px !important;
+    border-radius: 4px !important;
+    line-height: 1.5 !important;
+    display: inline-block !important;
+}
+
+/* Chevron Reset */
+html body .pro-accordion-chevron-box {
+    width: 24px !important;
+    height: 24px !important;
+    flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: transparent !important;
+    border: none !important;
+    color: #0a83ca !important;
+    margin-left: 16px !important;
+    padding: 0 !important;
+}
+
+/* Content Area Reset */
+html body .pro-accordion-content {
+    background: #ffffff !important;
+    position: relative !important;
+    z-index: 1 !important;
+    width: 100% !important;
+}
+
+html body .pro-accordion-content-inner {
+    padding: 10px 24px 24px 80px !important; /* Indented to align with text */
+    border-top: 1px solid rgba(10, 131, 202, 0.08) !important;
+    margin: 0 !important;
+    text-align: left !important;
+}
+
+html body .pro-accordion-subtitle {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    color: #334155 !important;
+    margin-bottom: 8px !important;
+    display: block !important;
+    text-align: left !important;
+}
+
+html body .pro-accordion-description {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+    color: #475569 !important;
+    margin-bottom: 16px !important;
+    text-align: left !important;
+}
+
+html body .pro-accordion-details-box {
+    background: #f8fafc !important;
+    padding: 16px !important;
+    border-radius: 8px !important;
+    font-size: 14px !important;
+    color: #64748b !important;
+    line-height: 1.6 !important;
+    border: 1px dashed #cbd5e1 !important;
+    text-align: left !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    html body .pro-accordion-header {
+        padding: 16px !important;
+    }
+    
+    html body .pro-accordion-header-content {
+        gap: 12px !important;
+    }
+    
+    html body .pro-accordion-content-inner {
+        padding: 16px 16px 24px 16px !important; /* Less indentation on mobile */
+    }
+    
+    html body h3.pro-accordion-title {
+        font-size: 16px !important;
+    }
+}

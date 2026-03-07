@@ -1,0 +1,20 @@
+[
+  {
+    "number": "01",
+    "icon": "bi bi-compass",
+    "title": "Identifier votre <strong>type</strong>",
+    "desc": "Comprendre vos mécanismes automatiques et vos motivations profondes."
+  },
+  {
+    "number": "02",
+    "icon": "bi bi-lightning-charge",
+    "title": "Activer votre <strong>croissance</strong>",
+    "desc": "Transformer vos schémas et développer plus de liberté intérieure."
+  },
+  {
+    "number": "03",
+    "icon": "bi bi-people",
+    "title": "Améliorer vos <strong>relations</strong>",
+    "desc": "Mieux communiquer et créer des liens plus conscients au quotidien."
+  }
+]

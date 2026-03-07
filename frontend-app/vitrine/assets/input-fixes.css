@@ -1,0 +1,61 @@
+/* Input field style fixes to ensure all inputs have white background and dark text */
+
+
+
+
+
+/* Global input styles */
+input,
+textarea,
+select {
+  background-color: #ffffff !important; /* White background */
+  color: #333333 !important; /* Dark gray text */
+  border: 1px solid #d1d5db !important; /* Light gray border */
+}
+
+/* Placeholder text color */
+input::placeholder,
+textarea::placeholder {
+  color: #9ca3af !important; /* Medium gray */
+  opacity: 1; /* Ensure visibility */
+}
+
+/* Focus state */
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--theme-color2) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(10, 131, 202, 0.2) !important;
+}
+
+/* Special treatment for checkbox and radio that shouldn't have white background */
+input[type="checkbox"],
+input[type="radio"] {
+  background-color: transparent !important;
+  border: 1px solid #d1d5db !important;
+}
+
+/* Form validation states */
+input.is-invalid,
+textarea.is-invalid,
+select.is-invalid {
+  border-color: var(--error-color) !important;
+  background-color: rgba(225, 55, 52, 0.05) !important;
+}
+
+input.is-valid,
+textarea.is-valid,
+select.is-valid {
+  border-color: var(--success-color) !important;
+  background-color: rgba(10, 131, 202, 0.05) !important;
+}
+
+/* Disabled state */
+input:disabled,
+textarea:disabled,
+select:disabled {
+  background-color: #f3f4f6 !important; /* Light gray background */
+  color: #6b7280 !important; /* Darker gray text */
+  cursor: not-allowed;
+}
