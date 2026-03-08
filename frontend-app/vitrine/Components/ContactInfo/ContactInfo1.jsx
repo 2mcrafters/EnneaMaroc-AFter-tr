@@ -155,47 +155,6 @@ const ContactInfo1 = () => {
                 </button>
               </form>
 
-              {/* Formulaire Horizon RH Button */}
-              <div style={{ marginTop: "20px", textAlign: "center" }}>
-                <a
-                  href="https://www.horizonrh.ma/contact/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    gap: "10px",
-                    padding: "14px 32px",
-                    background: "#fff",
-                    color: "#0a83ca",
-                    border: "2px solid #0a83ca",
-                    borderRadius: "50px",
-                    fontSize: "16px",
-                    fontWeight: 600,
-                    textDecoration: "none",
-                    transition: "all 0.3s ease",
-                    boxShadow: "0 4px 12px rgba(10, 131, 202, 0.15)",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = "#0a83ca";
-                    e.currentTarget.style.color = "#fff";
-                    e.currentTarget.style.transform = "translateY(-2px)";
-                    e.currentTarget.style.boxShadow =
-                      "0 6px 20px rgba(10, 131, 202, 0.3)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = "#fff";
-                    e.currentTarget.style.color = "#0a83ca";
-                    e.currentTarget.style.transform = "translateY(0)";
-                    e.currentTarget.style.boxShadow =
-                      "0 4px 12px rgba(10, 131, 202, 0.15)";
-                  }}
-                >
-                  <span>Formulaire Horizon RH</span>
-                  <i className="bi bi-arrow-right"></i>
-                </a>
-              </div>
             </div>
           </div>
 
@@ -208,9 +167,6 @@ const ContactInfo1 = () => {
                   className="sub-title"
                   style={{ color: "var(--theme-color1)" }}
                 >
-                  <span>
-                    <i className="asterisk"></i>
-                  </span>{" "}
                   Consultation gratuite
                 </div>
                 <h2

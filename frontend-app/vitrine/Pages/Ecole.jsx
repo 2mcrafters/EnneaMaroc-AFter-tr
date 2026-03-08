@@ -1,4 +1,4 @@
-﻿import React, { useState } from "react";
+import React, { useState } from "react";
 import Seo from "../Components/Seo/Seo";
 import { Link } from "react-router-dom";
 import {
@@ -24,6 +24,40 @@ export default function Ecole() {
     blue: "#0a83ca",
   };
   const [heroOk, setHeroOk] = useState(true);
+  const [expandedTrainer, setExpandedTrainer] = useState(null);
+  const toggleTrainer = (idx) => setExpandedTrainer(expandedTrainer === idx ? null : idx);
+
+  const trainers = [
+    {
+      name: "Dr. Amina El Fassi",
+      role: "Fondatrice & Formatrice Principale",
+      photo: "/assets/imgss001/coaching (23).jpg",
+      short: "Psychologue clinicienne et coach certifiée IEA, Dr. Amina accompagne depuis plus de 18 ans individus et organisations.",
+      full: "Psychologue clinicienne et coach certifiée IEA, Dr. Amina accompagne depuis plus de 18 ans individus et organisations au Maroc et à l'international. Elle est l'une des pionnières de l'enseignement de l'Ennéagramme en langue arabe et française, et a formé plus de 500 coachs et praticiens certifiés. Sa pédagogie allie rigueur académique, expérience vécue et profonde humanité.",
+    },
+    {
+      name: "Youssef Benali",
+      role: "Formateur Senior — Ennéagramme & Leadership",
+      photo: "/assets/imgss001/coaching (16).jpg",
+      short: "Consultant en développement organisationnel et coach exécutif, Youssef intervient auprès de grandes entreprises marocaines et africaines.",
+      full: "Consultant en développement organisationnel et coach exécutif, Youssef intervient auprès de grandes entreprises marocaines et africaines. Certifié IEA et formé à l'école Narrative, il spécialise ses formations sur les dynamiques d'équipe, la communication non violente et la transformation du leadership. Il anime régulièrement des ateliers en entreprise et en open public.",
+    },
+    {
+      name: "Samira Ouazzani",
+      role: "Formatrice — Ennéagramme & Bien-être",
+      photo: "/assets/imgss001/coaching (47).jpg",
+      short: "Praticienne certifiée en sophrologie et Ennéagramme, Samira intègre les approches corps-esprit dans ses programmes de développement personnel.",
+      full: "Praticienne certifiée en sophrologie et Ennéagramme, Samira intègre les approches corps-esprit dans ses programmes de développement personnel. Elle accompagne particulièrement les femmes en transition professionnelle et personnelle, et co-dirige le module bien-être de l'École EnnéaMaroc. Son approche douce et rigoureuse crée un espace de confiance et de transformation profonde.",
+    },
+    {
+      name: "Karim Tahiri",
+      role: "Formateur — Ennéagramme & Éducation",
+      photo: "/assets/imgss001/coaching (54).jpg",
+      short: "Enseignant-chercheur et formateur en sciences de l'éducation, Karim développe des programmes d'intégration de l'Ennéagramme dans le milieu scolaire et universitaire.",
+      full: "Enseignant-chercheur et formateur en sciences de l'éducation, Karim développe des programmes d'intégration de l'Ennéagramme dans le milieu scolaire et universitaire. Docteur en sciences de l'éducation, il a publié plusieurs articles sur l'Ennéagramme comme outil pédagogique et accompagne des établissements publics et privés dans la mise en place de dispositifs de connaissance de soi pour élèves et enseignants.",
+    },
+  ];
+
   const heroImg = `/assets/imgss001/` + encodeURIComponent("coaching (47).jpg");
   const OVERLAY_ALPHA = 0.82;
   const IMAGE_OPACITY = 0.7;
@@ -62,41 +96,19 @@ export default function Ecole() {
       title: "Vision",
       icon: FaEye,
       description:
-        "Être un espace de référence au Maroc et dans le monde arabe pour la transmission de l’Ennéagramme comme outil de connaissance de soi, de transformation et de développement collectif.",
+        "Être un espace de référence au Maroc et dans le monde arabe pour la transmission de l'Ennéagramme comme outil de connaissance de soi, de transformation et de développement collectif.",
     },
     {
       title: "Mission",
       icon: FaCompass,
       description:
-        "Offrir des programmes certifiants et accessibles qui permettent à chacun de découvrir, approfondir et transmettre l’Ennéagramme selon les standards internationaux et adaptés à notre culture.",
+        "Offrir des programmes certifiants et accessibles qui permettent à chacun de découvrir, approfondir et transmettre l'Ennéagramme selon les standards internationaux et adaptés à notre culture.",
     },
     {
       title: "Valeurs",
       icon: FaStar,
       description:
         "Humanité : mettre la personne au centre.\nOuverture : croiser traditions et modernité, culture locale et internationale.\nExcellence : conjuguer rigueur scientifique et pratique vécue.\nPartage : transmettre pour inspirer et faire grandir.",
-    },
-  ];
-
-  // Team members
-  const teamMembers = [
-    {
-      name: "Dr. Karim Bennani",
-      role: "Fondateur & Formateur Principal",
-      expertise: "Psychologie, Ennéagramme, Leadership",
-      photo: "/assets/images/team/team-1.jpg",
-    },
-    {
-      name: "Fatima Zahra El Amrani",
-      role: "Coach Certifiée",
-      expertise: "Développement personnel, Coaching d'équipe",
-      photo: "/assets/images/team/team-2.jpg",
-    },
-    {
-      name: "Mohamed Rachid",
-      role: "Formateur & Consultant",
-      expertise: "Management, Formation en entreprise",
-      photo: "/assets/images/team/team-3.jpg",
     },
   ];
 
@@ -186,24 +198,13 @@ export default function Ecole() {
           >
             <div className="row justify-content-center">
               <div className="col-lg-10 text-center">
-                <div
-                  style={{
-                    ...pill("rgba(255,255,255,0.25)", C.white),
-                    display: "inline-flex",
-                    marginBottom: 20,
-                    fontSize: 13,
-                    letterSpacing: 1,
-                  }}
-                >
-                  ÉCOLE ENNÉAMAROC
-                </div>
                 <h1
                   style={{
-                    fontSize: 40,
-                    fontWeight: 800,
+                    fontSize: "max(2.1vw, 32px)",
+                    fontWeight: 600,
                     color: C.white,
                     marginBottom: 20,
-                    lineHeight: 1.15,
+                    lineHeight: 1.2,
                   }}
                 >
                   L'École EnnéaMaroc
@@ -233,8 +234,8 @@ export default function Ecole() {
               <div className="col-lg-6">
                 <h2
                   style={{
-                    fontSize: 38,
-                    fontWeight: 800,
+                    fontSize: "max(2.1vw, 32px)",
+                    fontWeight: 600,
                     color: C.blue,
                     marginBottom: 20,
                   }}
@@ -250,25 +251,12 @@ export default function Ecole() {
                     textAlign: "justify",
                   }}
                 >
-                  L’École EnnéaMaroc réunit une équipe pluridisciplinaire
+                  L'École EnnéaMaroc réunit une équipe pluridisciplinaire
                   composée de formateurs certifiés, de chercheurs
                   universitaires, de coachs professionnels et de praticiens de
                   terrain. Chacun apporte sa singularité, son expertise et son
                   expérience humaine, afin de créer une dynamique
-                  d’apprentissage vivante et riche.
-                </p>
-                <p
-                  style={{
-                    fontSize: 17,
-                    color: "#6c757d",
-                    lineHeight: 1.8,
-                    marginBottom: 25,
-                    textAlign: "justify",
-                  }}
-                >
-                  Notre force : l’union de compétences locales et
-                  internationales pour garantir une pédagogie adaptée au
-                  contexte marocain et ouverte sur le monde.
+                  d'apprentissage vivante et riche.
                 </p>
                 <Link
                   to="/#pourquoi-ennea-maroc"
@@ -307,28 +295,27 @@ export default function Ecole() {
                   <div
                     style={{
                       position: "absolute",
-                      bottom: 30,
-                      left: 30,
-                      background: C.white,
-                      padding: "20px 25px",
+                      bottom: 24,
+                      left: 24,
+                      right: 24,
+                      background: "rgba(255,255,255,0.92)",
+                      backdropFilter: "blur(10px)",
+                      padding: "18px 22px",
                       borderRadius: 16,
-                      boxShadow: "0 4px 20px rgba(0,0,0,0.15)",
+                      boxShadow: "0 4px 24px rgba(0,0,0,0.13)",
+                      borderLeft: `4px solid ${C.blue}`,
                     }}
                   >
-                    <div
-                      style={{
-                        fontSize: 14,
-                        color: "#6c757d",
-                        marginBottom: 5,
-                      }}
-                    >
+                    <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: C.blue, marginBottom: 4 }}>
                       Notre approche
                     </div>
-                    <div
-                      style={{ fontSize: 16, fontWeight: 700, color: C.blue }}
-                    >
+                    <div style={{ fontSize: 16, fontWeight: 700, color: C.black, marginBottom: 10 }}>
                       Humaine • Rigoureuse • Ancrée
                     </div>
+                    <div style={{ height: 1, background: "rgba(10,131,202,0.15)", marginBottom: 10 }} />
+                    <p style={{ fontSize: 14, color: "#555", lineHeight: 1.65, margin: 0 }}>
+                      Notre force : l'union de compétences locales et internationales pour garantir une pédagogie adaptée au contexte marocain et ouverte sur le monde.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -341,19 +328,10 @@ export default function Ecole() {
           <div className="container">
             <div className="row justify-content-center mb-5">
               <div className="col-lg-8 text-center">
-                <div
-                  style={{
-                    ...pill("rgba(255,255,255,0.25)", C.white),
-                    display: "inline-flex",
-                    marginBottom: 15,
-                  }}
-                >
-                  2 • PÉDAGOGIE
-                </div>
                 <h2
                   style={{
-                    fontSize: 38,
-                    fontWeight: 800,
+                    fontSize: "max(2.1vw, 32px)",
+                    fontWeight: 600,
                     color: C.white,
                     marginBottom: 15,
                   }}
@@ -456,24 +434,15 @@ export default function Ecole() {
           <div className="container">
             <div className="row justify-content-center mb-5">
               <div className="col-lg-8 text-center">
-                <div
-                  style={{
-                    ...pill(`${C.blue}15`, C.blue),
-                    display: "inline-flex",
-                    marginBottom: 15,
-                  }}
-                >
-                  3 • VISION • MISSION • VALEURS
-                </div>
                 <h2
                   style={{
-                    fontSize: 38,
-                    fontWeight: 800,
+                    fontSize: "max(2.1vw, 32px)",
+                    fontWeight: 600,
                     color: C.blue,
                     marginBottom: 15,
                   }}
                 >
-                  Cap, raison d’être et principes
+                  Cap, raison d'être et principes
                 </h2>
               </div>
             </div>
@@ -553,19 +522,10 @@ export default function Ecole() {
           <div className="container">
             <div className="row justify-content-center mb-5">
               <div className="col-lg-10 text-center">
-                <div
-                  style={{
-                    ...pill("rgba(255,255,255,0.25)", C.white),
-                    display: "inline-flex",
-                    marginBottom: 15,
-                  }}
-                >
-                  4 • NOTRE APPROCHE À L'ENNÉA-MAROC
-                </div>
                 <h2
                   style={{
-                    fontSize: 38,
-                    fontWeight: 800,
+                    fontSize: "max(2.1vw, 32px)",
+                    fontWeight: 600,
                     color: C.white,
                     marginBottom: 20,
                   }}
@@ -575,7 +535,6 @@ export default function Ecole() {
               </div>
             </div>
 
-            {/* Two Column Layout */}
             <div className="row g-4">
               {/* Left Card - Notre Vocation */}
               <div className="col-lg-6">
@@ -811,6 +770,96 @@ export default function Ecole() {
           </div>
         </section>
 
+        {/* NOTRE ÉQUIPE DE FORMATEURS */}
+        <section style={{ padding: "70px 20px", background: C.white }}>
+          <div className="container">
+            <div className="row justify-content-center mb-5">
+              <div className="col-lg-8 text-center">
+                <h2 style={{ fontSize: "max(2.1vw, 32px)", fontWeight: 600, color: C.blue, marginBottom: 10 }}>
+                  Notre équipe de formateurs
+                </h2>
+                <p style={{ fontSize: 17, color: "#6c757d", lineHeight: 1.7 }}>
+                  Des experts passionnés, engagés à transmettre l'Ennéagramme avec rigueur et humanité.
+                </p>
+              </div>
+            </div>
+
+            <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
+              {trainers.map((t, idx) => (
+                <React.Fragment key={idx}>
+                  {idx === 2 && (
+                    <div style={{ position: "relative", margin: "8px 0", height: 3, borderRadius: 99, overflow: "hidden", background: "rgba(10,131,202,0.12)" }}>
+                      <div style={{
+                        position: "absolute",
+                        top: 0, left: 0,
+                        height: "100%",
+                        width: "100%",
+                        background: "linear-gradient(90deg, transparent, #0a83ca, #e13734, #0a83ca, transparent)",
+                        backgroundSize: "200% 100%",
+                        animation: "trainerDivider 5s ease-in-out infinite",
+                      }} />
+                      <style>{`@keyframes trainerDivider { 0%{background-position:200% 0} 100%{background-position:-200% 0} }`}</style>
+                    </div>
+                  )}
+                  <div
+                    style={{
+                      display: "flex",
+                      gap: 28,
+                      background: "#f8f9fa",
+                      borderRadius: 20,
+                      overflow: "hidden",
+                      boxShadow: "0 2px 12px rgba(0,0,0,0.06)",
+                      alignItems: "stretch",
+                      flexWrap: "wrap",
+                    }}
+                  >
+                    {/* Photo */}
+                    <div style={{ flexShrink: 0, width: "clamp(120px, 22%, 220px)", minHeight: 200 }}>
+                      <img
+                        src={t.photo}
+                        alt={t.name}
+                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                        onError={(e) => { e.target.src = "/assets/imgss001/coaching (16).jpg"; }}
+                      />
+                    </div>
+                    {/* Content */}
+                    <div style={{ flex: 1, padding: "28px 28px 22px", display: "flex", flexDirection: "column", justifyContent: "center", minWidth: 220 }}>
+                      <div style={{ fontSize: 13, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: C.blue, marginBottom: 6 }}>
+                        {t.role}
+                      </div>
+                      <h3 style={{ fontSize: "clamp(18px, 1.6vw, 22px)", fontWeight: 700, color: C.black, marginBottom: 12 }}>
+                        {t.name}
+                      </h3>
+                      <p style={{ fontSize: 15, color: "#6c757d", lineHeight: 1.75, margin: "0 0 14px", textAlign: "justify" }}>
+                        {expandedTrainer === idx ? t.full : t.short}
+                      </p>
+                      <button
+                        onClick={() => toggleTrainer(idx)}
+                        style={{
+                          alignSelf: "flex-start",
+                          background: "none",
+                          border: `1.5px solid ${C.blue}`,
+                          color: C.blue,
+                          borderRadius: 50,
+                          padding: "6px 18px",
+                          fontSize: 13,
+                          fontWeight: 600,
+                          cursor: "pointer",
+                          transition: "all 0.2s",
+                        }}
+                        onMouseEnter={(e) => { e.currentTarget.style.background = C.blue; e.currentTarget.style.color = "#fff"; }}
+                        onMouseLeave={(e) => { e.currentTarget.style.background = "none"; e.currentTarget.style.color = C.blue; }}
+                      >
+                        {expandedTrainer === idx ? "Lire moins ▲" : "Lire tout ▼"}
+                      </button>
+                    </div>
+                  </div>
+                </React.Fragment>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* CTA */}
         <section style={{ padding: "60px 20px", background: "#eef2f6" }}>
           <div className="container">
@@ -818,13 +867,13 @@ export default function Ecole() {
               <div className="col-lg-8 text-center">
                 <h2
                   style={{
-                    fontSize: 38,
-                    fontWeight: 800,
+                    fontSize: "max(2.1vw, 32px)",
+                    fontWeight: 600,
                     color: C.blue,
                     marginBottom: 20,
                   }}
                 >
-                  Rejoindre une communauté d’apprentissage vivante
+                  Rejoindre une communauté d'apprentissage vivante
                 </h2>
                 <p
                   style={{

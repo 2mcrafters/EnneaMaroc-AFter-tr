@@ -102,7 +102,7 @@
 .process-description {
     font-size: 16px;
     line-height: 1.7;
-    color: var(--gray-color2);
+    color: #3a3a3a;
     margin: 0;
     white-space: pre-line;
 }
@@ -13645,17 +13645,20 @@ a.text-theme:hover,
 }
 
 .choose-eyebrow {
-    font-size: 14px;
-    letter-spacing: 0.2em;
+    font-size: max(1vw, 16px);
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    font-weight: 600;
-    color: var(--gray-color2);
+    font-weight: 700;
+    color: var(--theme-color);
+    display: block;
+    margin-bottom: 10px;
 }
 
 .choose-headline {
-    font-size: clamp(32px, 4vw, 44px);
-    line-height: 1.15;
-    margin: 0;
+    font-size: max(2.1vw, 32px);
+    line-height: 1.2;
+    margin: 0 0 16px;
+    font-weight: 600;
     color: var(--theme-color2);
 }
 
@@ -51339,4 +51342,29 @@ a.text-theme:hover,
     .cs_main_header_right {
         flex-shrink: 0 !important;
     }
+}
+
+/* Unified section titles and hero title rules */
+.sec-title, .section-title, .hero-content .title, .hb-title, .about-showcase-title { font-size: max(2.1vw, 32px) !important; font-weight: 600 !important; }
+
+.hero-content .title, .hb-title { font-size: max(4.1vw, 42px) !important; }
+
+.about-showcase-copy .title-area { margin-bottom: 24px !important; }
+
+/* ===== GLOBAL SECTION SCROLL REVEAL ===== */
+section:not(#about-section) {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+section.section-animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }

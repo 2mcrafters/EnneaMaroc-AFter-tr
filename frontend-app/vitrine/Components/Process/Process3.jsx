@@ -142,6 +142,15 @@ const Process3 = () => {
   );
 
   return (
+    <>
+    <style>{`
+      @media (max-width: 640px) {
+        .process3-hero-text {
+          text-align: center !important;
+          text-align-last: center !important;
+        }
+      }
+    `}</style>
     <section style={{ background: colors.bg, padding: "80px 0" }}>
       <div style={{ maxWidth: 1160, margin: "0 auto", padding: "0 16px" }}>
         {/* Hero Image with Overlay */}
@@ -152,7 +161,7 @@ const Process3 = () => {
             overflow: "hidden",
             marginBottom: "40px",
             boxShadow: "0 20px 60px rgba(0, 0, 0, 0.4)",
-            height: "420px",
+            height: "240px",
           }}
         >
           <img
@@ -178,33 +187,15 @@ const Process3 = () => {
               flexDirection: "column",
               alignItems: "center",
               justifyContent: "center",
-              padding: "40px 20px",
+              padding: "22px 20px",
             }}
           >
-            <div
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 8,
-                padding: "8px 20px",
-                borderRadius: 999,
-                background: "rgba(255, 255, 255, 0.25)",
-                backdropFilter: "blur(10px)",
-                border: "1px solid rgba(255, 255, 255, 0.4)",
-                color: "#ffffff",
-                fontWeight: 700,
-                letterSpacing: ".08em",
-                marginBottom: "20px",
-              }}
-            >
-              PHILOSOPHIE
-            </div>
             <h2
               style={{
                 margin: "0 0 16px",
-                fontSize: "clamp(28px, 5vw, 48px)",
+                fontSize: "max(2.1vw, 32px)",
                 lineHeight: 1.2,
-                fontWeight: 900,
+                fontWeight: 600,
                 color: "#ffffff",
                 textAlign: "center",
                 maxWidth: "800px",
@@ -214,6 +205,7 @@ const Process3 = () => {
               La philosophie de l'Ennéagramme
             </h2>
             <p
+              className="process3-hero-text"
               style={{
                 maxWidth: "700px",
                 margin: "0 auto",
@@ -340,6 +332,7 @@ const Process3 = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

@@ -89,7 +89,7 @@ const Choose1 = () => {
                     </span>
                     <div>
                       <h5>{item.title}</h5>
-                      <p style={{ textAlign: "justify" }}>{item.text}</p>
+                      <p style={{ textAlign: "justify", color: "#3a3a3a" }}>{item.text}</p>
                     </div>
                   </div>
                 ))}

@@ -430,7 +430,7 @@ const BlogGrid = () => {
               fontSize: isSmall ? "12px" : "14px",
             }}
           >
-            Nos modules
+            Nos Parcours
           </div>
           <h2
             className="sec-title"

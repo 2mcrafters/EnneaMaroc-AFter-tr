@@ -3,6 +3,29 @@
 import { useMemo, useState } from "react";
 import data from "../../Data/testimonial1.json";
 
+const HERO_TITLE = "L'ENNÉAGRAMME : UNE CARTE VIVANTE DE L'ÊTRE HUMAIN";
+
+function AnimatedHeading() {
+  return (
+    <h1
+      style={{
+        margin: "0 0 4px",
+        padding: "0",
+        fontSize: "max(2.1vw, 22px)",
+        fontWeight: 700,
+        lineHeight: 1.15,
+        letterSpacing: "0.04em",
+        color: "#ffffff",
+        whiteSpace: "normal",
+        textAlign: "center",
+        width: "100%",
+      }}
+    >
+      {HERO_TITLE}
+    </h1>
+  );
+}
+
 /* ---------- Decorative inline icons ---------- */
 const Icon = ({ i = 0, strokeColor = "rgba(255,255,255,0.92)" }) => {
   const which = i % 3;
@@ -158,45 +181,57 @@ const TestimonialComponent = () => {
     if (variant === "mobile") {
       return {
         display: "none",
-        flexDirection: "column",
-        gap: "10px",
+        flexDirection: "row",
+        flexWrap: "nowrap",
+        gap: "4px",
         justifyContent: "center",
-        alignItems: "stretch",
+        alignItems: "flex-end",
         width: "100%",
-        padding: "0 18px 18px",
-        marginBottom: "28px",
+        padding: "0 12px",
+        marginBottom: "0",
+        position: "relative",
+        zIndex: 2,
+        overflowX: "auto",
+        WebkitOverflowScrolling: "touch",
+        scrollbarWidth: "none",
+        msOverflowStyle: "none",
       };
     }
 
     return {
       display: "flex",
-      flexWrap: "wrap",
-      gap: "12px",
+      flexWrap: "nowrap",
+      gap: "4px",
       justifyContent: "center",
-      marginBottom: "48px",
+      marginBottom: "0",
+      paddingLeft: "0",
+      position: "relative",
+      zIndex: 2,
     };
   };
 
   const getButtonStyle = (isActive, variant, accent) => {
     const isMobile = variant === "mobile";
+    // Both mobile and desktop use folder-tab style
     return {
       cursor: "pointer",
-      padding: isMobile ? "12px 18px" : "16px 30px",
-      borderRadius: "999px",
-      border: `1px solid ${isActive ? "#ffffff" : "rgba(255, 255, 255, 0.35)"}`,
-      background: isActive ? "#ffffff" : "rgba(255, 255, 255, 0.14)",
-      color: isActive ? accent : "rgba(255, 255, 255, 0.92)",
+      padding: isActive ? (isMobile ? "10px 16px 12px" : "12px 28px 14px") : (isMobile ? "8px 14px 10px" : "10px 26px 12px"),
+      borderRadius: "12px 12px 0 0",
+      border: "1.5px solid rgba(255,255,255,0.35)",
+      borderBottom: isActive ? "2px solid #ffffff" : "1.5px solid rgba(255,255,255,0.35)",
+      background: isActive ? "#ffffff" : "rgba(255,255,255,0.1)",
+      color: isActive ? accent : "rgba(255,255,255,0.88)",
       fontWeight: 800,
-      letterSpacing: isMobile ? "0.08em" : "1.4px",
+      letterSpacing: isMobile ? "1px" : "1.4px",
       textTransform: "uppercase",
-      fontSize: isMobile ? "11px" : "13px",
-      transition: "all 0.25s ease",
+      fontSize: isMobile ? "10px" : "12px",
+      transition: "all 0.22s ease",
       backdropFilter: "blur(10px)",
-      boxShadow: isActive
-        ? "0 8px 24px rgba(255, 255, 255, 0.25)"
-        : "0 6px 18px rgba(0, 0, 0, 0.18)",
-      width: isMobile ? "100%" : "auto",
-      textAlign: "center",
+      position: "relative",
+      zIndex: isActive ? 3 : 1,
+      marginBottom: isActive ? "-2px" : "0",
+      outline: "none",
+      whiteSpace: "nowrap",
     };
   };
 
@@ -218,25 +253,26 @@ const TestimonialComponent = () => {
             className="ennea-tab-button"
             style={buttonStyle}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = "#e13734";
-              e.currentTarget.style.borderColor = "#e13734";
-              e.currentTarget.style.color = "#ffffff";
-              e.currentTarget.style.boxShadow =
-                "0 10px 28px rgba(225, 55, 52, 0.35)";
+              if (isActive) return;
+              if (variant === "desktop") {
+                e.currentTarget.style.background = "rgba(255,255,255,0.22)";
+                e.currentTarget.style.color = "#ffffff";
+              } else {
+                e.currentTarget.style.background = "#e13734";
+                e.currentTarget.style.borderColor = "#e13734";
+                e.currentTarget.style.color = "#ffffff";
+              }
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = isActive
-                ? "#ffffff"
-                : "rgba(255, 255, 255, 0.14)";
-              e.currentTarget.style.borderColor = isActive
-                ? "#ffffff"
-                : "rgba(255, 255, 255, 0.35)";
-              e.currentTarget.style.color = isActive
-                ? item.accent
-                : "rgba(255, 255, 255, 0.92)";
-              e.currentTarget.style.boxShadow = isActive
-                ? "0 8px 24px rgba(255, 255, 255, 0.25)"
-                : "0 6px 18px rgba(0, 0, 0, 0.18)";
+              if (isActive) return;
+              if (variant === "desktop") {
+                e.currentTarget.style.background = "rgba(255,255,255,0.1)";
+                e.currentTarget.style.color = "rgba(255,255,255,0.88)";
+              } else {
+                e.currentTarget.style.background = "rgba(255, 255, 255, 0.14)";
+                e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.35)";
+                e.currentTarget.style.color = "rgba(255, 255, 255, 0.92)";
+              }
             }}
           >
             {item.label}
@@ -333,7 +369,7 @@ const TestimonialComponent = () => {
         style={{
           position: "relative",
           background: "linear-gradient(135deg, #0a83ca 0%, #073c86 100%)",
-          padding: "48px 0 48px",
+          padding: "24px 0 24px",
           overflow: "hidden",
         }}
       >
@@ -350,7 +386,7 @@ const TestimonialComponent = () => {
           style={{
             position: "relative",
             zIndex: 2,
-            maxWidth: "1190px",
+            maxWidth: "1280px",
             margin: "0 auto",
             padding: "0 40px",
           }}
@@ -360,61 +396,49 @@ const TestimonialComponent = () => {
             className="ennea-hero-wrapper"
             style={{
               width: "100%",
-              maxWidth: "1190px",
-              margin: "0 auto 24px",
+              maxWidth: "100%",
+              margin: "0 auto 20px",
               color: "#ffffff",
-              display: "grid",
-              gap: "8px",
-              textAlign: "center",
-              justifyItems: "center",
+              display: "flex",
+              flexDirection: "column",
               alignItems: "center",
+              gap: "0",
+              textAlign: "center",
             }}
           >
-            <h1
-              className="ennea-hero-heading"
-              style={{
-                margin: 0,
-                padding: "0 8px",
-                fontSize: "clamp(16px, 2vw, 28px)",
-                lineHeight: 1.18,
-                fontWeight: 700,
-                letterSpacing: "0.06em",
-                color: "#ffffff",
-                whiteSpace: "nowrap",
-              }}
-            >
-              L’ENNÉAGRAMME : UNE CARTE VIVANTE DE L’ÊTRE HUMAIN
-            </h1>
+            <AnimatedHeading />
+            <div style={{
+              width: "48px",
+              height: "2px",
+              background: "rgba(255,255,255,0.4)",
+              borderRadius: "99px",
+              margin: "14px auto",
+            }} />
             <div
               style={{
-                display: "flex",
-                alignItems: "center",
-                padding: "0 8px",
-              }}
-            ></div>
-            <div
-              style={{
-                border: "1px solid rgba(255, 255, 255, 0.5)",
-                borderRadius: "12px",
-                padding: "32px",
-                marginTop: "24px",
-                maxWidth: "1190px",
+                border: "1px solid rgba(255,255,255,0.25)",
+                borderRadius: "16px",
+                padding: "20px 40px",
+                marginTop: "0",
+                maxWidth: "86%",
                 width: "100%",
+                boxSizing: "border-box",
                 textAlign: "center",
-                backgroundColor: "rgba(255, 255, 255, 0.05)",
-                backdropFilter: "blur(4px)",
+                backgroundColor: "rgba(255,255,255,0.07)",
+                backdropFilter: "blur(8px)",
               }}
             >
               <p
                 className="ennea-hero-subtitle"
                 style={{
-                  margin: "0 0 20px 0",
-                  fontSize: "20px",
-                  color: "#ffffff",
+                  margin: "0 0 14px 0",
+                  fontSize: "12px",
+                  color: "rgba(255,255,255,0.6)",
                   fontWeight: 700,
                   lineHeight: 1.4,
                   textTransform: "uppercase",
-                  letterSpacing: "1px",
+                  letterSpacing: "2.5px",
+                  textAlign: "center",
                 }}
               >
                 Plus qu’un outil, une voie de transformation
@@ -425,24 +449,17 @@ const TestimonialComponent = () => {
                   display: "flex",
                   flexDirection: "column",
                   gap: "8px",
-                  color: "rgba(255, 255, 255, 0.9)",
+                  color: "rgba(255,255,255,0.88)",
                   fontSize: "15px",
-                  lineHeight: "1.6",
+                  lineHeight: "1.75",
                   textAlign: "justify",
-                  textAlignLast: "justify",
+                  textAlignLast: "center",
                   width: "100%",
                   margin: "0 auto",
                 }}
               >
-                <p style={{ margin: 0 }}>
-                  C’est une carte vivante des dynamiques humaines, un miroir qui
-                  révèle nos forces, nos fragilités, et les chemins d’évolution
-                  possibles.
-                </p>
-                <p style={{ margin: 0 }}>
-                  Il nous aide à passer de la survie automatique à la présence
-                  consciente, en ouvrant un espace de liberté intérieure.
-                </p>
+                <p style={{ margin: 0 }}>C'est une carte vivante des dynamiques humaines, un miroir qui révèle nos forces, nos fragilités, et les chemins d'évolution possibles.</p>
+                <p style={{ margin: 0 }}>L'Ennéagramme nous aide à passer de la survie automatique à la présence consciente, en ouvrant un espace de liberté intérieure.</p>
               </div>
             </div>
           </div>
@@ -450,6 +467,9 @@ const TestimonialComponent = () => {
           <style>
             {`
               .ennea-tabs-wrapper-mobile {
+                display: none;
+              }
+              .ennea-tabs-wrapper-mobile::-webkit-scrollbar {
                 display: none;
               }
 
@@ -462,17 +482,24 @@ const TestimonialComponent = () => {
                   display: flex !important;
                 }
 
+                .ennea-tab-button {
+                  font-size: 9px !important;
+                  padding: 7px 10px 9px !important;
+                  letter-spacing: 0.8px !important;
+                }
+
                 .ennea-hero-wrapper {
-                  padding: 0 18px;
+                  padding: 0;
                   gap: 10px !important;
-                  margin-bottom: 24px !important;
+                  margin-bottom: 20px !important;
                 }
 
                 .ennea-hero-heading {
-                  font-size: 22px !important;
-                  line-height: 1.18 !important;
+                  font-size: clamp(16px, 5vw, 26px) !important;
+                  line-height: 1.2 !important;
                   white-space: normal !important;
-                  letter-spacing: 0.04em !important;
+                  letter-spacing: 0.03em !important;
+                  word-break: break-word !important;
                 }
 
                 .ennea-hero-label {
@@ -542,6 +569,15 @@ const TestimonialComponent = () => {
                   justify-content: center !important;
                   margin-top: 20px !important;
                 }
+
+              @media (max-width: 640px) {
+                .ennea-side-grid {
+                  display: none !important;
+                }
+                .ennea-main-grid {
+                  grid-template-columns: 1fr !important;
+                  gap: 0 !important;
+                }
               }
             `}
           </style>
@@ -551,8 +587,10 @@ const TestimonialComponent = () => {
           {/* Active panel styled like Philosophie section */}
           <div
             style={{
-              maxWidth: "1280px",
+              maxWidth: "100%",
               margin: "0 auto",
+              position: "relative",
+              zIndex: 1,
             }}
           >
             <div
@@ -578,11 +616,11 @@ const TestimonialComponent = () => {
               <article
                 style={{
                   background: "#ffffff",
-                  borderRadius: "26px",
-                  padding: "40px 48px",
+                  borderRadius: "24px",
+                  padding: "24px 36px",
                   color: "#0e1b25",
                   display: "grid",
-                  gap: "32px",
+                  gap: "0",
                   boxShadow: "0 20px 60px rgba(5, 28, 50, 0.1)",
                 }}
               >
@@ -591,44 +629,25 @@ const TestimonialComponent = () => {
                   style={{
                     display: "grid",
                     gridTemplateColumns: "1.2fr 0.8fr",
-                    gap: "64px",
+                    gap: "36px",
                     alignItems: "center",
                   }}
                 >
                   <div
                     style={{
                       display: "grid",
-                      gap: "32px",
+                      gap: "12px",
                       textAlign: "left",
                     }}
                   >
-                    <div
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "18px",
-                      }}
-                    >
-                      <div
-                        style={{
-                          display: "grid",
-                          placeItems: "center",
-                          width: "64px",
-                          height: "64px",
-                          borderRadius: "20px",
-                          background: `linear-gradient(135deg, ${active.accent} 0%, rgba(14, 27, 37, 0.08) 100%)`,
-                          boxShadow: "0 18px 32px rgba(10,131,202,0.18)",
-                        }}
-                      >
-                        <Icon i={activeIndex} strokeColor="#ffffff" />
-                      </div>
-                      <div>
+                    <div>
                         <p
                           style={{
-                            margin: 0,
-                            fontSize: "12px",
-                            letterSpacing: "0.2em",
+                            margin: "0 0 6px 0",
+                            fontSize: "13px",
+                            letterSpacing: "0.22em",
                             textTransform: "uppercase",
+                            fontWeight: 700,
                             color: active.accent,
                           }}
                         >
@@ -637,27 +656,32 @@ const TestimonialComponent = () => {
                         <p
                           style={{
                             margin: 0,
-                            fontSize: "18px",
+                            fontSize: "clamp(20px, 2vw, 28px)",
                             fontWeight: 700,
                             color: "#0e1b25",
-                            maxWidth: "360px",
+                            lineHeight: 1.2,
                           }}
                         >
                           {active.title}
                         </p>
-                      </div>
                     </div>
-                    <p
-                      style={{
-                        margin: "0 0 18px",
-                        fontSize: "16px",
-                        color: "rgba(14, 27, 37, 0.8)",
-                        lineHeight: "1.6",
-                        textAlign: "left",
-                      }}
-                    >
-                      {active.tag}
-                    </p>
+                    <div style={{ margin: "4px 0 6px" }}>
+                      <span
+                        style={{
+                          display: "inline-block",
+                          padding: "5px 16px",
+                          border: `1.5px solid ${active.accent}`,
+                          borderRadius: "999px",
+                          fontSize: "13px",
+                          fontWeight: 600,
+                          color: active.accent,
+                          letterSpacing: "0.04em",
+                          background: "transparent",
+                        }}
+                      >
+                        {active.tag}
+                      </span>
+                    </div>
                     <div>
                       {renderDescription(active.desc, {
                         paragraphColor: "rgba(14, 27, 37, 0.88)",

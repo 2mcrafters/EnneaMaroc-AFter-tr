@@ -34,13 +34,25 @@ const Home = () => {
           rotatetext="Se découvrir – Se libérer – Être autonome."
           subtitle2="DEPUIS 2006"
           content="Nous accompagnons les particuliers et les entreprises sur le chemin de la connaissance de soi. Grâce à l'Ennéagramme et au coaching, nous facilitons la communication et renforçons la cohésion d'équipe pour une transformation durable et autonome."
-          btnname="Contactez-nous"
-          ctaTagline="Des renseignements sur notre parcours de formation et nos solutions dérivées"
-          expyear="25"
-          exptitle="<span class='fw-semibold'>années</span> <br>d’expérience pro"
+          btnname="Découvrir l'équipe"
+          buttonLink="/ecole"
+          expyear="20"
+          exptitle="<span>années</span><br />d’expérience"
           avatar="/assets/imgss001/chafik.jpg"
           name="Chafik Harti"
-          // designation="Fondateur"
+          designation="Co-fondateur"
+          teamMembers={[
+            {
+              image: "/assets/imgss001/chafik.jpg",
+              name: "Chafik Harti",
+              role: "Co-fondateur",
+            },
+            {
+              image: "/assets/imgss001/freid (1).jpg",
+              name: "Yousra Andalib",
+              role: "Co-fondatrice",
+            },
+          ]}
         ></About1>
         {/* <Partner1></Partner1> */}
         {/* <Services1></Services1> */}

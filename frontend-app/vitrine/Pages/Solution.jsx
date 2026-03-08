@@ -978,14 +978,16 @@ export default function Solution() {
         {/* EQUIPES */}
         <section
           id="equipes"
-          style={{ padding: "80px 20px", background: C.white }}
+          style={{ padding: "80px 20px", background: C.lightBlue }}
         >
           <div className="container">
-            <div className="row g-4">
-              <div className="col-lg-4">
+
+            {/* Header row — same as ENTREPRISES */}
+            <div className="row align-items-center mb-5">
+              <div className="col-lg-8">
                 <div
                   style={{
-                    color: C.red,
+                    color: C.blue,
                     fontSize: 13,
                     fontWeight: 700,
                     letterSpacing: "0.12em",
@@ -997,173 +999,116 @@ export default function Solution() {
                 </div>
                 <h2
                   style={{
-                    fontSize: 36,
+                    fontSize: 42,
                     fontWeight: 700,
                     color: C.black,
-                    marginBottom: 16,
+                    margin: "0 0 20px",
                     lineHeight: 1.2,
                   }}
                 >
                   Programme Ennéagramme Équipes opérationnelles
                 </h2>
+                <p style={{ fontSize: 18, color: C.gray, lineHeight: 1.7 }}>
+                  D'un opérateur exécutant à un opérateur impliqué et acteur
+                </p>
+              </div>
+              <div className="col-lg-4 text-lg-end">
                 <div
                   style={{
+                    display: "inline-block",
                     background: C.blue,
-                    padding: "24px 28px",
+                    color: C.white,
+                    padding: "24px 32px",
                     borderRadius: 12,
-                    marginTop: 24,
-                    borderTop: `3px solid ${C.blue}`,
+                    textAlign: "center",
                   }}
                 >
-                  <div
-                    style={{
-                      fontSize: 42,
-                      fontWeight: 800,
-                      lineHeight: 1,
-                      color: C.white,
-                    }}
-                  >
-                    8
-                  </div>
-                  <div
-                    style={{
-                      fontSize: 14,
-                      fontWeight: 600,
-                      marginTop: 6,
-                      color: C.white,
-                    }}
-                  >
-                    JOURS
-                  </div>
-                  <p
-                    style={{
-                      fontSize: 15,
-                      marginTop: 10,
-                      marginBottom: 0,
-                      color: C.white,
-                      lineHeight: 1.5,
-                    }}
-                  >
-                    D'un opérateur exécutant à un opérateur impliqué et acteur
-                  </p>
+                  <div style={{ fontSize: 48, fontWeight: 800, lineHeight: 1 }}>8</div>
+                  <div style={{ fontSize: 15, fontWeight: 600, marginTop: 8 }}>JOURS</div>
                 </div>
               </div>
+            </div>
 
-              <div className="col-lg-8">
-                <div
-                  style={{
-                    background: C.lightBlue,
-                    borderRadius: 12,
-                    padding: 40,
-                    borderTop: `3px solid ${C.blue}`,
-                    marginBottom: 24,
-                  }}
-                >
-                  <h3
-                    style={{
-                      fontSize: 22,
-                      fontWeight: 700,
-                      marginBottom: 16,
-                      color: C.black,
-                    }}
-                  >
-                    Objectif
-                  </h3>
-                  <p style={{ fontSize: 16, color: C.gray, lineHeight: 1.7 }}>
-                    Renforcer la cohésion, la collaboration et la gestion des
-                    conflits dans les équipes.
-                  </p>
-                  <h3
-                    style={{
-                      fontSize: 22,
-                      fontWeight: 700,
-                      margin: "28px 0 16px",
-                      color: C.black,
-                    }}
-                  >
-                    Modules
-                  </h3>
-                  {[
-                    "Découvrir les 9 profils : comprendre les dynamiques individuelles",
-                    "Travailler ensemble : reconnaître les forces complémentaires de chaque type",
-                    "Communication efficace : transformer les incompréhensions en leviers",
-                    "Gestion des tensions : comprendre le stress et apaiser les conflits",
-                  ].map((item, i) => (
+            {/* White card — same as ENTREPRISES */}
+            <div
+              style={{
+                background: C.white,
+                borderRadius: 16,
+                padding: 50,
+                boxShadow: "0 2px 16px rgba(0,0,0,0.08)",
+              }}
+            >
+              {/* Objectif */}
+              <div
+                style={{
+                  borderLeft: `4px solid ${C.blue}`,
+                  paddingLeft: 28,
+                  marginBottom: 50,
+                }}
+              >
+                <h3 style={{ fontSize: 24, fontWeight: 700, marginBottom: 12, color: C.black }}>
+                  Objectif général
+                </h3>
+                <p style={{ fontSize: 17, lineHeight: 1.8, margin: 0, color: C.gray, textAlign: "justify", hyphens: "auto" }}>
+                  Renforcer la cohésion, la collaboration et la gestion des conflits dans les équipes opérationnelles,
+                  en s'appuyant sur la compréhension des profils de personnalité pour passer d'une logique
+                  d'exécution individuelle à une coopération consciente et engagée.
+                </p>
+              </div>
+
+              {/* Modules */}
+              <h3 style={{ fontSize: 28, fontWeight: 700, marginBottom: 32, color: C.black }}>
+                Modules
+              </h3>
+              <div className="row g-4" style={{ marginBottom: 40 }}>
+                {[
+                  { title: "Découvrir les 9 profils", text: "Comprendre les dynamiques individuelles et les motivations profondes de chaque type de personnalité au sein de l'équipe." },
+                  { title: "Travailler ensemble", text: "Reconnaître les forces complémentaires de chaque type et construire une coopération fondée sur la conscience mutuelle." },
+                  { title: "Communication efficace", text: "Transformer les incompréhensions en leviers de dialogue, en apprenant à décoder les langages et besoins de chaque profil." },
+                  { title: "Gestion des tensions", text: "Comprendre les mécanismes de stress propres à chaque type et apaiser les conflits relationnels avant qu'ils ne s'installent." },
+                ].map((mod, idx) => (
+                  <div key={idx} className="col-lg-6">
                     <div
-                      key={i}
                       style={{
-                        display: "flex",
-                        gap: 10,
-                        marginBottom: 12,
-                        alignItems: "start",
+                        background: C.lightBlue,
+                        borderRadius: 12,
+                        padding: 32,
+                        height: "100%",
+                        borderTop: `3px solid ${C.blue}`,
                       }}
                     >
-                      <span style={{ color: C.blue, fontSize: 18 }}>•</span>
-                      <p
-                        style={{
-                          fontSize: 15,
-                          color: C.gray,
-                          margin: 0,
-                          paddingTop: 2,
-                          lineHeight: 1.6,
-                        }}
-                      >
-                        {item}
+                      <h4 style={{ fontSize: 19, fontWeight: 700, margin: "0 0 14px", color: C.black }}>
+                        {mod.title}
+                      </h4>
+                      <p style={{ fontSize: 15, color: C.gray, margin: 0, lineHeight: 1.65, textAlign: "justify", hyphens: "auto" }}>
+                        {mod.text}
                       </p>
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
+              </div>
 
-                <div
-                  style={{
-                    background: C.lightGreen,
-                    borderRadius: 12,
-                    padding: 40,
-                    borderTop: `3px solid ${C.green}`,
-                  }}
-                >
-                  <h3
-                    style={{
-                      fontSize: 22,
-                      fontWeight: 700,
-                      marginBottom: 20,
-                      color: C.black,
-                    }}
-                  >
-                    Valeur ajoutée
-                  </h3>
+              {/* Valeur ajoutée — same as Bénéfices block */}
+              <div
+                style={{
+                  background: C.lightGreen,
+                  padding: 36,
+                  borderRadius: 12,
+                  borderTop: `3px solid ${C.green}`,
+                }}
+              >
+                <h3 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: C.black }}>
+                  Valeur ajoutée
+                </h3>
+                <div style={{ display: "grid", gap: 14 }}>
                   {[
-                    "Équipes plus soudées et conscientes des différences",
-                    "Réduction des tensions relationnelles",
-                    "Meilleure performance collective par la coopération",
+                    "Équipes plus soudées et conscientes des différences de chaque profil.",
+                    "Réduction des tensions relationnelles et des incompréhensions récurrentes.",
+                    "Meilleure performance collective grâce à une coopération consciente et durable.",
                   ].map((item, i) => (
-                    <div
-                      key={i}
-                      style={{
-                        display: "flex",
-                        gap: 10,
-                        marginBottom: 14,
-                        alignItems: "start",
-                      }}
-                    >
-                      <span
-                        style={{
-                          color: C.green,
-                          fontSize: 18,
-                          fontWeight: 700,
-                        }}
-                      >
-                        ✓
-                      </span>
-                      <p
-                        style={{
-                          fontSize: 15,
-                          color: C.black,
-                          margin: 0,
-                          paddingTop: 2,
-                          lineHeight: 1.6,
-                        }}
-                      >
+                    <div key={i} style={{ display: "flex", gap: 12, alignItems: "start" }}>
+                      <span style={{ color: C.green, fontSize: 20, fontWeight: 700 }}>✓</span>
+                      <p style={{ fontSize: 16, color: C.black, margin: 0, paddingTop: 2, lineHeight: 1.6 }}>
                         {item}
                       </p>
                     </div>
@@ -1171,6 +1116,7 @@ export default function Solution() {
                 </div>
               </div>
             </div>
+
           </div>
         </section>
 

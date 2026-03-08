@@ -55,7 +55,154 @@ const highlights = [
   },
 ];
 
-// Static data moved to backend
+// Static fallback – used when the backend API is unreachable
+const STATIC_FALLBACK_MONTHS = [
+  "nov-25","déc-25","janv-26","fév-26","mars-26","avr-26",
+  "mai-26","juin-26","juil-26","août-26","sept-26","oct-26",
+  "nov-26","déc-26",
+];
+
+const STATIC_FALLBACK_LEVELS = [
+  {
+    id: "decouvrir",
+    title: "Découvrir – Niveau 1",
+    route: "/découvrir",
+    codePrefix: "D",
+    totalDays: 12,
+    totalCost: "21 000 MAD",
+    modules: [
+      {
+        code: "D1", reference: "D1",
+        name: "Initiation et Découverte",
+        days: 2, hours: "9h – 17h", prereq: "Aucun", price: "3 500 MAD",
+        sessions: [{ monthLabel:"nov-25", monthKey:"2025-11", start_date:"2025-11-15", end_date:"2025-11-16" }],
+      },
+      {
+        code: "D2", reference: "D2",
+        name: "Centres d'intelligence",
+        days: 2, hours: "9h – 17h", prereq: "D1", price: "3 500 MAD",
+        sessions: [{ monthLabel:"déc-25", monthKey:"2025-12", start_date:"2025-12-13", end_date:"2025-12-14" }],
+      },
+      {
+        code: "D3", reference: "D3",
+        name: "Instincts",
+        days: 2, hours: "9h – 17h", prereq: "D1", price: "3 500 MAD",
+        sessions: [{ monthLabel:"janv-26", monthKey:"2026-01", start_date:"2026-01-17", end_date:"2026-01-18" }],
+      },
+      {
+        code: "D4", reference: "D4",
+        name: "Lumière : Conscience claire de nos mécanismes inconscients",
+        days: 2, hours: "9h – 17h", prereq: "D2 – D3", price: "3 500 MAD",
+        sessions: [{ monthLabel:"fév-26", monthKey:"2026-02", start_date:"2026-02-14", end_date:"2026-02-15" }],
+      },
+      {
+        code: "D5", reference: "D5",
+        name: "Ombre : Se libérer des fardeaux de l'ego",
+        days: 2, hours: "9h – 17h", prereq: "D3", price: "3 500 MAD",
+        sessions: [{ monthLabel:"mars-26", monthKey:"2026-03", start_date:"2026-03-14", end_date:"2026-03-15" }],
+      },
+      {
+        code: "D6", reference: "D6",
+        name: "Profondeur : Être autonome dans le chemin d'évolution",
+        days: 2, hours: "9h – 17h", prereq: "D3", price: "3 500 MAD",
+        sessions: [{ monthLabel:"avr-26", monthKey:"2026-04", start_date:"2026-04-18", end_date:"2026-04-19" }],
+      },
+    ],
+  },
+  {
+    id: "approfondir",
+    title: "Approfondir – Niveau 2",
+    route: "/approfondir",
+    codePrefix: "V",
+    totalDays: 15,
+    totalCost: "21 000 MAD",
+    modules: [
+      {
+        code: "V1", reference: "V1",
+        name: "Ressemblance et confusion",
+        days: 2, hours: "9h – 17h", prereq: "Niveau D", price: "3 500 MAD",
+        sessions: [{ monthLabel:"nov-25", monthKey:"2025-11", start_date:"2025-11-22", end_date:"2025-11-23" }],
+      },
+      {
+        code: "V2", reference: "V2",
+        name: "Relations en Ennéagramme",
+        days: 2, hours: "9h – 17h", prereq: "V1", price: "3 500 MAD",
+        sessions: [{ monthLabel:"janv-26", monthKey:"2026-01", start_date:"2026-01-24", end_date:"2026-01-25" }],
+      },
+      {
+        code: "V3", reference: "V3",
+        name: "Pathologie et ombres",
+        days: 2, hours: "9h – 17h", prereq: "V1", price: "3 500 MAD",
+        sessions: [{ monthLabel:"fév-26", monthKey:"2026-02", start_date:"2026-02-21", end_date:"2026-02-22" }],
+      },
+      {
+        code: "V4", reference: "V4",
+        name: "Grand Panel & pistes de développement",
+        days: 2, hours: "9h – 17h", prereq: "V2 – V3", price: "3 500 MAD",
+        sessions: [{ monthLabel:"mars-26", monthKey:"2026-03", start_date:"2026-03-21", end_date:"2026-03-22" }],
+      },
+      {
+        code: "V5", reference: "V5",
+        name: "Intégration : Ennéagramme et profils jungiens",
+        days: 2, hours: "9h – 17h", prereq: "V2", price: "3 500 MAD",
+        sessions: [{ monthLabel:"mai-26", monthKey:"2026-05", start_date:"2026-05-16", end_date:"2026-05-17" }],
+      },
+      {
+        code: "V6", reference: "V6",
+        name: "Retraite ennéagrammiste",
+        days: 5, hours: "9h – 17h", prereq: "D4 – V2 – V3", price: "3 500 MAD",
+        sessions: [{ monthLabel:"juin-26", monthKey:"2026-06", start_date:"2026-06-15", end_date:"2026-06-19" }],
+      },
+    ],
+  },
+  {
+    id: "transmettre",
+    title: "À la maîtrise – Niveau 3",
+    route: "/transmettre",
+    codePrefix: "M",
+    totalDays: 20,
+    totalCost: "26 000 MAD",
+    modules: [
+      {
+        code: "M1", reference: "M1",
+        name: "Conduite et animation de panels",
+        days: 3, hours: "9h – 17h", prereq: "Niveau V", price: "4 000 MAD",
+        sessions: [{ monthLabel:"déc-25", monthKey:"2025-12", start_date:"2025-12-20", end_date:"2025-12-22" }],
+      },
+      {
+        code: "M2", reference: "M2",
+        name: "Devenir profileur : Processus de l'entretien typologique",
+        days: 3, hours: "9h – 17h", prereq: "M1", price: "4 000 MAD",
+        sessions: [{ monthLabel:"fév-26", monthKey:"2026-02", start_date:"2026-02-28", end_date:"2026-03-02" }],
+      },
+      {
+        code: "M3", reference: "M3",
+        name: "Superviser, co-développer : 5 cas pratiques filmés",
+        days: 3, hours: "9h – 17h", prereq: "M2", price: "4 000 MAD",
+        sessions: [{ monthLabel:"avr-26", monthKey:"2026-04", start_date:"2026-04-25", end_date:"2026-04-27" }],
+      },
+      {
+        code: "M4", reference: "M4",
+        name: "En croisant l'Ennéagramme et la thérapie brève",
+        days: 3, hours: "9h – 17h", prereq: "D – V", price: "4 000 MAD",
+        sessions: [{ monthLabel:"juin-26", monthKey:"2026-06", start_date:"2026-06-27", end_date:"2026-06-29" }],
+      },
+      {
+        code: "M5", reference: "M5",
+        name: "Certification à la méthode Ennea-Pro HRH",
+        days: 3, hours: "9h – 17h", prereq: "M2 – M4", price: "4 000 MAD",
+        sessions: [{ monthLabel:"sept-26", monthKey:"2026-09", start_date:"2026-09-12", end_date:"2026-09-14" }],
+      },
+      {
+        code: "M6", reference: "M6",
+        name: "Projet : Ancrer une approche adaptée à son public avec soutenance",
+        days: 5, hours: "9h – 17h", prereq: "M4", price: "6 000 MAD",
+        sessions: [{ monthLabel:"nov-26", monthKey:"2026-11", start_date:"2026-11-07", end_date:"2026-11-11" }],
+      },
+    ],
+  },
+];
+
 function Agenda() {
   const [scheduleLevels, setScheduleLevels] = useState([]);
   const [agendaMonths, setAgendaMonths] = useState([]);
@@ -211,7 +358,10 @@ function Agenda() {
 
         setScheduleLevels(formatted);
       } catch (err) {
-        console.error(err);
+        console.warn("Agenda: backend unavailable, using static fallback data.");
+        setScheduleLevels(STATIC_FALLBACK_LEVELS);
+        setAgendaMonths(STATIC_FALLBACK_MONTHS);
+        setViewStartDate(new Date(2025, 10, 1)); // November 2025
       } finally {
         setLoading(false);
       }

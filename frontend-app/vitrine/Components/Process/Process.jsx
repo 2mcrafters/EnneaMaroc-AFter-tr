@@ -29,7 +29,6 @@ const Process = () => {
                 <div className="process-icon-wrap">
                   <i className={item.icon}></i>
                 </div>
-                <span className="process-badge">{item.number}</span>
               </div>
               <h4
                 className="process-title"
@@ -43,6 +42,27 @@ const Process = () => {
               </p>
             </div>
           ))}
+        </div>
+        {/* Quote block below cards */}
+        <div style={{
+          marginTop: "32px",
+          padding: "20px 36px",
+          borderRadius: "16px",
+          background: "linear-gradient(120deg, rgba(10,131,202,0.07), rgba(7,60,134,0.05))",
+          border: "1.5px solid rgba(10,131,202,0.18)",
+          textAlign: "center",
+        }}>
+          <p style={{
+            margin: 0,
+            fontSize: "clamp(15px, 1.4vw, 18px)",
+            fontWeight: 500,
+            color: "#0a83ca",
+            lineHeight: 1.7,
+            fontStyle: "italic",
+          }}>
+            « L'Ennéagramme est une invitation à vivre pleinement, à se rencontrer soi-même
+            et à rencontrer l'autre, dans toute la richesse de l'humanité. »
+          </p>
         </div>
       </div>
     </section>

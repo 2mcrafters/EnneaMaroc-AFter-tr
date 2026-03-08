@@ -204,6 +204,7 @@ export default function Header1({ variant = "" }) {
 
   const renderItem = (item) => {
     if (item.type === "hash") {
+      const isHomePage = location.pathname === '/';
       return (
         <a
           href={`/#${item.hashTo}`}
@@ -218,11 +219,31 @@ export default function Header1({ variant = "" }) {
             display: "inline-flex",
             alignItems: "center",
             height: 44,
+            padding: "0 16px",
+            borderRadius: "9999px",
             fontSize: "17px",
-            fontWeight: 600,
+            fontWeight: isHomePage ? 700 : 600,
+            transition: "all 0.2s",
+            textDecoration: "none",
+            color: isHomePage ? "#0a83ca" : "inherit",
           }}
         >
-          {item.label}
+          <span style={{ position: "relative", paddingBottom: "3px" }}>
+            {item.label}
+            {isHomePage && (
+              <span style={{
+                position: "absolute",
+                bottom: 0,
+                left: "50%",
+                transform: "translateX(-50%)",
+                width: "100%",
+                height: "2.5px",
+                background: "#0a83ca",
+                borderRadius: "99px",
+                display: "block",
+              }} />
+            )}
+          </span>
         </a>
       );
     }
@@ -230,7 +251,6 @@ export default function Header1({ variant = "" }) {
     if (item.type === "link") {
       const normalizedPath = normalizeRouteSegment(location.pathname);
       const isActive = normalizedPath === normalizeRouteSegment(item.to);
-      const isMobileView = isMobile();
 
       return (
         <Link
@@ -244,22 +264,32 @@ export default function Header1({ variant = "" }) {
             height: 44,
             padding: "0 16px",
             borderRadius: "9999px",
-            backgroundColor: isMobileView
-              ? "transparent"
-              : isActive
-              ? "#0a83ca"
-              : "transparent",
-            color: isActive
-              ? isMobileView
-                ? "#0a83ca"
-                : "#ffffff"
-              : "inherit",
-            fontWeight: 600,
+            fontWeight: isActive ? 700 : 600,
             fontSize: "17px",
             transition: "all 0.2s",
+            textDecoration: "none",
+            color: isActive ? "#0a83ca" : "inherit",
           }}
         >
-          {item.label}
+          <span style={{
+            position: "relative",
+            paddingBottom: "3px",
+          }}>
+            {item.label}
+            {isActive && (
+              <span style={{
+                position: "absolute",
+                bottom: 0,
+                left: "50%",
+                transform: "translateX(-50%)",
+                width: "100%",
+                height: "2.5px",
+                background: "#0a83ca",
+                borderRadius: "99px",
+                display: "block",
+              }} />
+            )}
+          </span>
         </Link>
       );
     }
@@ -527,8 +557,24 @@ export default function Header1({ variant = "" }) {
       style={{ position: "fixed", zIndex: 999, width: "100%", top: 0 }}
     >
       <style>{`
+        /* ── scale hover for all nav links ── */
+        .cs_nav_link {
+          transition: transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.4s ease !important;
+          display: inline-flex;
+          align-items: center;
+          text-decoration: none !important;
+        }
+        .cs_nav_link:hover {
+          transform: scale(1.12) !important;
+          text-decoration: none !important;
+          color: #0a83ca !important;
+        }
+        .cs_nav_link:hover::after,
+        .cs_nav_link:focus::after {
+          display: none !important;
+        }
+
         @media (max-width: 991px) {
-          /* Avoid horizontal overflow and excessive width on mobile nav */
           .cs_nav .cs_nav_list {
             width: 100% !important;
             left: 0 !important;
@@ -542,12 +588,9 @@ export default function Header1({ variant = "" }) {
             box-sizing: border-box !important;
             background: transparent !important;
           }
-          /* Remove blue bg on hover/active for mobile nav links */
-          .cs_nav .cs_nav_list .cs_nav_link:hover,
-          .cs_nav .cs_nav_list .cs_nav_link:focus,
-          .cs_nav .cs_nav_list .cs_nav_link:active {
+          .cs_nav .cs_nav_list .cs_nav_link:hover {
             background: transparent !important;
-            color: #0a83ca !important;
+            transform: scale(1.04) !important;
           }
         }
       `}</style>
@@ -574,7 +617,7 @@ export default function Header1({ variant = "" }) {
               <Link
                 to="/"
                 className="cs_site_branding"
-                onClick={closeMobileAll}
+                onClick={() => { closeMobileAll(); window.scrollTo({ top: 0, behavior: "instant" }); }}
               >
                 <img
                   className="cs-logo"

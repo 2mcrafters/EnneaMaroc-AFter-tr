@@ -77,7 +77,7 @@ const CoursesListPage: React.FC = () => {
           <BackArrowIcon className="w-6 h-6" />
         </a>
         <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 text-center">
-          Nos Modules
+          Nos Parcours
         </h1>
       </div>
 

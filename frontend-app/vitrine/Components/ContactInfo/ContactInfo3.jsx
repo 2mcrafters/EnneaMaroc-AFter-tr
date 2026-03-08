@@ -1,4 +1,4 @@
-const ContactInfo3 = () => {
+﻿const ContactInfo3 = () => {
   return (
     <div>
       <section className="contact-section style-2 space bg-theme3">
@@ -9,9 +9,6 @@ const ContactInfo3 = () => {
               <div className="contact-content-wrap">
                 <div className="title-area twoT">
                   <div className="sub-title">
-                    <span>
-                      <i className="asterisk"></i>
-                    </span>
                     CONTACT
                   </div>
                   <h2 className="sec-title">
@@ -47,21 +44,14 @@ const ContactInfo3 = () => {
                     <div className="info">
                       <h4 className="title">Appelez-nous</h4>
                       <div className="content" style={{ color: "#000" }}>
-                        <strong>Tel :</strong>{" "}
+                        <strong>Tel 1 :</strong>{" "}
                         <a href="tel:0661246647" style={{ color: "#000" }}>
-                          0661 24 66 47
+                          06 61 24 66 47
                         </a>
                         <br />
-                        <span>Nous sommes à votre disposition</span>
-                        <br />
-                        <span>Entreprise :</span>{" "}
+                        <strong>Tel 2 :</strong>{" "}
                         <a href="tel:0662062032" style={{ color: "#000" }}>
-                          0662 062 032
-                        </a>
-                        <br />
-                        <span>Dev. Personnel :</span>{" "}
-                        <a href="tel:0661246647" style={{ color: "#000" }}>
-                          0661 24 66 47
+                          06 62 06 20 32
                         </a>
                       </div>
                     </div>
@@ -121,16 +111,6 @@ const ContactInfo3 = () => {
                     <span className="link-effect">
                       <span className="effect-1">Instagram</span>
                       <span className="effect-1">Instagram</span>
-                    </span>
-                  </a>
-                  <a
-                    href="https://x.com/horizonrh"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <span className="link-effect">
-                      <span className="effect-1">Twitter/X</span>
-                      <span className="effect-1">Twitter/X</span>
                     </span>
                   </a>
                   <a
@@ -213,26 +193,7 @@ const ContactInfo3 = () => {
                       />
                     </div>
                     <div className="form-group">
-                      <select
-                        className="custom-select"
-                        id="service"
-                        name="service"
-                        autoComplete="off"
-                      >
-                        <option>Quel service vous intéresse ?</option>
-                        <option value="coaching-individuel">
-                          Coaching individuel
-                        </option>
-                        <option value="formation-enneagramme">
-                          Formation Ennéagramme
-                        </option>
-                        <option value="coaching-equipe">
-                          Coaching d’équipe
-                        </option>
-                        <option value="atelier-developpement">
-                          Atelier développement personnel
-                        </option>
-                      </select>
+                      <input type="text" id="service" name="service" placeholder="Quel service vous intéresse ?" autoComplete="off" />
                     </div>
                   </div>
 
@@ -263,18 +224,6 @@ const ContactInfo3 = () => {
                       </span>
                       <i className="bi bi-arrow-right"></i>
                     </button>
-                    <a
-                      href="https://www.horizonrh.ma/contact/"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="theme-btn bg-white text-dark"
-                    >
-                      <span className="link-effect">
-                        <span className="effect-1">Formulaire Horizon RH</span>
-                        <span className="effect-1">Formulaire Horizon RH</span>
-                      </span>
-                      <i className="bi bi-arrow-up-right"></i>
-                    </a>
                   </div>
                 </form>
               </div>
