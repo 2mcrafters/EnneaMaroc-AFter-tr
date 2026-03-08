@@ -85,7 +85,7 @@ const BlogCard = ({ blog }) => {
         <h1
           style={{
             fontSize: isMobile ? "25px" : "25px",
-            fontWeight: 800,
+            fontWeight: 600,
             textAlign: "center",
             lineHeight: 1.2,
           }}
@@ -125,6 +125,7 @@ const BlogCard = ({ blog }) => {
               fontSize: isMobile ? "16px" : "18px",
               lineHeight: 1.4,
               wordBreak: "break-word",
+              fontWeight: 500,
             }}
           >
             {blog.title}
@@ -305,6 +306,8 @@ const HorizontalCard = ({ blog }) => {
                 fontSize: isSmall ? "15px" : isMobile ? "16px" : "18px",
                 lineHeight: 1.4,
                 wordBreak: "break-word",
+                fontWeight: 700,
+                color: "#0a83ca",
               }}
             >
               {blog.title}
@@ -480,56 +483,38 @@ const BlogGrid = () => {
 
         <div
           style={{
-            marginTop: isMobile ? 32 : 56,
+            marginTop: isMobile ? 16 : 28,
             padding: isSmall
-              ? "24px 16px"
+              ? "14px 16px"
               : isMobile
-              ? "32px 24px"
-              : "40px 32px",
+              ? "18px 20px"
+              : "24px 28px",
             borderRadius: isMobile ? 20 : 28,
             background: "rgba(6, 32, 73, 0.35)",
             border: "1px solid rgba(255, 255, 255, 0.18)",
             boxShadow: "0 24px 60px rgba(4, 20, 45, 0.45)",
           }}
         >
-          <h3
-            style={{
-              margin: 0,
-              color: "#ffffff",
-              fontSize: isSmall ? "16px" : isMobile ? "20px" : "26px",
-              fontWeight: 800,
-              letterSpacing: isSmall
-                ? "0.06em"
-                : isMobile
-                ? "0.08em"
-                : "0.12em",
-              textTransform: "uppercase",
-              textAlign: "center",
-              lineHeight: 1.4,
-            }}
-          >
-            SOLUTION (DÉRIVER/ EXTENSION):
+          <div style={{ textAlign: "center", marginBottom: isSmall ? 10 : isMobile ? 14 : 18 }}>
             <span
               style={{
-                display: "block",
-                fontSize: isSmall ? "11px" : isMobile ? "13px" : "16px",
+                display: "inline-block",
+                color: "#ffffff",
+                fontSize: isSmall ? "14px" : isMobile ? "17px" : "22px",
                 fontWeight: 600,
-                letterSpacing: isSmall
-                  ? "0.12em"
-                  : isMobile
-                  ? "0.18em"
-                  : "0.24em",
-                marginTop: isSmall ? 6 : 10,
+                letterSpacing: isSmall ? "0.06em" : isMobile ? "0.08em" : "0.12em",
+                textTransform: "uppercase",
+                lineHeight: 1.4,
               }}
             >
-              Autres programmes : Panels – leadership – …..
+              SOLUTION (DÉRIVER/ EXTENSION)
             </span>
-          </h3>
+          </div>
 
           <div
             className="row gx-25 gy-25"
             style={{
-              marginTop: isSmall ? 20 : isMobile ? 28 : 36,
+              marginTop: isSmall ? 10 : isMobile ? 14 : 18,
             }}
           >
             {solutionCards.map((card, index) => (

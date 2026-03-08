@@ -40,32 +40,32 @@ export default function Ecole() {
 
   const trainers = [
     {
-      name: "Dr. Amina El Fassi",
-      role: "Fondatrice & Formatrice Principale",
-      photo: "/assets/imgss001/coaching (23).jpg",
-      short: "Psychologue clinicienne et coach certifiée IEA, Dr. Amina accompagne depuis plus de 18 ans individus et organisations.",
-      full: "Psychologue clinicienne et coach certifiée IEA, Dr. Amina accompagne depuis plus de 18 ans individus et organisations au Maroc et à l'international. Elle est l'une des pionnières de l'enseignement de l'Ennéagramme en langue arabe et française, et a formé plus de 500 coachs et praticiens certifiés. Sa pédagogie allie rigueur académique, expérience vécue et profonde humanité.",
+      name: "Chafik MEKRAI HARTI",
+      role: "Co-Fondateur & Formateur Principale",
+      photo: "/assets/imgss001/chafik.jpg",
+      short: "Je suis coach d'organisations, formateur senior et chercheur en Ennéagramme, engagé depuis plus de deux décennies dans l'exploration des mécanismes de la personnalité, des dynamiques relationnelles et des leviers de transformation humaine.",
+      full: "Je suis coach d'organisations, formateur senior et chercheur en Ennéagramme, engagé depuis plus de deux décennies dans l'exploration des mécanismes de la personnalité, des dynamiques relationnelles et des leviers de transformation humaine. Directeur Général du cabinet Horizon Ressources Humaines depuis 2007 et co-créateur de l'école EnneaMaroc, j'accompagne dirigeants, équipes, coachs et particuliers dans un chemin de conscience qui relie performance, humanité et sens.\n\nMon approche s'appuie sur l'Ennéagramme comme cartographie vivante de la conscience, enrichie par la PNL, l'intelligence émotionnelle, l'approche systémique et l'intelligence collective. Je conçois des parcours d'apprentissage progressifs, expérientiels et profondément transformateurs, visant non seulement le développement des compétences, mais aussi l'évolution de la posture intérieure.\n\nMa philosophie d'accompagnement repose sur trois piliers : se comprendre pour mettre de la lumière sur ses fonctionnements, se libérer de ses automatismes et conditionnements, puis devenir autonome dans ses décisions, afin d'agir avec discernement, responsabilité et alignement, au service de soi, des autres et de la société.",
     },
     {
-      name: "Youssef Benali",
-      role: "Formateur Senior — Ennéagramme & Leadership",
-      photo: "/assets/imgss001/coaching (16).jpg",
-      short: "Consultant en développement organisationnel et coach exécutif, Youssef intervient auprès de grandes entreprises marocaines et africaines.",
-      full: "Consultant en développement organisationnel et coach exécutif, Youssef intervient auprès de grandes entreprises marocaines et africaines. Certifié IEA et formé à l'école Narrative, il spécialise ses formations sur les dynamiques d'équipe, la communication non violente et la transformation du leadership. Il anime régulièrement des ateliers en entreprise et en open public.",
+      name: "Yousra Andalib",
+      role: "Co-Fondatrice — Formatrice, Coach & Thérapeute",
+      photo: "/assets/imgss001/youssra andalib.png",
+      short: "Je suis Dr Yousra Andalib, experte en accompagnement de l'humain. J'interviens en tant que formatrice, Coach et Thérapeute en psycho-énergie, et j'accompagne toute personne dans son chemin de connaissance de soi, de conscience et de transformation.",
+      full: "Je suis Dr Yousra Andalib, experte en accompagnement de l'humain. J'interviens en tant que formatrice, Coach et Thérapeute en psycho-énergie, et j'accompagne toute personne dans son chemin de connaissance de soi, de conscience et de transformation.\n\nPassionnée par la complexité de l'être humain, je suis convaincue que chacun porte en lui une richesse singulière et une empreinte unique à offrir au monde. Ma philosophie s'inspire du colibri : chacun, à sa mesure, peut contribuer à un changement plus conscient, plus aligné et plus humain.\n\nÀ travers l'Ennéagramme, je crée des espaces d'exploration intérieure, de sens et d'évolution durable. Au sein d'EnnéaMaroc, première école de l'Ennéagramme au Maroc, je m'engage en tant que co-fondatrice à incarner cette philosophie, en plaçant la connaissance de soi, la responsabilité et la conscience au cœur de toute transformation humaine.",
     },
     {
-      name: "Samira Ouazzani",
-      role: "Formatrice — Ennéagramme & Bien-être",
-      photo: "/assets/imgss001/coaching (47).jpg",
-      short: "Praticienne certifiée en sophrologie et Ennéagramme, Samira intègre les approches corps-esprit dans ses programmes de développement personnel.",
-      full: "Praticienne certifiée en sophrologie et Ennéagramme, Samira intègre les approches corps-esprit dans ses programmes de développement personnel. Elle accompagne particulièrement les femmes en transition professionnelle et personnelle, et co-dirige le module bien-être de l'École EnnéaMaroc. Son approche douce et rigoureuse crée un espace de confiance et de transformation profonde.",
+      name: "Philippe Halin",
+      role: "Formateur — Psychologue & Psychothérapeute",
+      photo: "/assets/imgss001/Philippe Halin.avif",
+      short: "Je suis Philippe Halin, psychologue et psychothérapeute. Mon parcours s'est d'abord ancré dans l'accompagnement de publics en grande précarité : j'ai travaillé pendant 12 ans auprès de personnes sans-abri, une expérience profondément humaine.",
+      full: "Je suis Philippe Halin, psychologue et psychothérapeute. Mon parcours s'est d'abord ancré dans l'accompagnement de publics en grande précarité : j'ai travaillé pendant 12 ans auprès de personnes sans-abri, une expérience profondément humaine qui a nourri ma compréhension de la vulnérabilité, de la résilience et de la dignité de chacun.\n\nJ'ai ensuite consacré plus de 25 ans à la formation d'adultes, en accompagnant des professionnels, des équipes et des organisations dans leurs processus d'évolution personnelle et collective. Mon approche relie la psychologie, la pédagogie expérientielle et la connaissance de soi, avec une attention particulière portée aux dynamiques relationnelles et aux potentiels de transformation.\n\nÀ travers l'Ennéagramme et les espaces d'accompagnement que je coanime, je m'engage à soutenir des chemins de conscience, d'authenticité et de croissance intérieure, avec la conviction que chaque être humain porte en lui des ressources essentielles pour évoluer et contribuer au monde.",
     },
     {
-      name: "Karim Tahiri",
-      role: "Formateur — Ennéagramme & Éducation",
-      photo: "/assets/imgss001/coaching (54).jpg",
-      short: "Enseignant-chercheur et formateur en sciences de l'éducation, Karim développe des programmes d'intégration de l'Ennéagramme dans le milieu scolaire et universitaire.",
-      full: "Enseignant-chercheur et formateur en sciences de l'éducation, Karim développe des programmes d'intégration de l'Ennéagramme dans le milieu scolaire et universitaire. Docteur en sciences de l'éducation, il a publié plusieurs articles sur l'Ennéagramme comme outil pédagogique et accompagne des établissements publics et privés dans la mise en place de dispositifs de connaissance de soi pour élèves et enseignants.",
+      name: "Isabelle Arimont",
+      role: "Formatrice — Criminologue & Pédagogue",
+      photo: "/assets/imgss001/Isabelle Arimont.avif",
+      short: "Je suis Isabelle Arimont, criminologue de formation. Mon parcours m'a menée vers la recherche, l'enseignement de la psychologie dans le secondaire, la didactique à l'UCL, ainsi que vers la danse contemporaine.",
+      full: "Je suis Isabelle Arimont, criminologue de formation. Mon parcours m'a menée vers la recherche, l'enseignement de la psychologie dans le secondaire, la didactique à l'UCL, ainsi que vers la danse contemporaine, autant de voies qui nourrissent ma compréhension du mouvement humain, intérieur comme extérieur.\n\nJ'aime mettre les personnes en mouvement, au sens propre comme au sens symbolique, et créer des passerelles vivantes vers l'univers des jeunes et des générations en devenir. Mon approche relie le corps, la pédagogie et la conscience de soi pour favoriser l'expression, la créativité et la transformation.\n\nÀ travers mes interventions et les espaces que je coanime, je m'engage à éveiller chacun à sa beauté essentielle, à inviter à un regard plus doux et plus bienveillant sur soi, et à accompagner l'émergence d'une présence plus libre, plus consciente et plus vivante au monde.",
     },
   ];
 
@@ -787,84 +787,139 @@ export default function Ecole() {
         </section>
 
         {/* NOTRE ÉQUIPE DE FORMATEURS */}
-        <section id="equipe-formateurs" style={{ padding: "70px 20px", background: C.white }}>
+        <section id="equipe-formateurs" style={{ padding: "clamp(40px,6vw,70px) 16px", background: C.white }}>
+          <style>{`
+            @keyframes trainerDivider { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+
+            /* === DESKTOP CARD === */
+            .trainer-card { display:flex; flex-direction:row; gap:0; background:#f8f9fa; border-radius:20px; overflow:hidden; box-shadow:0 2px 16px rgba(0,0,0,0.07); align-items:stretch; }
+            .trainer-photo { flex-shrink:0; width:clamp(140px,26%,260px); min-height:220px; position:relative; }
+            .trainer-photo img { width:100%; height:100%; object-fit:cover; display:block; }
+            .trainer-content { flex:1; padding:24px 24px 20px; display:flex; flex-direction:column; justify-content:center; position:relative; z-index:1; min-width:0; }
+            .trainer-role { font-size:11px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#0a83ca; margin-bottom:5px; }
+            .trainer-name { font-size:clamp(16px,1.6vw,21px); font-weight:700; color:#0e1b25; margin-bottom:10px; line-height:1.3; }
+            .trainer-desc { font-size:14px; line-height:1.75; margin:0 0 12px; text-align:justify; }
+            .trainer-desc p { color:#1f2937 !important; margin:0; }
+            .trainer-desc p + p { margin-top:10px; }
+            .trainer-btn { align-self:flex-start; background:none; border:1.5px solid #0a83ca; color:#0a83ca; border-radius:50px; padding:7px 20px; font-size:13px; font-weight:600; cursor:pointer; transition:all 0.2s; }
+            .trainer-btn:hover { background:#0a83ca; color:#fff; }
+
+            /* === MOBILE CARD === */
+            @media (max-width: 600px) {
+              .trainer-card {
+                flex-direction: row;
+                align-items: flex-start;
+                border-radius: 16px;
+                gap: 0;
+                background: #fff;
+                box-shadow: 0 3px 18px rgba(0,0,0,0.09);
+              }
+              /* Left: square photo with name/role badge underneath */
+              .trainer-photo {
+                width: 110px;
+                min-width: 110px;
+                flex-shrink: 0;
+                display: flex;
+                flex-direction: column;
+                background: #0a83ca;
+                min-height: 100%;
+              }
+              .trainer-photo img {
+                width: 110px;
+                height: 130px;
+                object-fit: cover;
+                object-position: top center;
+                display: block;
+              }
+              .trainer-photo-badge {
+                padding: 8px 8px 10px;
+                background: #0a83ca;
+                text-align: center;
+              }
+              .trainer-photo-badge .badge-name {
+                font-size: 11px;
+                font-weight: 700;
+                color: #fff;
+                line-height: 1.3;
+                word-break: break-word;
+              }
+              .trainer-photo-badge .badge-role {
+                font-size: 9px;
+                font-weight: 600;
+                color: rgba(255,255,255,0.82);
+                margin-top: 3px;
+                letter-spacing: 0.04em;
+                line-height: 1.3;
+              }
+              /* Right: content */
+              .trainer-content {
+                flex: 1;
+                padding: 14px 14px 14px;
+                min-width: 0;
+                justify-content: flex-start;
+              }
+              .trainer-role { display: none; }
+              .trainer-name { display: none; }
+              .trainer-desc { font-size: 12.5px; line-height: 1.7; margin-bottom: 10px; }
+              .trainer-btn {
+                width: 100%;
+                display: block;
+                text-align: center;
+                padding: 9px 16px;
+                font-size: 13px;
+                border-radius: 10px;
+              }
+            }
+          `}</style>
           <div className="container">
             <div className="row justify-content-center mb-5">
               <div className="col-lg-8 text-center">
-                <h2 style={{ fontSize: "max(2.1vw, 32px)", fontWeight: 600, color: C.blue, marginBottom: 10 }}>
+                <h2 style={{ fontSize: "clamp(22px,3.5vw,32px)", fontWeight: 600, color: C.blue, marginBottom: 10 }}>
                   Notre équipe de formateurs
                 </h2>
-                <p style={{ fontSize: 17, color: "#6c757d", lineHeight: 1.7 }}>
+                <p style={{ fontSize: "clamp(14px,1.5vw,17px)", color: "#6c757d", lineHeight: 1.7, margin: 0 }}>
                   Des experts passionnés, engagés à transmettre l'Ennéagramme avec rigueur et humanité.
                 </p>
               </div>
             </div>
 
-            <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "clamp(16px,2vw,28px)" }}>
               {trainers.map((t, idx) => (
                 <React.Fragment key={idx}>
                   {idx === 2 && (
-                    <div style={{ position: "relative", margin: "8px 0", height: 3, borderRadius: 99, overflow: "hidden", background: "rgba(10,131,202,0.12)" }}>
+                    <div style={{ position: "relative", margin: "4px 0", height: 3, borderRadius: 99, overflow: "hidden", background: "rgba(10,131,202,0.12)" }}>
                       <div style={{
-                        position: "absolute",
-                        top: 0, left: 0,
-                        height: "100%",
-                        width: "100%",
+                        position: "absolute", top: 0, left: 0, height: "100%", width: "100%",
                         background: "linear-gradient(90deg, transparent, #0a83ca, #e13734, #0a83ca, transparent)",
-                        backgroundSize: "200% 100%",
-                        animation: "trainerDivider 5s ease-in-out infinite",
+                        backgroundSize: "200% 100%", animation: "trainerDivider 5s ease-in-out infinite",
                       }} />
-                      <style>{`@keyframes trainerDivider { 0%{background-position:200% 0} 100%{background-position:-200% 0} }`}</style>
                     </div>
                   )}
-                  <div
-                    style={{
-                      display: "flex",
-                      gap: 28,
-                      background: "#f8f9fa",
-                      borderRadius: 20,
-                      overflow: "hidden",
-                      boxShadow: "0 2px 12px rgba(0,0,0,0.06)",
-                      alignItems: "stretch",
-                      flexWrap: "wrap",
-                    }}
-                  >
-                    {/* Photo */}
-                    <div style={{ flexShrink: 0, width: "clamp(120px, 22%, 220px)", minHeight: 200 }}>
+                  <div className="trainer-card">
+                    <div className="trainer-photo">
                       <img
                         src={t.photo}
                         alt={t.name}
-                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                         onError={(e) => { e.target.src = "/assets/imgss001/coaching (16).jpg"; }}
                       />
-                    </div>
-                    {/* Content */}
-                    <div style={{ flex: 1, padding: "28px 28px 22px", display: "flex", flexDirection: "column", justifyContent: "center", minWidth: 220 }}>
-                      <div style={{ fontSize: 13, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: C.blue, marginBottom: 6 }}>
-                        {t.role}
+                      <div className="trainer-photo-badge">
+                        <div className="badge-name">{t.name}</div>
+                        <div className="badge-role">{t.role}</div>
                       </div>
-                      <h3 style={{ fontSize: "clamp(18px, 1.6vw, 22px)", fontWeight: 700, color: C.black, marginBottom: 12 }}>
-                        {t.name}
-                      </h3>
-                      <p style={{ fontSize: 15, color: "#6c757d", lineHeight: 1.75, margin: "0 0 14px", textAlign: "justify" }}>
-                        {expandedTrainer === idx ? t.full : t.short}
-                      </p>
+                    </div>
+                    <div className="trainer-content">
+                      <div className="trainer-role">{t.role}</div>
+                      <h3 className="trainer-name">{t.name}</h3>
+                      <div className="trainer-desc">
+                        {(expandedTrainer === idx ? t.full : t.short)
+                          .split("\n\n")
+                          .map((para, i) => (
+                            <p key={i} style={{ color: "#1f2937" }}>{para}</p>
+                          ))}
+                      </div>
                       <button
+                        className="trainer-btn"
                         onClick={() => toggleTrainer(idx)}
-                        style={{
-                          alignSelf: "flex-start",
-                          background: "none",
-                          border: `1.5px solid ${C.blue}`,
-                          color: C.blue,
-                          borderRadius: 50,
-                          padding: "6px 18px",
-                          fontSize: 13,
-                          fontWeight: 600,
-                          cursor: "pointer",
-                          transition: "all 0.2s",
-                        }}
-                        onMouseEnter={(e) => { e.currentTarget.style.background = C.blue; e.currentTarget.style.color = "#fff"; }}
-                        onMouseLeave={(e) => { e.currentTarget.style.background = "none"; e.currentTarget.style.color = C.blue; }}
                       >
                         {expandedTrainer === idx ? "Lire moins ▲" : "Lire tout ▼"}
                       </button>

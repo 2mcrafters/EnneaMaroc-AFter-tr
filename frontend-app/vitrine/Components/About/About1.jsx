@@ -402,11 +402,20 @@ const About1 = ({
             }
 
             .about-showcase-team {
-              grid-template-columns: 1fr;
+              grid-template-columns: repeat(2, minmax(0, 1fr));
+              gap: 10px;
             }
 
             .about-showcase-card {
-              min-height: 360px;
+              min-height: 220px;
+            }
+
+            .about-showcase-card-content h5 {
+              font-size: 15px;
+            }
+
+            .about-showcase-card-content p {
+              font-size: 12px;
             }
           }
         `}

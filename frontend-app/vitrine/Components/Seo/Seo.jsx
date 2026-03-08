@@ -9,7 +9,7 @@ const ORGANIZATION_NAME = "Ennéa Maroc";
 const pageMetadata = {
   home: {
     title:
-      "EnnéaMaroc : École de Coaching & Formation Ennéagramme Certifiante au Maroc",
+      "EnnéaMaroc | 1ère École de Coaching et Formation Ennéagramme au Maroc",
     description:
       "Devenez expert en Ennéagramme. Formation certifiante, coaching professionnel et développement du leadership à Tanger, Casablanca et partout au Maroc. Testez votre profil.",
     keywords: [
