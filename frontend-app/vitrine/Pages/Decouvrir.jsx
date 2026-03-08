@@ -178,7 +178,7 @@ const Découvrir = () => {
   // ---------- DATA ----------
 
   // ---------- THEME ----------
-  const C = { white: "#fff", black: "#000", red: "#e13734", blue: "#0a83ca" };
+  const C = { white: "#fff", black: "#000", red: "#e13734", blue: "#2d969a" };
 
   // Media
   const heroImg = `/assets/imgss001/${encodeURIComponent("coaching (53).jpg")}`;
@@ -213,7 +213,7 @@ const Découvrir = () => {
     textDecoration: "none",
   });
   const h1 = { fontWeight: 800, letterSpacing: "-0.3px" };
-  const h2 = { fontWeight: 800, letterSpacing: "-0.2px" };
+  const h2 = { fontWeight: 800, letterSpacing: "-0.2px", color: C.blue };
 
   // ---------- (Optional) header measure leftover ----------
   const headerWrapRef = useRef(null);
@@ -374,7 +374,7 @@ const Découvrir = () => {
             style={{
               position: "absolute",
               inset: 0,
-              background: `linear-gradient(rgba(10,131,202,${OVERLAY_ALPHA}), rgba(10,131,202,${OVERLAY_ALPHA}))`,
+              background: `linear-gradient(rgba(45,150,154,${OVERLAY_ALPHA}), rgba(45,150,154,${OVERLAY_ALPHA}))`,
               zIndex: 0,
             }}
           />
@@ -469,6 +469,7 @@ const Découvrir = () => {
                   module={m}
                   isOpen={openIndex === idx}
                   onToggle={() => setOpenIndex(openIndex === idx ? null : idx)}
+                  color="#2d969a"
                 />
               ))}
             </div>

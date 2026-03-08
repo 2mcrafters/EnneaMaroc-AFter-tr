@@ -2,6 +2,17 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FaArrowRight } from 'react-icons/fa';
 
+const mobileCSS = `
+@media (max-width: 600px) {
+  .parcours-bar { padding: 12px 0 !important; }
+  .parcours-stages-wrap { gap: 8px !important; flex-wrap: nowrap !important; padding: 0 8px !important; }
+  .parcours-stage-link { min-width: 0 !important; flex: 1 1 0 !important; }
+  .parcours-stage-pill { padding: 8px 10px !important; }
+  .parcours-stage-badge { width: 26px !important; height: 26px !important; min-width: 26px !important; font-size: 13px !important; margin-right: 6px !important; }
+  .parcours-stage-label { font-size: 11px !important; letter-spacing: 0 !important; }
+}
+`;
+
 const ParcoursDiagram = () => {
   const location = useLocation();
   // Decode the pathname to handle special characters like accents correctly
@@ -13,25 +24,27 @@ const ParcoursDiagram = () => {
       path: '/découvrir',
       letter: 'D',
       label: 'Découvrir',
-      color: '#0a83ca', // Blue
+      color: '#2d969a',
     },
     {
       id: 2,
       path: '/approfondir',
       letter: 'M',
       label: 'Approfondir',
-      color: '#10b981', // Green
+      color: '#64508d',
     },
     {
       id: 3,
       path: '/transmettre',
       letter: 'V',
       label: 'Transmettre',
-      color: '#f59e0b', // Orange
+      color: '#ff7d2d',
     },
   ];
 
   return (
+    <>
+    <style>{mobileCSS}</style>
     <div style={{
       width: '100vw',
       marginLeft: 'calc(50% - 50vw)',
@@ -40,7 +53,7 @@ const ParcoursDiagram = () => {
       position: 'relative',
       zIndex: 10,
     }}>
-      <div style={{
+      <div className="parcours-bar" style={{
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -52,7 +65,7 @@ const ParcoursDiagram = () => {
         borderBottom: '1px solid rgba(255, 255, 255, 0.3)',
         boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.15)',
       }}>
-        <div style={{
+        <div className="parcours-stages-wrap" style={{
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
@@ -87,15 +100,17 @@ const ParcoursDiagram = () => {
               {/* Stage Pill */}
               <Link 
                 to={stage.path}
+                className="parcours-stage-link"
                 style={{
                   textDecoration: 'none',
-                  flex: '0 1 auto', // Changed from 1 1 auto to prevent excessive stretching
+                  flex: '0 1 auto',
                   display: 'flex',
                   justifyContent: 'center',
                   minWidth: '220px'
                 }}
               >
                 <div 
+                  className="parcours-stage-pill"
                   style={{
                     display: 'flex',
                     alignItems: 'center',
@@ -125,7 +140,7 @@ const ParcoursDiagram = () => {
                   }}
                 >
                   {/* Badge */}
-                  <div style={{
+                  <div className="parcours-stage-badge" style={{
                     width: '36px',
                     height: '36px',
                     borderRadius: '50%',
@@ -144,7 +159,7 @@ const ParcoursDiagram = () => {
                   </div>
                   
                   {/* Label */}
-                  <span style={{
+                  <span className="parcours-stage-label" style={{
                     color: 'white',
                     fontWeight: '700',
                     fontSize: '16px',
@@ -163,6 +178,7 @@ const ParcoursDiagram = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

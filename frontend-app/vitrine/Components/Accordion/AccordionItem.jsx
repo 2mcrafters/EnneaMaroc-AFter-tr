@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
-const AccordionItem = ({ module, isOpen, onToggle, index }) => {
+const AccordionItem = ({ module, isOpen, onToggle, index, color = "#0a83ca" }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -23,7 +23,7 @@ const AccordionItem = ({ module, isOpen, onToggle, index }) => {
       marginBottom: "16px",
       position: "relative",
       borderStyle: "solid",
-      borderColor: "#0a83ca",
+      borderColor: color,
       // Border width is handled by motion
     },
     header: {
@@ -33,7 +33,7 @@ const AccordionItem = ({ module, isOpen, onToggle, index }) => {
       alignItems: "center",
       justifyContent: "space-between",
       padding: "14px 20px",
-      background: isHovered ? "rgba(10, 131, 202, 0.03)" : "transparent",
+      background: isHovered ? `${color}08` : "transparent",
       border: "none",
       cursor: "pointer",
       textAlign: "left",
@@ -56,7 +56,7 @@ const AccordionItem = ({ module, isOpen, onToggle, index }) => {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      color: "#0a83ca",
+      color: color,
       fontSize: "20px",
     },
     textGroup: {
@@ -69,7 +69,7 @@ const AccordionItem = ({ module, isOpen, onToggle, index }) => {
       fontFamily: "'Inter', system-ui, -apple-system, sans-serif",
       fontSize: "20px",
       fontWeight: "700",
-      color: isOpen ? "#0a83ca" : "#334155",
+      color: isOpen ? color : "#334155",
       margin: "0",
       lineHeight: "1.2",
       whiteSpace: "nowrap",
@@ -90,7 +90,7 @@ const AccordionItem = ({ module, isOpen, onToggle, index }) => {
       display: "inline-block",
     },
     chevronBox: {
-      color: "#0a83ca",
+      color: color,
       marginLeft: "16px",
       display: "flex",
       alignItems: "center",
@@ -126,13 +126,13 @@ const AccordionItem = ({ module, isOpen, onToggle, index }) => {
       marginRight: "6px",
       transform: "translateX(8px)",
       boxShadow: "0 2px 6px rgba(0,0,0,0.06)",
-      width: "160px",
+      maxWidth: "160px",
       overflow: "hidden",
       textOverflow: "ellipsis",
     },
     contentInner: {
       padding: "6px 20px 12px 80px",
-      borderTop: "1px solid rgba(10, 131, 202, 0.08)",
+      borderTop: `1px solid ${color}14`,
       textAlign: "left",
     },
     subtitle: {
@@ -221,7 +221,7 @@ const AccordionItem = ({ module, isOpen, onToggle, index }) => {
       width: "100%",
       marginTop: "24px",
       padding: "12px 24px",
-      background: "#e13734",
+      background: color,
       color: "#ffffff",
       fontWeight: "700",
       fontSize: "14px",
@@ -338,35 +338,71 @@ const AccordionItem = ({ module, isOpen, onToggle, index }) => {
         .vitrine-accordion .icon-box { width: 36px !important; height: 36px !important; min-width: 36px !important; }
       }
 
-      /* Mobile: center text and CTA button inside the card */
+      /* Mobile — everything centered, stacked column */
       @media (max-width: 600px) {
-        .vitrine-accordion .header { padding: 12px 14px !important; }
-        .vitrine-accordion .header-content { gap: 12px !important; }
-        /* allow title to wrap on small screens to avoid truncation */
-        .vitrine-accordion .module-title { white-space: normal !important; overflow: visible !important; text-overflow: unset !important; font-size: 16px !important; text-align: left !important; }
-        .vitrine-accordion .header-badge, .vitrine-accordion .prereq-badge { padding: 4px 7px !important; font-size: 10px !important; }
-        .vitrine-accordion .icon-box { width: 34px !important; height: 34px !important; min-width: 34px !important; }
-        /* Header right wrap stays flex but can shrink; badges may wrap naturally */
-        .vitrine-accordion .header-right-wrap { display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
-
-        /* Center the card content and remove large left padding used for desktop icon */
-        .vitrine-accordion .content-inner { padding-left: 14px !important; padding-right: 14px !important; text-align: left !important; }
-        .vitrine-accordion .content-inner .meta-row { justify-content: flex-start !important; }
-        .vitrine-accordion .content-inner .meta-item { min-width: 0 !important; text-align: left !important; }
-        .vitrine-accordion .content-inner .metaLabel, .vitrine-accordion .content-inner .metaValue { justify-content: flex-start !important; }
-
-        /* Center the action button and make it a nice centered CTA */
-        .vitrine-accordion .action-button { width: 90% !important; margin: 16px auto 0 !important; display: block !important; }
-
-        /* Center small helper groups */
-        .vitrine-accordion .text-group { align-items: flex-start !important; }
+        /* button itself: column, centered */
+        button.vitrine-accordion {
+          flex-direction: column !important;
+          align-items: center !important;
+          padding: 14px 12px !important;
+          gap: 8px !important;
+          text-align: center !important;
+        }
+        /* icon + title block: column, centered */
+        .vitrine-accordion .header-content {
+          flex-direction: column !important;
+          align-items: center !important;
+          justify-content: center !important;
+          gap: 8px !important;
+          width: 100% !important;
+          flex: unset !important;
+        }
+        .vitrine-accordion .text-group { align-items: center !important; }
+        /* title: centered, wraps freely */
+        .vitrine-accordion .module-title {
+          white-space: normal !important;
+          overflow: visible !important;
+          text-overflow: unset !important;
+          font-size: 15px !important;
+          line-height: 1.3 !important;
+          text-align: center !important;
+        }
+        /* icon size */
+        .vitrine-accordion .icon-box { width: 36px !important; height: 36px !important; min-width: 36px !important; font-size: 18px !important; }
+        /* badges row: centered, wraps */
+        .vitrine-accordion .header-right-wrap {
+          width: 100% !important;
+          justify-content: center !important;
+          align-items: center !important;
+          flex-wrap: wrap !important;
+          gap: 8px !important;
+          margin-left: 0 !important;
+          flex-shrink: unset !important;
+        }
+        /* show prereq badge, auto width */
+        .vitrine-accordion .prereq-badge {
+          display: inline-flex !important;
+          width: auto !important;
+          max-width: 220px !important;
+          transform: none !important;
+        }
+        .vitrine-accordion .header-badge { padding: 4px 8px !important; font-size: 11px !important; }
+        /* remove the 80px left indent */
+        .vitrine-accordion .content-inner { padding: 10px 14px 16px 14px !important; }
+        /* stack practical-info rows and items vertically */
+        .vitrine-accordion .meta-row { flex-direction: column !important; gap: 14px !important; }
+        .vitrine-accordion .meta-item { min-width: 0 !important; width: 100% !important; }
+        /* allow horaires + prereq row to wrap */
+        .vitrine-accordion .horaires-wrap { flex-wrap: wrap !important; white-space: normal !important; gap: 8px !important; }
+        .vitrine-accordion .inline-prereq { white-space: normal !important; max-width: 100% !important; }
+        .vitrine-accordion .action-button { width: 100% !important; margin: 16px 0 0 !important; display: block !important; }
       }
     `}</style>
       <motion.div
         initial={false}
         animate={{
           borderWidth: isOpen ? "2px" : "1px",
-          boxShadow: isOpen ? "0 4px 12px rgba(10, 131, 202, 0.1)" : "none",
+          boxShadow: isOpen ? `0 4px 12px ${color}1a` : "none",
         }}
         style={styles.card}
         transition={{ duration: 0.2 }}
@@ -573,6 +609,7 @@ const AccordionItem = ({ module, isOpen, onToggle, index }) => {
                             <FaClock size={14} /> Horaires
                           </span>
                           <div
+                            className="horaires-wrap"
                             style={{
                               display: "flex",
                               gap: 12,

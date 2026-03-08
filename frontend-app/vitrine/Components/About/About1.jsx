@@ -430,7 +430,7 @@ const About1 = ({
               </div>
               <h5 className="about-showcase-since">{subtitle2 ? subtitle2.charAt(0).toUpperCase() + subtitle2.slice(1).toLowerCase() : ''}</h5>
               <p className="about-showcase-text">{parse(content)}</p>
-              <Link to={buttonLink} className="about-showcase-btn">
+              <Link to={buttonLink} className="about-showcase-btn" onClick={() => sessionStorage.setItem("scrollTo", "equipe-formateurs")}>
                   {btnname}
                   <i className="bi bi-arrow-right"></i>
                 </Link>

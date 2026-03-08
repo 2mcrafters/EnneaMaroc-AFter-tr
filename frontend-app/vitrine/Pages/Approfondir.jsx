@@ -15,7 +15,7 @@ const Approfondir = () => {
   const [parcoursData, setParcoursData] = useState(null);
   const [openIndex, setOpenIndex] = useState(null);
   const PROGRAM_SUBTITLE =
-    "Niveau 2 – Voyage intérieur : Mécanismes, ombres et potentiels";
+    "Voyage intérieur : Mécanismes, ombres et potentiels";
 
   const [modules, setModules] = useState([
     {
@@ -184,7 +184,7 @@ const Approfondir = () => {
   ];
 
   // ---------- THEME ----------
-  const C = { white: "#fff", black: "#000", red: "#e13734", blue: "#0a83ca" };
+  const C = { white: "#fff", black: "#000", red: "#e13734", blue: "#64508d" };
 
   // Media
   const heroImg = `/assets/imgss001/${encodeURIComponent("coaching (53).jpg")}`;
@@ -219,7 +219,7 @@ const Approfondir = () => {
     textDecoration: "none",
   });
   const h1 = { fontWeight: 800, letterSpacing: "-0.3px" };
-  const h2 = { fontWeight: 800, letterSpacing: "-0.2px" };
+  const h2 = { fontWeight: 800, letterSpacing: "-0.2px", color: C.blue };
 
   // ---------- (Optional) header measure leftover ----------
   const headerWrapRef = useRef(null);
@@ -370,7 +370,7 @@ const Approfondir = () => {
             style={{
               position: "absolute",
               inset: 0,
-              background: `linear-gradient(rgba(10,131,202,${OVERLAY_ALPHA}), rgba(10,131,202,${OVERLAY_ALPHA}))`,
+              background: `linear-gradient(rgba(100,80,141,${OVERLAY_ALPHA}), rgba(100,80,141,${OVERLAY_ALPHA}))`,
               zIndex: 0,
             }}
           />
@@ -467,6 +467,7 @@ const Approfondir = () => {
                   index={idx}
                   isOpen={openIndex === idx}
                   onToggle={() => setOpenIndex(openIndex === idx ? null : idx)}
+                  color="#64508d"
                 />
               ))}
             </div>

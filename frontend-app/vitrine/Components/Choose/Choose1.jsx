@@ -100,7 +100,13 @@ const Choose1 = () => {
                   <strong>+18 ans</strong>
                   <span>d'accompagnement humain</span>
                 </div>
-                <Link to="/contact" className="theme-btn bg-dark">
+                <Link
+                  to="/ecole"
+                  className="theme-btn bg-dark"
+                  onClick={() => {
+                    sessionStorage.setItem("scrollTo", "equipe-formateurs");
+                  }}
+                >
                   <span className="link-effect">
                     <span className="effect-1">Rencontrez notre équipe</span>
                     <span className="effect-1">Rencontrez notre équipe</span>

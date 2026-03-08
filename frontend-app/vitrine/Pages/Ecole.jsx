@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Seo from "../Components/Seo/Seo";
 import { Link } from "react-router-dom";
 import {
@@ -26,6 +26,17 @@ export default function Ecole() {
   const [heroOk, setHeroOk] = useState(true);
   const [expandedTrainer, setExpandedTrainer] = useState(null);
   const toggleTrainer = (idx) => setExpandedTrainer(expandedTrainer === idx ? null : idx);
+
+  useEffect(() => {
+    const target = sessionStorage.getItem("scrollTo");
+    if (target) {
+      sessionStorage.removeItem("scrollTo");
+      setTimeout(() => {
+        const el = document.getElementById(target);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 150);
+    }
+  }, []);
 
   const trainers = [
     {
@@ -259,7 +270,12 @@ export default function Ecole() {
                   d'apprentissage vivante et riche.
                 </p>
                 <Link
-                  to="/#pourquoi-ennea-maroc"
+                  to="/ecole"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const el = document.getElementById("equipe-formateurs");
+                    if (el) el.scrollIntoView({ behavior: "smooth" });
+                  }}
                   style={{
                     ...btn(C.blue, C.white),
                     fontSize: 16,
@@ -771,7 +787,7 @@ export default function Ecole() {
         </section>
 
         {/* NOTRE ÉQUIPE DE FORMATEURS */}
-        <section style={{ padding: "70px 20px", background: C.white }}>
+        <section id="equipe-formateurs" style={{ padding: "70px 20px", background: C.white }}>
           <div className="container">
             <div className="row justify-content-center mb-5">
               <div className="col-lg-8 text-center">
