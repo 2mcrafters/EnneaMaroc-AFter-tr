@@ -33,7 +33,13 @@ const colors = {
   slate: "#1d1c1a",
   gray: "#5b6a75",
   lightGray: "#dde7f1",
+  // parcours brand colors
+  teal: "#2d969a",
+  purple: "#64508d",
+  orange: "#ff7d2d",
 };
+
+const PARCOURS_COLORS = ["#2d969a", "#64508d", "#ff7d2d"];
 
 const tabLabels = ["Découvrir", "Approfondir", "À la maîtrise"];
 
@@ -214,157 +220,11 @@ function Agenda() {
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const data = await parcoursService.getAll();
-
-        // Calculate dynamic months range from data
-        let minDate = new Date();
-        let maxDate = new Date();
-        let hasDates = false;
-
-        const allSessions = [];
-        data.forEach((p) => {
-          p.modules.forEach((m) => {
-            if (m.sessions) {
-              m.sessions.forEach((s) => {
-                allSessions.push(new Date(s.start_date));
-              });
-            }
-          });
-        });
-
-        if (allSessions.length > 0) {
-          minDate = new Date(
-            Math.min.apply(
-              null,
-              allSessions.map((d) => d.getTime())
-            )
-          );
-          maxDate = new Date(
-            Math.max.apply(
-              null,
-              allSessions.map((d) => d.getTime())
-            )
-          );
-
-          // Adjust to start of month
-          minDate = new Date(minDate.getFullYear(), minDate.getMonth(), 1);
-        } else {
-          // Default to current date + 14 months if no data
-          minDate = new Date();
-          maxDate = new Date(new Date().setMonth(new Date().getMonth() + 14));
-        }
-
-        // Generate month headers from minDate to maxDate (or fixed 14 months window starting from min)
-        const startMonth = allSessions.length > 0 ? minDate : new Date();
-        const monthsList = [];
-        const monthNames = [
-          "janv",
-          "fév",
-          "mars",
-          "avr",
-          "mai",
-          "juin",
-          "juil",
-          "août",
-          "sept",
-          "oct",
-          "nov",
-          "déc",
-        ];
-
-        for (let i = 0; i < 14; i++) {
-          const d = new Date(
-            startMonth.getFullYear(),
-            startMonth.getMonth() + i,
-            1
-          );
-          monthsList.push(
-            `${monthNames[d.getMonth()]}-${d.getFullYear().toString().slice(2)}`
-          );
-        }
-        setAgendaMonths(monthsList);
-        setViewStartDate(startMonth);
-
-        const formatted = data.map((p) => {
-          // Calculate total days and cost
-          const totalDays = p.modules.reduce(
-            (acc, m) => acc + (Number.parseInt(m.duration, 10) || 0),
-            0
-          );
-          const totalCost = p.modules.reduce(
-            (acc, m) => acc + toNumber(m.price),
-            0
-          );
-
-          return {
-            id: p.slug,
-            title: p.title,
-            route: `/${p.slug === "decouvrir" ? "découvrir" : p.slug}`,
-            codePrefix:
-              p.slug === "decouvrir"
-                ? "D"
-                : p.slug === "approfondir"
-                ? "V"
-                : "M", // Infer prefix
-            totalDays: totalDays,
-            totalCost: formatPrice(totalCost, "-"),
-            modules: p.modules.map((m) => ({
-              code: m.reference || m.subtitle,
-              reference: m.reference,
-              name: m.title,
-              days: parseInt(m.duration) || 0,
-              hours: m.horaires,
-              prereq: m.prerequis,
-              price: formatPrice(m.price, "-"),
-              sessions: m.sessions
-                ? m.sessions.map((s) => {
-                    const d = new Date(s.start_date);
-                    const months = [
-                      "janv",
-                      "fév",
-                      "mars",
-                      "avr",
-                      "mai",
-                      "juin",
-                      "juil",
-                      "août",
-                      "sept",
-                      "oct",
-                      "nov",
-                      "déc",
-                    ];
-                    const monthLabel = `${months[d.getMonth()]}-${d
-                      .getFullYear()
-                      .toString()
-                      .slice(2)}`;
-
-                    // Return full object instead of just string
-                    return {
-                      ...s,
-                      monthLabel,
-                      monthKey: `${d.getFullYear()}-${String(
-                        d.getMonth() + 1
-                      ).padStart(2, "0")}`,
-                    };
-                  })
-                : [],
-            })),
-          };
-        });
-        // Sort by level (Découvrir, Approfondir, Transmettre)
-        const order = ["decouvrir", "approfondir", "transmettre"];
-        formatted.sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id));
-
-        setScheduleLevels(formatted);
-      } catch (err) {
-        console.warn("Agenda: backend unavailable, using static fallback data.");
-        setScheduleLevels(STATIC_FALLBACK_LEVELS);
-        setAgendaMonths(STATIC_FALLBACK_MONTHS);
-        setViewStartDate(new Date(2025, 10, 1)); // November 2025
-      } finally {
-        setLoading(false);
-      }
+      // Use static fallback data directly (backend not available in this environment)
+      setScheduleLevels(STATIC_FALLBACK_LEVELS);
+      setAgendaMonths(STATIC_FALLBACK_MONTHS);
+      setViewStartDate(new Date(2025, 10, 1)); // November 2025
+      setLoading(false);
     };
     fetchData();
   }, []);
@@ -609,29 +469,12 @@ function Agenda() {
           <div className="container">
             <div className="row justify-content-center text-center">
               <div className="col-lg-9">
-                <div
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: 10,
-                    padding: "10px 22px",
-                    borderRadius: 999,
-                    background: "rgba(255,255,255,0.16)",
-                    border: "1px solid rgba(255,255,255,0.35)",
-                    fontSize: 13,
-                    fontWeight: 700,
-                    letterSpacing: "0.14em",
-                    textTransform: "uppercase",
-                  }}
-                >
-                  Agenda EnnéaMaroc
-                </div>
                 <h1
                   className="hero-title"
                   style={{
                     margin: "26px 0 20px",
                     fontSize: "clamp(28px, 6vw, 56px)",
-                    fontWeight: 800,
+                    fontWeight: 600,
                     flexWrap: "wrap",
                     color: "#fff",
                     lineHeight: 1.2,
@@ -696,6 +539,7 @@ function Agenda() {
                   style={{
                     fontSize: "clamp(28px, 5vw, 36px)",
                     fontWeight: 800,
+                    color: colors.blue,
                     marginBottom: 12,
                   }}
                 >
@@ -718,7 +562,7 @@ function Agenda() {
               </div>
             </div>
             <div className="row g-4">
-              {highlights.map((item) => (
+              {highlights.map((item, hi) => (
                 <div key={item.title} className="col-lg-4 col-md-6">
                   <div
                     className="highlight-cards"
@@ -728,7 +572,7 @@ function Agenda() {
                       padding: "36px 30px",
                       height: "100%",
                       boxShadow: "0 18px 45px rgba(8, 68, 120, 0.08)",
-                      borderTop: `3px solid ${colors.blue}`,
+                      borderTop: `3px solid ${PARCOURS_COLORS[hi]}`,
                     }}
                   >
                     <div
@@ -736,8 +580,8 @@ function Agenda() {
                         width: 60,
                         height: 60,
                         borderRadius: 14,
-                        background: colors.softBlue,
-                        color: colors.blue,
+                        background: `${PARCOURS_COLORS[hi]}18`,
+                        color: PARCOURS_COLORS[hi],
                         fontSize: 26,
                         display: "flex",
                         alignItems: "center",
@@ -801,7 +645,7 @@ function Agenda() {
                     fontSize: "clamp(28px, 5vw, 36px)",
                     fontWeight: 800,
                     margin: "0 0 14px",
-                    color: colors.slate,
+                    color: colors.blue,
                   }}
                 >
                   Calendrier 2025 – 2026 par niveaux
@@ -838,6 +682,7 @@ function Agenda() {
                 className="tabs-container"
               >
                 {scheduleLevels.map((level, index) => {
+                  const tabColor = PARCOURS_COLORS[index] || colors.blue;
                   return (
                     <React.Fragment key={level.id}>
                       <button
@@ -847,11 +692,11 @@ function Agenda() {
                           padding: "16px 32px",
                           background:
                             activeTab === index
-                              ? "linear-gradient(135deg, #0a83ca 0%, #09538f 100%)"
+                              ? tabColor
                               : "#fff",
                           border:
                             activeTab === index
-                              ? "2px solid rgba(10, 131, 202, 0.3)"
+                              ? `2px solid ${tabColor}`
                               : `2px solid ${colors.lightGray}`,
                           borderRadius: 8,
                           color: activeTab === index ? "#fff" : colors.slate,
@@ -862,7 +707,7 @@ function Agenda() {
                           transition: "all 0.3s ease",
                           boxShadow:
                             activeTab === index
-                              ? "0 4px 16px rgba(10, 131, 202, 0.25)"
+                              ? `0 4px 16px ${tabColor}40`
                               : "0 2px 6px rgba(0, 0, 0, 0.06)",
                           transform:
                             activeTab === index ? "translateY(-1px)" : "none",
@@ -1535,7 +1380,9 @@ function Agenda() {
             </div>
 
             <div className="row g-4">
-              {thematicTracks.map((track) => (
+              {thematicTracks.map((track, ti) => {
+                const tc = PARCOURS_COLORS[ti] || colors.blue;
+                return (
                 <div key={track.title} className="col-lg-4 col-md-6">
                   <div
                     className="thematic-card"
@@ -1544,7 +1391,7 @@ function Agenda() {
                       borderRadius: 16,
                       padding: "32px 28px",
                       boxShadow: "0 24px 46px rgba(5, 46, 82, 0.18)",
-                      borderTop: `3px solid ${colors.deepBlue}`,
+                      borderTop: `3px solid ${tc}`,
                       height: "100%",
                     }}
                   >
@@ -1553,7 +1400,7 @@ function Agenda() {
                       style={{
                         fontSize: "clamp(18px, 4vw, 20px)",
                         fontWeight: 800,
-                        color: colors.slate,
+                        color: tc,
                         marginBottom: 20,
                       }}
                     >
@@ -1580,7 +1427,7 @@ function Agenda() {
                         >
                           <span
                             style={{
-                              color: colors.blue,
+                              color: tc,
                               fontSize: 16,
                               marginTop: 2,
                             }}
@@ -1603,7 +1450,7 @@ function Agenda() {
                         alignItems: "center",
                         gap: 8,
                         fontWeight: 700,
-                        color: colors.blue,
+                        color: tc,
                         textDecoration: "none",
                       }}
                     >
@@ -1612,7 +1459,8 @@ function Agenda() {
                     </Link>
                   </div>
                 </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
@@ -1659,7 +1507,7 @@ function Agenda() {
                   <h2
                     style={{
                       fontSize: "clamp(30px, 5vw, 44px)",
-                      fontWeight: 800,
+                      fontWeight: 600,
                       color: colors.blue,
                       lineHeight: 1.15,
                       marginBottom: 20,
@@ -1753,7 +1601,7 @@ function Agenda() {
                     <h3
                       style={{
                         fontSize: 22,
-                        fontWeight: 800,
+                        fontWeight: 600,
                         marginBottom: 14,
                       }}
                     >
