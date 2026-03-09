@@ -184,7 +184,7 @@ const Approfondir = () => {
   ];
 
   // ---------- THEME ----------
-  const C = { white: "#fff", black: "#000", red: "#e13734", blue: "#64508d" };
+  const C = { white: "#fff", black: "#000", red: "#64508d", blue: "#64508d" };
 
   // Media
   const heroImg = `/assets/imgss001/${encodeURIComponent("coaching (53).jpg")}`;

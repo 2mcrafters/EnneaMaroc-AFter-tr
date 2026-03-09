@@ -55,7 +55,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[#1c8bce] text-white not-prose">
+    <footer className="bg-[#ff8f42] text-white not-prose">
       {/* Main */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-8 pb-6">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 items-start">

@@ -44,7 +44,7 @@ function ScrollToTopButton() {
   height: 56,
   borderRadius: "50%",
         border: "none",
-  background: "linear-gradient(135deg, #e13734 0%, #c92a27 100%)",
+  background: "linear-gradient(135deg, #64508d 0%, #4e3a72 100%)",
         color: "#fff",
   fontSize: 18,
   boxShadow: "0 16px 36px rgba(225, 55, 52, 0.24)",

@@ -41,7 +41,7 @@ const BlogCard = ({ blog }) => {
     padding: isMobile ? "8px 12px" : "10px 14px",
     textAlign: "center",
     marginTop: "16px",
-    backgroundColor: "#0a83ca",
+    backgroundColor: "#ff7d2d",
     color: "#fff",
     borderRadius: "15px",
     textDecoration: "none",
@@ -162,7 +162,7 @@ const BlogCard = ({ blog }) => {
               (e.currentTarget.style.backgroundColor = "#dc3545")
             }
             onMouseLeave={(e) =>
-              (e.currentTarget.style.backgroundColor = "#0a83ca")
+              (e.currentTarget.style.backgroundColor = "#ff7d2d")
             }
           >
             <span style={{ gridColumn: 2, justifySelf: "center" }}>
@@ -198,7 +198,7 @@ const HorizontalCard = ({ blog }) => {
     padding: isSmall ? "6px 10px" : isMobile ? "8px 12px" : "10px 14px",
     textAlign: "center",
     marginTop: isMobile ? "8px" : "12px",
-    backgroundColor: "#0a83ca",
+    backgroundColor: "#ff7d2d",
     color: "#fff",
     borderRadius: "15px",
     textDecoration: "none",
@@ -264,7 +264,7 @@ const HorizontalCard = ({ blog }) => {
               top: isSmall ? 8 : 12,
               left: isSmall ? 8 : 12,
               padding: isSmall ? "4px 8px" : "6px 14px",
-              background: "#0a83ca",
+              background: "#ff7d2d",
               color: "#fff",
               borderRadius: 8,
               fontSize: isSmall ? "10px" : isMobile ? "11px" : "13px",
@@ -307,7 +307,7 @@ const HorizontalCard = ({ blog }) => {
                 lineHeight: 1.4,
                 wordBreak: "break-word",
                 fontWeight: 700,
-                color: "#0a83ca",
+                color: "#ff7d2d",
               }}
             >
               {blog.title}
@@ -345,7 +345,7 @@ const HorizontalCard = ({ blog }) => {
               (e.currentTarget.style.backgroundColor = "#dc3545")
             }
             onMouseLeave={(e) =>
-              (e.currentTarget.style.backgroundColor = "#0a83ca")
+              (e.currentTarget.style.backgroundColor = "#ff7d2d")
             }
           >
             <span style={{ gridColumn: 2, justifySelf: "center" }}>
@@ -410,7 +410,7 @@ const BlogGrid = () => {
       id="blog-section"
       className="blog-section space"
       style={{
-        background: "#0a83ca",
+        background: "#ff7d2d",
         padding: isSmall ? "40px 0" : isMobile ? "50px 0" : "60px 0",
       }}
     >

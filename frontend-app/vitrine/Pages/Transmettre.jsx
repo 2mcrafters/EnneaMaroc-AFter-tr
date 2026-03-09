@@ -180,7 +180,7 @@ const Transmettre = () => {
   }, []);
 
   // ---------- THEME ----------
-  const C = { white: "#fff", black: "#000", red: "#e13734", blue: "#ff7d2d" };
+  const C = { white: "#fff", black: "#000", red: "#64508d", blue: "#ff7d2d" };
 
   // Media
   const heroImg = `/assets/imgss001/${encodeURIComponent("coaching (53).jpg")}`;

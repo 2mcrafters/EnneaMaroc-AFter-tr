@@ -472,6 +472,22 @@ const App: React.FC = () => {
 
   const isAuthPage = currentPath === "#/login" || currentPath === "#/signup";
 
+  // Hide the top navbar on all admin/employee/user-dashboard routes
+  const shouldHideHeader =
+    currentPath.startsWith("#/admin/") ||
+    currentPath.startsWith("#/employee/") ||
+    currentPath === "#/dashboard" ||
+    currentPath === "#/my-courses" ||
+    currentPath === "#/monthly-payments" ||
+    currentPath === "#/profile" ||
+    currentPath.startsWith("#/profile");
+
+  // Admin/employee routes already have a sidebar layout (AdminLayout);
+  // for other dashboard pages (student) we show a minimal sticky top bar.
+  const isAdminRoute =
+    currentPath.startsWith("#/admin/") ||
+    currentPath.startsWith("#/employee/");
+
   return (
     <div
       className={`min-h-screen ${
@@ -492,7 +508,43 @@ const App: React.FC = () => {
         />
       )}
       <div className="relative z-10 min-h-screen flex flex-col">
-        <Header />
+        {/* Show full Header only on public / auth pages */}
+        {!shouldHideHeader && <Header />}
+
+        {/* Minimal sticky top bar for student/user dashboard routes (no sidebar layout) */}
+        {shouldHideHeader && !isAdminRoute && (
+          <div className="sticky top-0 z-50 bg-white border-b border-slate-100 shadow-sm">
+            <div className="flex items-center justify-between h-14 px-4 max-w-7xl mx-auto">
+              <a href="/" aria-label="Aller à l'accueil">
+                <img
+                  src="/assets/images/logo/logo.png"
+                  alt="EnneaMaroc"
+                  className="h-9 w-auto object-contain"
+                />
+              </a>
+              <a
+                href="/"
+                className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold text-slate-600 hover:text-[#e13734] bg-slate-100 hover:bg-red-50 rounded-lg transition-colors"
+              >
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                  />
+                </svg>
+                <span className="hidden sm:inline">Accueil</span>
+              </a>
+            </div>
+          </div>
+        )}
+
         <main className="pb-24 lg:pb-0 flex-grow">{renderPage()}</main>
         <BottomNav />
       </div>

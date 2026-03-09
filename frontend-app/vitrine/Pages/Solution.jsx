@@ -8,8 +8,8 @@ export default function Solution() {
   const C = {
     white: "#fff",
     black: "#1d1c1a",
-    red: "#e13734",
-    blue: "#0a83ca",
+    red: "#64508d",
+    blue: "#ff7d2d",
     gray: "#6c757d",
     light: "#f8f9fa",
     lightBlue: "#e8f4fd",
@@ -80,12 +80,12 @@ export default function Solution() {
         <section
           style={{
             backgroundImage:
-              "linear-gradient(rgba(10, 131, 202, 0.92), rgba(10, 131, 202, 0.92)), url('/assets/imgss001/coaching (23).jpg')",
+              "linear-gradient(rgba(100, 80, 141, 0.92), rgba(100, 80, 141, 0.92)), url('/assets/imgss001/coaching (23).jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
             padding: "clamp(200px, 25vh, 320px) 20px clamp(80px, 12vh, 120px)",
-            borderBottom: `1px solid #0776bb`,
+            borderBottom: `1px solid #4e3a72`,
           }}
         >
           <div className="container">
@@ -1126,7 +1126,7 @@ export default function Solution() {
           style={{
             padding: "80px 20px",
             backgroundImage:
-              "linear-gradient(rgba(10, 131, 202, 0.92), rgba(10, 131, 202, 0.92)), url('/assets/imgss001/coaching (23).jpg')",
+              "linear-gradient(rgba(100, 80, 141, 0.92), rgba(100, 80, 141, 0.92)), url('/assets/imgss001/coaching (23).jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -1464,7 +1464,7 @@ export default function Solution() {
                       >
                         •
                       </span>
-                      <strong style={{ color: "#0a83ca" }}>Ouverture :</strong>{" "}
+                      <strong style={{ color: "#ff7d2d" }}>Ouverture :</strong>{" "}
                       croiser traditions et modernité, culture locale et
                       internationale.
                     </p>
@@ -1482,7 +1482,7 @@ export default function Solution() {
                       >
                         •
                       </span>
-                      <strong style={{ color: "#0a83ca" }}>Pluralité :</strong>{" "}
+                      <strong style={{ color: "#ff7d2d" }}>Pluralité :</strong>{" "}
                       diversité des points de vue et des expériences.
                     </p>
                     <p
@@ -1499,7 +1499,7 @@ export default function Solution() {
                       >
                         •
                       </span>
-                      <strong style={{ color: "#0a83ca" }}>
+                      <strong style={{ color: "#ff7d2d" }}>
                         Co-construction :
                       </strong>{" "}
                       la richesse naît du dialogue, pas uniquement du savoir
@@ -1519,7 +1519,7 @@ export default function Solution() {
                       >
                         •
                       </span>
-                      <strong style={{ color: "#0a83ca" }}>
+                      <strong style={{ color: "#ff7d2d" }}>
                         Application vivante :
                       </strong>{" "}
                       passer de la théorie à des échanges concrets, ancrés dans
@@ -1554,7 +1554,7 @@ export default function Solution() {
                       <p
                         style={{
                           marginBottom: 8,
-                          color: "#0a83ca",
+                          color: "#ff7d2d",
                           fontWeight: 700,
                         }}
                       >
@@ -1586,7 +1586,7 @@ export default function Solution() {
                       <p
                         style={{
                           marginBottom: 8,
-                          color: "#0a83ca",
+                          color: "#ff7d2d",
                           fontWeight: 700,
                         }}
                       >
@@ -1631,7 +1631,7 @@ export default function Solution() {
                         >
                           •
                         </span>
-                        <strong style={{ color: "#0a83ca" }}>Objectif :</strong>{" "}
+                        <strong style={{ color: "#ff7d2d" }}>Objectif :</strong>{" "}
                         favoriser l'apprentissage collaboratif en donnant la
                         parole aux participants et en valorisant leurs vécus.
                       </p>
@@ -1653,7 +1653,7 @@ export default function Solution() {
                         >
                           •
                         </span>
-                        <strong style={{ color: "#0a83ca" }}>Format :</strong>{" "}
+                        <strong style={{ color: "#ff7d2d" }}>Format :</strong>{" "}
                         petits groupes, animations interactives, exercices de
                         co-développement.
                       </p>

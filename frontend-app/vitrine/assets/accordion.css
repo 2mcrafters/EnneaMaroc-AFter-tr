@@ -1,4 +1,4 @@
-﻿/* ===== OUTLINED ACCORDION STYLES (High Specificity Fix) ===== */
+/* ===== OUTLINED ACCORDION STYLES (High Specificity Fix) ===== */
 
 /* Force reset of container styles */
 html body .pro-accordion-container {
@@ -11,7 +11,7 @@ html body .pro-accordion-container {
 /* Card Styles - High Specificity */
 html body .pro-accordion-card {
     background: #ffffff !important;
-    border: 1px solid #0a83ca !important;
+    border: 1px solid #ff7d2d !important;
     border-radius: 16px !important;
     box-shadow: none !important;
     overflow: hidden !important;
@@ -72,7 +72,7 @@ html body .pro-accordion-icon-box {
     justify-content: center !important;
     background: transparent !important;
     border-radius: 0 !important;
-    color: #0a83ca !important;
+    color: #ff7d2d !important;
     font-size: 20px !important;
     box-shadow: none !important;
     padding: 0 !important;
@@ -114,7 +114,7 @@ html body h3.pro-accordion-title {
 }
 
 html body .pro-accordion-card.active h3.pro-accordion-title {
-    color: #0a83ca !important;
+    color: #ff7d2d !important;
 }
 
 /* Meta/Duration Reset */
@@ -149,7 +149,7 @@ html body .pro-accordion-chevron-box {
     justify-content: center !important;
     background: transparent !important;
     border: none !important;
-    color: #0a83ca !important;
+    color: #ff7d2d !important;
     margin-left: 16px !important;
     padding: 0 !important;
 }

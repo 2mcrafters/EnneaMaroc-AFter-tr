@@ -48,7 +48,7 @@ const Home = () => {
               role: "Co-fondateur",
             },
             {
-              image: "/assets/imgss001/freid (1).jpg",
+              image: "/assets/imgss001/youssra andalib.png",
               name: "Yousra Andalib",
               role: "Co-fondatrice",
             },

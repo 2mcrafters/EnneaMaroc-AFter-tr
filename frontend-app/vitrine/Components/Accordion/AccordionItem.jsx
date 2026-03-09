@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
-const AccordionItem = ({ module, isOpen, onToggle, index, color = "#0a83ca" }) => {
+const AccordionItem = ({ module, isOpen, onToggle, index, color = "#ff7d2d" }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -175,7 +175,7 @@ const AccordionItem = ({ module, isOpen, onToggle, index, color = "#0a83ca" }) =
       fontSize: "17px",
       fontWeight: "700",
       textTransform: "uppercase",
-      color: "#e13734",
+      color: "#64508d",
       letterSpacing: "0.05em",
       display: "flex",
       alignItems: "center",
@@ -823,7 +823,7 @@ const AccordionItem = ({ module, isOpen, onToggle, index, color = "#0a83ca" }) =
                             }
                           }}
                           style={{
-                            backgroundColor: "#e13734",
+                            backgroundColor: "#64508d",
                             color: "#fff",
                             padding: "8px 16px",
                             borderRadius: "6px",
@@ -854,7 +854,7 @@ const AccordionItem = ({ module, isOpen, onToggle, index, color = "#0a83ca" }) =
                     <a
                       href="/app/#/contact"
                       style={{
-                        color: "#e13734",
+                        color: "#64508d",
                         fontWeight: "600",
                         marginTop: "8px",
                         display: "inline-block",

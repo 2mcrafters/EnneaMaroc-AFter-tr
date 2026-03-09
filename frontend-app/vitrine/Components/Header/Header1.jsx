@@ -225,7 +225,7 @@ export default function Header1({ variant = "" }) {
             fontWeight: isHomePage ? 700 : 600,
             transition: "all 0.2s",
             textDecoration: "none",
-            color: isHomePage ? "#0a83ca" : "inherit",
+            color: isHomePage ? "#ff7d2d" : "inherit",
           }}
         >
           <span style={{ position: "relative", paddingBottom: "3px" }}>
@@ -238,7 +238,7 @@ export default function Header1({ variant = "" }) {
                 transform: "translateX(-50%)",
                 width: "100%",
                 height: "2.5px",
-                background: "#0a83ca",
+                background: "#ff7d2d",
                 borderRadius: "99px",
                 display: "block",
               }} />
@@ -268,7 +268,7 @@ export default function Header1({ variant = "" }) {
             fontSize: "17px",
             transition: "all 0.2s",
             textDecoration: "none",
-            color: isActive ? "#0a83ca" : "inherit",
+            color: isActive ? "#ff7d2d" : "inherit",
           }}
         >
           <span style={{
@@ -284,7 +284,7 @@ export default function Header1({ variant = "" }) {
                 transform: "translateX(-50%)",
                 width: "100%",
                 height: "2.5px",
-                background: "#0a83ca",
+                background: "#ff7d2d",
                 borderRadius: "99px",
                 display: "block",
               }} />
@@ -330,7 +330,7 @@ export default function Header1({ variant = "" }) {
               <>
                 <span
                   style={{
-                    color: "#0a83ca",
+                    color: "#ff7d2d",
                     fontWeight: 600,
                     fontSize: "17px",
                     marginLeft: isMobileView ? "16px" : "0",
@@ -367,9 +367,9 @@ export default function Header1({ variant = "" }) {
                     backgroundColor: isMobileView
                       ? "transparent"
                       : isParcoursActive
-                      ? "#0a83ca"
+                      ? "#ff7d2d"
                       : "#F0F9FA",
-                    color: isParcoursActive ? "#0a83ca" : "#007A80",
+                    color: isParcoursActive ? "#ff7d2d" : "#007A80",
                     padding: "6px 12px",
                     borderRadius: "9999px",
                     fontSize: "17px",
@@ -377,7 +377,7 @@ export default function Header1({ variant = "" }) {
                     border: isMobileView
                       ? "1px solid #B2EBF2"
                       : isParcoursActive
-                      ? "1px solid #0a83ca"
+                      ? "1px solid #ff7d2d"
                       : "1px solid #B2EBF2",
                     cursor: "pointer",
                     width: isMobileView ? "100%" : "auto",
@@ -433,7 +433,7 @@ export default function Header1({ variant = "" }) {
                   display: "flex",
                   alignItems: "center",
                   gap: "4px",
-                  color: isOpen ? "#e13734" : "inherit",
+                  color: isOpen ? "#64508d" : "inherit",
                   background: "none",
                   border: "none",
                   cursor: "pointer",
@@ -517,7 +517,7 @@ export default function Header1({ variant = "" }) {
                       padding: "8px 12px",
                       borderRadius: "8px",
                       color: isActive ? "#ffffff" : "#334155",
-                      backgroundColor: isActive ? "#0a83ca" : "transparent",
+                      backgroundColor: isActive ? "#ff7d2d" : "transparent",
                       fontWeight: isActive ? "bold" : "normal",
                       textDecoration: "none",
                       transition: "all 0.2s",
@@ -526,7 +526,7 @@ export default function Header1({ variant = "" }) {
                     onMouseEnter={(e) => {
                       if (!isActive) {
                         e.currentTarget.style.backgroundColor = "#f8fafc";
-                        e.currentTarget.style.color = "#e13734";
+                        e.currentTarget.style.color = "#64508d";
                       }
                     }}
                     onMouseLeave={(e) => {
@@ -567,7 +567,7 @@ export default function Header1({ variant = "" }) {
         .cs_nav_link:hover {
           transform: scale(1.12) !important;
           text-decoration: none !important;
-          color: #0a83ca !important;
+          color: #ff7d2d !important;
         }
         .cs_nav_link:hover::after,
         .cs_nav_link:focus::after {
@@ -575,22 +575,43 @@ export default function Header1({ variant = "" }) {
         }
 
         @media (max-width: 991px) {
+          /* Hide nav list by default on mobile, show when is-open */
           .cs_nav .cs_nav_list {
-            width: 100% !important;
+            display: none !important;
+          }
+          .cs_nav .cs_nav_list.is-open {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            position: fixed !important;
+            top: 80px !important;
             left: 0 !important;
             right: 0 !important;
-            padding: 10px 0 !important;
+            width: 100vw !important;
+            max-height: calc(100vh - 80px) !important;
+            overflow-y: auto !important;
+            background: #ffffff !important;
+            z-index: 998 !important;
+            padding: 16px 0 24px !important;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15) !important;
+            border-top: 2px solid rgba(10,131,202,0.1) !important;
+          }
+          .cs_nav .cs_nav_list > li {
+            width: 100% !important;
           }
           .cs_nav .cs_nav_list > li > a,
           .cs_nav .cs_nav_list .cs_nav_link {
-            padding: 12px 16px !important;
+            padding: 12px 20px !important;
             width: 100% !important;
             box-sizing: border-box !important;
             background: transparent !important;
+            color: #1a1a2e !important;
+            font-size: 16px !important;
           }
           .cs_nav .cs_nav_list .cs_nav_link:hover {
-            background: transparent !important;
-            transform: scale(1.04) !important;
+            background: rgba(10,131,202,0.06) !important;
+            transform: none !important;
+            color: #ff7d2d !important;
           }
         }
       `}</style>
@@ -630,7 +651,10 @@ export default function Header1({ variant = "" }) {
             </div>
 
             {/* Center: nav */}
-            <div className="cs_main_header_center nav-center">
+            <div
+              className="cs_main_header_center nav-center"
+              style={{ display: isMobileView ? "none" : undefined }}
+            >
               <div className="cs_nav cs_primary_font fw-bold">
                 <nav className="cs_navbar" role="navigation" aria-label="Main">
                   <ul
@@ -638,7 +662,6 @@ export default function Header1({ variant = "" }) {
                     className={`cs_nav_list ${mobileOpen ? "is-open" : ""}`}
                     role="menubar"
                     style={{
-                      display: "flex",
                       alignItems: "center",
                       gap: 15,
                       listStyle: "none",
@@ -670,16 +693,16 @@ export default function Header1({ variant = "" }) {
                 <div className="header-right">
                   <div className="profile-icon">
                     <a
-                      href={isLoggedIn ? "/app/#/profile" : "/app/#/login"}
+                      href={isLoggedIn ? "/app/#/admin/dashboard" : "/app/#/login"}
                       aria-label={
-                        isLoggedIn ? "Profil" : "Accéder à la page Se connecter"
+                        isLoggedIn ? "Tableau de bord" : "Accéder à la page Se connecter"
                       }
                       onClick={closeMobileAll}
                       style={{
                         width: 40,
                         height: 40,
                         borderRadius: "50%",
-                        background: "#1c8bce",
+                        background: "#ff8f42",
                         color: "#fff",
                         border: "none",
                         display: "inline-flex",
@@ -710,7 +733,7 @@ export default function Header1({ variant = "" }) {
                           whiteSpace: "nowrap",
                         }}
                       >
-                        {isLoggedIn ? "Profil" : "S'inscrire"}
+                        {isLoggedIn ? "Dashboard" : "S'inscrire"}
                       </span>
                     </a>
                     {/* {isAdmin && <Link to="/admin" className="admin-link">Admin</Link>} */}
@@ -732,7 +755,7 @@ export default function Header1({ variant = "" }) {
                   borderRadius: 12,
                   border: "2px solid rgba(10, 131, 202, 0.2)",
                   background: "#fff",
-                  display: "inline-flex",
+                  display: isMobileView ? "inline-flex" : "none",
                   alignItems: "center",
                   justifyContent: "center",
                   flexDirection: "column",
@@ -745,7 +768,7 @@ export default function Header1({ variant = "" }) {
                   style={{
                     width: 24,
                     height: 3,
-                    background: "#0a83ca",
+                    background: "#ff7d2d",
                     display: "block",
                     borderRadius: 2,
                     transition: "all 0.3s ease",
@@ -755,7 +778,7 @@ export default function Header1({ variant = "" }) {
                   style={{
                     width: 24,
                     height: 3,
-                    background: "#0a83ca",
+                    background: "#ff7d2d",
                     display: "block",
                     borderRadius: 2,
                     transition: "all 0.3s ease",
@@ -765,7 +788,7 @@ export default function Header1({ variant = "" }) {
                   style={{
                     width: 24,
                     height: 3,
-                    background: "#0a83ca",
+                    background: "#ff7d2d",
                     display: "block",
                     borderRadius: 2,
                     transition: "all 0.3s ease",

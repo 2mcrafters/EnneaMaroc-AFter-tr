@@ -25,9 +25,9 @@ const toNumber = (value) => {
 };
 
 const colors = {
-  blue: "#0a83ca",
+  blue: "#ff7d2d",
   deepBlue: "#0776bb",
-  red: "#e13734",
+  red: "#64508d",
   softBlue: "#e8f4fd",
   softWhite: "#f5fbff",
   slate: "#1d1c1a",
@@ -345,7 +345,7 @@ function Agenda() {
   if (loading) {
     return (
       <div className="flex justify-center items-center min-h-screen">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#0a83ca]"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#ff7d2d]"></div>
       </div>
     );
   }
@@ -453,7 +453,7 @@ function Agenda() {
         <style>{`
           .agenda-hero {
             padding: clamp(240px, 28vh, 360px) 20px clamp(90px, 13vh, 130px);
-            background-image: linear-gradient(rgba(7, 118, 187, 0.88), rgba(10, 131, 202, 0.9)), url('/assets/imgss001/freid (2).jpg');
+            background-image: linear-gradient(rgba(100, 80, 141, 0.88), rgba(100, 80, 141, 0.9)), url('/assets/imgss001/freid (2).jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -792,7 +792,7 @@ function Agenda() {
                       marginBottom: 24,
                       padding: "20px 24px",
                       background:
-                        "linear-gradient(135deg, #e13734 0%, #c92a27 100%)",
+                        "linear-gradient(135deg, #64508d 0%, #4e3a72 100%)",
                       borderRadius: 14,
                       border: "1px solid rgba(225, 55, 52, 0.3)",
                       boxShadow: "0 6px 20px rgba(225, 55, 52, 0.2)",
@@ -985,7 +985,7 @@ function Agenda() {
                                 ) : (
                                   <span
                                     onClick={() => setEditingHeaderIndex(idx)}
-                                    className="cursor-pointer hover:text-[#0a83ca] hover:underline block w-full h-full"
+                                    className="cursor-pointer hover:text-[#ff7d2d] hover:underline block w-full h-full"
                                     title="Cliquez pour changer le mois"
                                   >
                                     {header}
@@ -1153,7 +1153,7 @@ function Agenda() {
                                     Parcours complet
                                   </strong>
                                   &nbsp;: {level.totalDays} jours –{" "}
-                                  <span style={{ color: "#e13734" }}>
+                                  <span style={{ color: "#64508d" }}>
                                     {level.totalCost}
                                   </span>
                                 </div>
@@ -1239,7 +1239,7 @@ function Agenda() {
                         background:
                           index === scheduleLevels.length - 1
                             ? "rgba(10, 131, 202, 0.15)"
-                            : "linear-gradient(135deg, #0a83ca 0%, #09538f 100%)",
+                            : "linear-gradient(135deg, #ff7d2d 0%, #d95e14 100%)",
                         color:
                           index === scheduleLevels.length - 1
                             ? "rgba(255,255,255,0.7)"
@@ -1287,19 +1287,19 @@ function Agenda() {
             }
             
             .table-scroll-wrapper::-webkit-scrollbar-thumb {
-              background: #e13734;
+              background: #64508d;
               border-radius: 8px;
               border: 3px solid rgba(255, 255, 255, 0.4);
             }
             
             .table-scroll-wrapper::-webkit-scrollbar-thumb:hover {
-              background: #c92a27;
+              background: #4e3a72;
             }
             
             /* Firefox */
             .table-scroll-wrapper {
               scrollbar-width: auto;
-              scrollbar-color: #e13734 rgba(225, 55, 52, 0.15);
+              scrollbar-color: #64508d rgba(225, 55, 52, 0.15);
             }
 
             /* Mobile center tabs */
@@ -1327,7 +1327,7 @@ function Agenda() {
         <section
           style={{
             padding: "100px 20px",
-            background: "linear-gradient(135deg, #0a83ca 0%, #09538f 100%)",
+            background: "linear-gradient(135deg, #ff7d2d 0%, #d95e14 100%)",
           }}
         >
           <div className="container">

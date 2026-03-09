@@ -103,7 +103,7 @@ const About1 = ({
             display: inline-block;
             width: 2px;
             height: 1em;
-            background: #0a83ca;
+            background: #ff7d2d;
             margin-left: 3px;
             vertical-align: middle;
             animation: blink 0.8s step-start infinite;
@@ -129,7 +129,7 @@ const About1 = ({
           }
 
           .about-showcase-copy .sub-title {
-            color: #0a83ca;
+            color: #ff7d2d;
             font-size: 18px;
             font-weight: 700;
             letter-spacing: 0.08em;
@@ -137,7 +137,7 @@ const About1 = ({
           }
 
           .about-showcase-title {
-            color: #0a83ca;
+            color: #ff7d2d;
             font-size: max(22px, 2.3vw); /* fallback for 0.8vw typo */
             line-height: 1.1;
             font-weight: 600;
@@ -151,7 +151,7 @@ const About1 = ({
           }
 
           .about-showcase-since {
-            color: #0a83ca;
+            color: #ff7d2d;
             font-size: 16px;
             font-weight: 600;
             letter-spacing: 0.04em;
@@ -174,9 +174,9 @@ const About1 = ({
             gap: 10px;
             min-width: 0;
             padding: 12px 28px;
-            border: 1.8px solid #0a83ca;
+            border: 1.8px solid #ff7d2d;
             border-radius: 999px;
-            color: #0a83ca;
+            color: #ff7d2d;
             font-size: 16px;
             font-weight: 600;
             background: transparent;
@@ -185,7 +185,7 @@ const About1 = ({
           }
 
           .about-showcase-btn:hover {
-            background: #0a83ca;
+            background: #ff7d2d;
             color: #ffffff;
           }
 
@@ -213,7 +213,7 @@ const About1 = ({
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #0a83ca;
+            color: #ff7d2d;
             flex: 0 0 auto;
           }
 
@@ -238,7 +238,7 @@ const About1 = ({
           .about-showcase-circle .text-inner svg {
             width: 100%;
             height: 100%;
-            fill: #0a83ca;
+            fill: #ff7d2d;
           }
 
           .about-showcase-circle .text-inner text {
@@ -252,7 +252,7 @@ const About1 = ({
             width: 36px;
             height: 36px;
             border-radius: 50%;
-            background: #0a83ca;
+            background: #ff7d2d;
             color: #ffffff;
             display: inline-flex;
             align-items: center;
@@ -267,7 +267,7 @@ const About1 = ({
             display: flex;
             align-items: center;
             gap: 12px;
-            color: #0a83ca;
+            color: #ff7d2d;
             flex-wrap: wrap;
           }
 
@@ -275,7 +275,7 @@ const About1 = ({
             font-size: clamp(48px, 6vw, 76px);
             line-height: 0.9;
             font-weight: 800;
-            -webkit-text-stroke: 3px #0a83ca;
+            -webkit-text-stroke: 3px #ff7d2d;
             color: transparent;
           }
 
@@ -290,7 +290,7 @@ const About1 = ({
             display: inline-block;
             padding: 3px 10px;
             border-radius: 10px;
-            background: #0a83ca;
+            background: #ff7d2d;
             color: #ffffff;
             font-weight: 700;
             margin-bottom: 6px;
@@ -323,7 +323,7 @@ const About1 = ({
             content: "";
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, rgba(10, 131, 202, 0.95) 0%, rgba(10, 131, 202, 0.6) 20%, transparent 45%);
+            background: linear-gradient(to top, rgba(100, 80, 141, 0.95) 0%, rgba(100, 80, 141, 0.6) 20%, transparent 45%);
             border-radius: 16px;
             pointer-events: none;
           }

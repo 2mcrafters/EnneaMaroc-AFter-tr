@@ -56,7 +56,7 @@ const Process = () => {
             margin: 0,
             fontSize: "clamp(15px, 1.4vw, 18px)",
             fontWeight: 500,
-            color: "#0a83ca",
+            color: "#ff7d2d",
             lineHeight: 1.7,
             fontStyle: "italic",
           }}>

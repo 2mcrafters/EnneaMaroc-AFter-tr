@@ -121,7 +121,7 @@ const baseConfig = [
     label: "Définition",
     order: "01",
     tag: "Racines spirituelles et transmissions modernes",
-    accent: "#e13734",
+    accent: "#64508d",
     fallbackTitle: "Une sagesse ancienne aux racines multiples",
     fallbackDesc: "",
   },
@@ -137,7 +137,7 @@ const baseConfig = [
     label: "Croissance",
     order: "03",
     tag: "Aligner corps, cœur et esprit pour se transformer",
-    accent: "#0a83ca",
+    accent: "#ff7d2d",
     fallbackTitle: "Un chemin de croissance personnelle",
     fallbackDesc: "",
   },
@@ -258,8 +258,8 @@ const TestimonialComponent = () => {
                 e.currentTarget.style.background = "rgba(255,255,255,0.22)";
                 e.currentTarget.style.color = "#ffffff";
               } else {
-                e.currentTarget.style.background = "#e13734";
-                e.currentTarget.style.borderColor = "#e13734";
+                e.currentTarget.style.background = "#64508d";
+                e.currentTarget.style.borderColor = "#64508d";
                 e.currentTarget.style.color = "#ffffff";
               }
             }}
@@ -368,7 +368,7 @@ const TestimonialComponent = () => {
         id="enneagramme-section"
         style={{
           position: "relative",
-          background: "linear-gradient(135deg, #0a83ca 0%, #073c86 100%)",
+          background: "linear-gradient(135deg, #ff7d2d 0%, #ff7d2d 100%)",
           padding: "24px 0 24px",
           overflow: "hidden",
         }}
@@ -379,7 +379,7 @@ const TestimonialComponent = () => {
             inset: 0,
             opacity: 0.12,
             background:
-              "radial-gradient(circle at 20% 20%, #e13734 0%, transparent 60%), radial-gradient(circle at 80% 30%, #ff9f1c 0%, transparent 55%)",
+              "radial-gradient(circle at 20% 20%, #64508d 0%, transparent 60%), radial-gradient(circle at 80% 30%, #ff9f1c 0%, transparent 55%)",
           }}
         />
         <div

@@ -1,9 +1,9 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 
 const Process3 = () => {
   const colors = {
-    bg: "#0a83ca",
-    primary: "#0a83ca",
+    bg: "#ff7d2d",
+    primary: "#ff7d2d",
     danger: "#dc3545",
     text: "#0e1b25",
     muted: "#5a6f82",
@@ -182,7 +182,7 @@ const Process3 = () => {
               right: 0,
               bottom: 0,
               background:
-                "linear-gradient(135deg, rgba(225, 55, 52, 0.9) 0%, rgba(235, 83, 75, 0.85) 100%)",
+                "linear-gradient(135deg, rgba(100, 80, 141, 0.9) 0%, rgba(120, 98, 165, 0.85) 100%)",
               display: "flex",
               flexDirection: "column",
               alignItems: "center",

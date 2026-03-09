@@ -41,7 +41,7 @@ const PageInfo = () => {
 							fontSize: "clamp(32px, 5vw, 48px)",
 							margin: 0,
 							fontWeight: 800,
-							color: "#0a83ca",
+							color: "#ff7d2d",
 						}}
 					>
 						Se connecter ou s’inscrire
@@ -77,7 +77,7 @@ const PageInfo = () => {
 								display: "inline-flex",
 								alignItems: "center",
 								justifyContent: "center",
-								background: "#0a83ca",
+								background: "#ff7d2d",
 								color: "#fff",
 								minWidth: 220,
 							}}
@@ -95,8 +95,8 @@ const PageInfo = () => {
 								display: "inline-flex",
 								alignItems: "center",
 								justifyContent: "center",
-								border: "2px solid #0a83ca",
-								color: "#0a83ca",
+								border: "2px solid #ff7d2d",
+								color: "#ff7d2d",
 								minWidth: 220,
 							}}
 						>

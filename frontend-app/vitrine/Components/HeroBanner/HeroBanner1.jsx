@@ -107,10 +107,11 @@ const HeroBanner1 = ({
           position:relative;
           min-height: var(--hero-h);
           display:flex; align-items:center; justify-content:center;
-          overflow:hidden; color:#fff; background:#0a83ca; isolation:isolate;
+          overflow:hidden; color:#fff; background:#64508d; isolation:isolate;
+          contain: layout paint;
         }
         @media (max-width: 768px){
-          .hb-wrap{ min-height: var(--hero-h-sm); padding-top: 90px; }
+          .hb-wrap{ min-height: var(--hero-h-sm); padding-top: 80px; }
         }
 
         .hb-bg{
@@ -124,7 +125,7 @@ const HeroBanner1 = ({
           position: absolute; inset: 0; z-index: 0; pointer-events: none;
           background: radial-gradient(ellipse 80% 60% at 50% 30%,
             rgba(255,255,255,0.55) 0%,
-            rgba(10,131,202,0.18) 45%,
+            rgba(100,80,141,0.18) 45%,
             transparent 75%);
           animation: heroFlash 1.1s ease-out forwards;
         }
@@ -189,23 +190,23 @@ const HeroBanner1 = ({
           will-change: transform;
         }
         .hb-btn.primary{
-          background:#1c8bce; color:#fff; border-color:#1c8bce;
+          background:#ff8f42; color:#fff; border-color:#ff8f42;
           box-shadow: 0 10px 26px rgba(0,0,0,.22);
         }
         .hb-btn.primary:hover,
         .hb-btn.primary:focus-visible{
-          background:#fff; color:#1c8bce; border-color:#1c8bce;
+          background:#fff; color:#ff8f42; border-color:#ff8f42;
           transform: translateY(-1px);
           box-shadow: 0 14px 32px rgba(0,0,0,.28);
           outline:none;
         }
         .hb-btn.secondary{
-          background:#e13734; color:#fff; border-color:#e13734;
+          background:#64508d; color:#fff; border-color:#64508d;
           box-shadow: 0 10px 26px rgba(0,0,0,.22);
         }
         .hb-btn.secondary:hover,
         .hb-btn.secondary:focus-visible{
-          background:#fff; color:#e13734; border-color:#e13734;
+          background:#fff; color:#64508d; border-color:#64508d;
           transform: translateY(-1px);
           box-shadow: 0 14px 32px rgba(0,0,0,.28);
           outline:none;

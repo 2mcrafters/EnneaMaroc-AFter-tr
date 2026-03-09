@@ -471,7 +471,7 @@ const AdminAgendaPage: React.FC = () => {
           {displayedParcours.map((parcours) => (
             <div key={parcours.id} className="mb-12">
               <div className="bg-[#0a83ca] text-white px-6 py-3 rounded-t-xl flex justify-between items-center">
-                <h3 className="font-bold text-lg">{parcours.title}</h3>
+                <h3 className="font-bold text-lg text-white">{parcours.title}</h3>
               </div>
               
               <div className="overflow-x-auto border border-slate-200 rounded-b-xl">

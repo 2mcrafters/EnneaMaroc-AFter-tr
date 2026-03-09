@@ -20,8 +20,8 @@ export default function Ecole() {
   const C = {
     white: "#fff",
     black: "#1d1c1a",
-    red: "#e13734",
-    blue: "#0a83ca",
+    red: "#64508d",
+    blue: "#ff7d2d",
   };
   const [heroOk, setHeroOk] = useState(true);
   const [expandedTrainer, setExpandedTrainer] = useState(null);
@@ -182,9 +182,9 @@ export default function Ecole() {
                 style={{
                   position: "absolute",
                   inset: 0,
-                  background: `linear-gradient(135deg, rgba(10,131,202,${OVERLAY_ALPHA}) 0%, rgba(10,131,202,${
+                  background: `linear-gradient(135deg, rgba(100,80,141,${OVERLAY_ALPHA}) 0%, rgba(100,80,141,${
                     OVERLAY_ALPHA * 0.7
-                  }) 100%)`,
+                  }) 100%)`,  
                 }}
               />
             </div>
@@ -796,13 +796,13 @@ export default function Ecole() {
             .trainer-photo { flex-shrink:0; width:clamp(140px,26%,260px); min-height:220px; position:relative; }
             .trainer-photo img { width:100%; height:100%; object-fit:cover; display:block; }
             .trainer-content { flex:1; padding:24px 24px 20px; display:flex; flex-direction:column; justify-content:center; position:relative; z-index:1; min-width:0; }
-            .trainer-role { font-size:11px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#0a83ca; margin-bottom:5px; }
+            .trainer-role { font-size:11px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#ff7d2d; margin-bottom:5px; }
             .trainer-name { font-size:clamp(16px,1.6vw,21px); font-weight:700; color:#0e1b25; margin-bottom:10px; line-height:1.3; }
             .trainer-desc { font-size:14px; line-height:1.75; margin:0 0 12px; text-align:justify; }
             .trainer-desc p { color:#1f2937 !important; margin:0; }
             .trainer-desc p + p { margin-top:10px; }
-            .trainer-btn { align-self:flex-start; background:none; border:1.5px solid #0a83ca; color:#0a83ca; border-radius:50px; padding:7px 20px; font-size:13px; font-weight:600; cursor:pointer; transition:all 0.2s; }
-            .trainer-btn:hover { background:#0a83ca; color:#fff; }
+            .trainer-btn { align-self:flex-start; background:none; border:1.5px solid #ff7d2d; color:#ff7d2d; border-radius:50px; padding:7px 20px; font-size:13px; font-weight:600; cursor:pointer; transition:all 0.2s; }
+            .trainer-btn:hover { background:#ff7d2d; color:#fff; }
 
             /* === MOBILE CARD === */
             @media (max-width: 600px) {
@@ -821,7 +821,7 @@ export default function Ecole() {
                 flex-shrink: 0;
                 display: flex;
                 flex-direction: column;
-                background: #0a83ca;
+                background: #ff7d2d;
                 min-height: 100%;
               }
               .trainer-photo img {
@@ -833,7 +833,7 @@ export default function Ecole() {
               }
               .trainer-photo-badge {
                 padding: 8px 8px 10px;
-                background: #0a83ca;
+                background: #ff7d2d;
                 text-align: center;
               }
               .trainer-photo-badge .badge-name {
@@ -890,7 +890,7 @@ export default function Ecole() {
                     <div style={{ position: "relative", margin: "4px 0", height: 3, borderRadius: 99, overflow: "hidden", background: "rgba(10,131,202,0.12)" }}>
                       <div style={{
                         position: "absolute", top: 0, left: 0, height: "100%", width: "100%",
-                        background: "linear-gradient(90deg, transparent, #0a83ca, #e13734, #0a83ca, transparent)",
+                        background: "linear-gradient(90deg, transparent, #ff7d2d, #64508d, #ff7d2d, transparent)",
                         backgroundSize: "200% 100%", animation: "trainerDivider 5s ease-in-out infinite",
                       }} />
                     </div>
