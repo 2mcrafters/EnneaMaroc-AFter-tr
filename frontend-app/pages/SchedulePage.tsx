@@ -1254,7 +1254,7 @@ const SchedulePage: React.FC = () => {
     const buttonText = currentlyCancelled ? "Réactiver" : "Confirmer";
     const buttonStyle = currentlyCancelled
       ? "bg-green-600 hover:bg-green-700"
-      : "bg-red-600 hover:bg-red-700";
+      : "bg-red-600 hover:bg-[#e06520]";
 
     const perform = async () => {
       try {
@@ -1418,7 +1418,7 @@ const SchedulePage: React.FC = () => {
         <button
           onClick={handleRefreshAllData}
           disabled={isRefreshing}
-          className="flex items-center gap-2 px-4 py-2 bg-brand-dark text-white rounded-lg hover:bg-[#e13734] transition-colors disabled:opacity-70"
+          className="flex items-center gap-2 px-4 py-2 bg-brand-dark text-white rounded-lg hover:bg-[#ff7d2d] transition-colors disabled:opacity-70"
         >
           <ArrowPathIcon
             className={`w-5 h-5 ${isRefreshing ? "animate-spin" : ""}`}
@@ -1517,7 +1517,7 @@ const SchedulePage: React.FC = () => {
                       {Object.entries(options).map(([key, label]) => (
                         <label
                           key={key}
-                          className="flex items-center space-x-3 p-2 hover:bg-[#e13734]/10 cursor-pointer rounded-md transition-colors"
+                          className="flex items-center space-x-3 p-2 hover:bg-[#ff7d2d]/10 cursor-pointer rounded-md transition-colors"
                         >
                           <input
                             type="checkbox"
@@ -1563,7 +1563,7 @@ const SchedulePage: React.FC = () => {
             </div>
             <button
               onClick={handleResetFilters}
-              className="px-4 py-2 text-xs font-semibold text-slate-700 bg-slate-200 rounded-full hover:bg-[#e13734] hover:text-white transition-colors"
+              className="px-4 py-2 text-xs font-semibold text-slate-700 bg-slate-200 rounded-full hover:bg-[#ff7d2d] hover:text-white transition-colors"
             >
               Réinitialiser les filtres
             </button>
@@ -1726,7 +1726,7 @@ const SchedulePage: React.FC = () => {
               onClick={() =>
                 setCurrentMobileDayIndex((prev) => (prev - 1 + 7) % 7)
               }
-              className="p-2 rounded-full hover:bg-[#e13734]/10 transition-colors"
+              className="p-2 rounded-full hover:bg-[#ff7d2d]/10 transition-colors"
             >
               <ChevronLeftIcon className="w-6 h-6 text-slate-600" />
             </button>
@@ -1736,7 +1736,7 @@ const SchedulePage: React.FC = () => {
             <button
               aria-label="Jour suivant"
               onClick={() => setCurrentMobileDayIndex((prev) => (prev + 1) % 7)}
-              className="p-2 rounded-full hover:bg-[#e13734]/10 transition-colors"
+              className="p-2 rounded-full hover:bg-[#ff7d2d]/10 transition-colors"
             >
               <ChevronRightIcon className="w-6 h-6 text-slate-600" />
             </button>
@@ -2005,7 +2005,7 @@ const SchedulePage: React.FC = () => {
                   className={`w-full px-6 py-3 font-semibold text-white rounded-full transition-colors ${
                     modalEventDetails.isCancelled
                       ? "bg-green-600 hover:bg-green-700"
-                      : "bg-red-600 hover:bg-red-700"
+                      : "bg-red-600 hover:bg-[#e06520]"
                   }`}
                 >
                   {modalEventDetails.isCancelled
@@ -2305,8 +2305,8 @@ const SchedulePage: React.FC = () => {
         tabIndex={0}
         className={`pointer-events-auto relative z-30 flex items-center gap-3 px-4 py-2 text-sm font-semibold rounded-lg transition-colors cursor-pointer block ${
           isActive
-            ? "bg-[#e13734] text-white"
-            : "text-slate-600 hover:bg-slate-100 hover:text-[#e13734]"
+            ? "bg-[#ff7d2d] text-white"
+            : "text-slate-600 hover:bg-slate-100 hover:text-[#ff7d2d]"
         }`}
       >
         {children}

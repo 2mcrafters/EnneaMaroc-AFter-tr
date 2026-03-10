@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:backend": "cd backend && php artisan serve",
+    "dev:full": "npx concurrently -n FRONT,BACK -c cyan,green \"npm run dev\" \"npm run dev:backend\"",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -37,6 +39,7 @@
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^4.7.0",
     "autoprefixer": "^10.4.22",
+    "concurrently": "^9.2.1",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.17",
     "typescript": "~5.8.2",

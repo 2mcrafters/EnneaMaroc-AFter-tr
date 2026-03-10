@@ -220,7 +220,7 @@ const SignUpPage: React.FC = () => {
               <a
                 href="#/login"
                 onClick={(e) => handleNav(e, "#/login")}
-                className="font-medium text-[#2790d0] hover:text-[#e13734]"
+                className="font-medium text-[#2790d0] hover:text-[#ff7d2d]"
               >
                 Connectez-vous ici
               </a>
@@ -312,7 +312,7 @@ const SignUpPage: React.FC = () => {
             <button
               type="submit"
               disabled={loading || Object.values(errors).some((e) => e)}
-              className="w-full flex justify-center py-3 px-4 border border-transparent rounded-full shadow-sm text-sm font-medium text-white bg-brand-dark hover:bg-[#e13734] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-dark transition-colors disabled:opacity-60"
+              className="w-full flex justify-center py-3 px-4 border border-transparent rounded-full shadow-sm text-sm font-medium text-white bg-brand-dark hover:bg-[#ff7d2d] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-dark transition-colors disabled:opacity-60"
             >
               {loading ? "Création du compte..." : "Créer un Compte"}
             </button>
@@ -324,7 +324,7 @@ const SignUpPage: React.FC = () => {
           <a
             href="#/login"
             onClick={(e) => handleNav(e, "#/login")}
-            className="font-medium text-[#2790d0] hover:text-[#e13734]"
+            className="font-medium text-[#2790d0] hover:text-[#ff7d2d]"
           >
             Se connecter
           </a>

@@ -3,6 +3,7 @@ import AdminLayout from "../components/admin/AdminLayout";
 import { useAppDispatch, useAppSelector } from "../store";
 import { fetchAllParcours } from "../store/slices/parcoursSlice";
 import { FaEdit } from "react-icons/fa";
+import { getParcoursColorBySlug } from "../utils/parcoursColors";
 
 const AdminCoursesListPage: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -101,13 +102,19 @@ const AdminCoursesListPage: React.FC = () => {
                 </tr>
               </thead>
               <tbody>
-                {filteredCourses.map((course) => (
+                {filteredCourses.map((course) => {
+                  const pc = getParcoursColorBySlug(course.slug);
+                  return (
                   <tr
                     key={course.id}
                     className="bg-white border-b hover:bg-slate-50 transition-colors"
+                    style={{ borderLeft: `4px solid ${pc.primary}` }}
                   >
                     <td className="px-6 py-4 font-medium text-slate-900">
-                      {course.title}
+                      <span className="inline-flex items-center gap-2">
+                        <span className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ backgroundColor: pc.primary }} />
+                        {course.title}
+                      </span>
                     </td>
                     <td className="px-6 py-4">
                       <div className="line-clamp-2">{course.description}</div>
@@ -118,14 +125,16 @@ const AdminCoursesListPage: React.FC = () => {
                           onClick={() =>
                             (window.location.hash = `#/admin/parcours/${course.slug}`)
                           }
-                          className="font-medium text-blue-600 hover:underline flex items-center gap-1"
+                          className="font-medium flex items-center gap-1 hover:underline"
+                          style={{ color: pc.primary }}
                         >
                           <FaEdit /> Modifier
                         </button>
                       </div>
                     </td>
                   </tr>
-                ))}
+                  );
+                })}
               </tbody>
             </table>
           </div>

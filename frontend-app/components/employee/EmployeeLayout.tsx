@@ -56,8 +56,8 @@ const EmployeeLayout: React.FC<{ children: React.ReactNode }> = ({ children }) =
           onClick={(e) => handleNav(e, path)}
           className={`flex items-center gap-3 px-4 py-2 text-sm font-semibold rounded-lg transition-colors cursor-pointer ${
             isActive
-              ? "bg-[#e13734] text-white"
-              : "text-slate-600 hover:bg-slate-100 hover:text-[#e13734]"
+              ? "bg-[#ff7d2d] text-white"
+              : "text-slate-600 hover:bg-slate-100 hover:text-[#ff7d2d]"
           }`}
         >
           {children}
@@ -75,7 +75,7 @@ const EmployeeLayout: React.FC<{ children: React.ReactNode }> = ({ children }) =
             </a>
             <a
               href="/"
-              className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold text-slate-600 hover:text-[#e13734] bg-slate-100 hover:bg-red-50 rounded-lg transition-colors"
+              className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold text-slate-600 hover:text-[#ff7d2d] bg-slate-100 hover:bg-orange-50 rounded-lg transition-colors"
             >
               <svg
                 className="w-4 h-4"
@@ -111,7 +111,7 @@ const EmployeeLayout: React.FC<{ children: React.ReactNode }> = ({ children }) =
                 <div className="mb-4 pb-3 border-b border-slate-200">
                   <a
                     href="/"
-                    className="flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-[#e13734] transition-colors"
+                    className="flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-[#ff7d2d] transition-colors"
                   >
                     <svg
                       className="w-5 h-5"

@@ -72,8 +72,8 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children, title }) => {
         onClick={(e) => handleNav(e, path)}
         className={`flex items-center gap-3 px-4 py-2 text-sm font-semibold rounded-lg transition-colors cursor-pointer ${
           isActive
-            ? "bg-[#e13734] text-white"
-            : "text-slate-600 hover:bg-slate-100 hover:text-[#e13734]"
+            ? "bg-[#64508d] text-white"
+            : "text-slate-600 hover:bg-slate-100 hover:text-[#64508d]"
         }`}
       >
         {children}
@@ -91,7 +91,7 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children, title }) => {
             {!isSidebarOpen && (
               <button
                 onClick={() => setIsSidebarOpen(true)}
-                className="hidden lg:flex p-2 rounded-lg bg-[#e13734] text-white hover:bg-[#c42e2b] transition-colors"
+                className="hidden lg:flex p-2 rounded-lg bg-[#64508d] text-white hover:bg-[#4e3d73] transition-colors"
                 aria-label="Ouvrir le menu"
               >
                 <svg
@@ -117,7 +117,7 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children, title }) => {
           {/* Right: Back to Home button */}
           <a
             href="/"
-            className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold text-slate-600 hover:text-[#e13734] bg-slate-100 hover:bg-red-50 rounded-lg transition-colors"
+            className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold text-slate-600 hover:text-[#64508d] bg-slate-100 hover:bg-purple-50 rounded-lg transition-colors"
           >
             <svg
               className="w-4 h-4"
@@ -162,7 +162,7 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children, title }) => {
                 {/* Home button in sidebar */}
                 <a
                   href="/"
-                  className="flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-[#e13734] transition-colors"
+                  className="flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-[#64508d] transition-colors"
                 >
                   <svg
                     className="w-5 h-5"
@@ -183,7 +183,7 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children, title }) => {
                 {/* Hide sidebar button */}
                 <button
                   onClick={() => setIsSidebarOpen(false)}
-                  className="p-1.5 rounded-lg bg-[#e13734] text-white hover:bg-[#c42e2b] transition-colors"
+                  className="p-1.5 rounded-lg bg-[#64508d] text-white hover:bg-[#4e3d73] transition-colors"
                   aria-label="Masquer le menu"
                 >
                   <svg

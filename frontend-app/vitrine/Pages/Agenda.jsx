@@ -40,6 +40,13 @@ const colors = {
 };
 
 const PARCOURS_COLORS = ["#2d969a", "#64508d", "#ff7d2d"];
+const PARCOURS_GRADIENTS = [
+  "linear-gradient(135deg, #2d969a 0%, #1d7275 100%)",
+  "linear-gradient(135deg, #64508d 0%, #4e3d73 100%)",
+  "linear-gradient(135deg, #ff7d2d 0%, #e06020 100%)",
+];
+const PARCOURS_SOFT = ["#e0f5f6", "#ede9f7", "#fff0e6"];
+const PARCOURS_DARK = ["#1d7275", "#4e3d73", "#e06020"];
 
 const tabLabels = ["Découvrir", "Approfondir", "À la maîtrise"];
 
@@ -773,6 +780,10 @@ function Agenda() {
 
             {scheduleLevels.map((level, index) => {
               if (activeTab !== index) return null;
+              const tabColor = PARCOURS_COLORS[index] || "#2d969a";
+              const tabGradient = PARCOURS_GRADIENTS[index] || PARCOURS_GRADIENTS[0];
+              const tabSoft = PARCOURS_SOFT[index] || "#e0f5f6";
+              const tabDark = PARCOURS_DARK[index] || "#1d7275";
               return (
                 <div
                   id={level.id}
@@ -791,11 +802,10 @@ function Agenda() {
                       alignItems: "baseline",
                       marginBottom: 24,
                       padding: "20px 24px",
-                      background:
-                        "linear-gradient(135deg, #64508d 0%, #4e3a72 100%)",
+                      background: tabGradient,
                       borderRadius: 14,
-                      border: "1px solid rgba(225, 55, 52, 0.3)",
-                      boxShadow: "0 6px 20px rgba(225, 55, 52, 0.2)",
+                      border: `1px solid ${tabDark}55`,
+                      boxShadow: `0 6px 20px ${tabColor}33`,
                     }}
                   >
                     <h3
@@ -950,8 +960,8 @@ function Agenda() {
                                 key={headerKey}
                                 style={{
                                   background:
-                                    idx === 0 ? colors.blue : colors.softBlue,
-                                  color: idx === 0 ? "#fff" : colors.blue,
+                                    idx === 0 ? tabColor : tabSoft,
+                                  color: idx === 0 ? "#fff" : tabDark,
                                   fontSize: idx === 0 ? 13 : 11,
                                   fontWeight: 700,
                                   letterSpacing: "0.08em",
@@ -1014,7 +1024,7 @@ function Agenda() {
                               <div
                                 style={{
                                   fontSize: 12,
-                                  color: colors.blue,
+                                  color: tabColor,
                                   marginBottom: 8,
                                   fontWeight: 700,
                                   letterSpacing: "0.08em",
@@ -1086,9 +1096,9 @@ function Agenda() {
                                     borderRight: `1px solid ${colors.lightGray}`,
                                     borderBottom: `1px solid ${colors.lightGray}`,
                                     background: hasSession
-                                      ? "rgba(10, 131, 202, 0.2)"
+                                      ? `${tabColor}33`
                                       : "#fff",
-                                    color: hasSession ? colors.blue : "#ddd",
+                                    color: hasSession ? tabColor : "#ddd",
                                     fontWeight: hasSession ? 700 : 400,
                                     textAlign: "center",
                                     fontSize: 16,
@@ -1135,9 +1145,9 @@ function Agenda() {
                                 alignItems: "center",
                                 gap: 16,
                                 padding: "16px 20px",
-                                background: colors.softBlue,
+                                background: tabSoft,
                                 borderRadius: 12,
-                                border: `1px solid ${colors.lightGray}`,
+                                border: `1px solid ${tabColor}44`,
                               }}
                             >
                               <div style={{ flex: 1 }}>
@@ -1149,11 +1159,11 @@ function Agenda() {
                                     marginBottom: 4,
                                   }}
                                 >
-                                  <strong style={{ color: colors.blue }}>
+                                  <strong style={{ color: tabColor }}>
                                     Parcours complet
                                   </strong>
                                   &nbsp;: {level.totalDays} jours –{" "}
-                                  <span style={{ color: "#64508d" }}>
+                                  <span style={{ color: tabDark }}>
                                     {level.totalCost}
                                   </span>
                                 </div>
@@ -1192,11 +1202,11 @@ function Agenda() {
                         flex: "0 0 auto",
                         padding: "14px 28px",
                         borderRadius: 12,
-                        border: `2px solid ${colors.blue}`,
+                        border: `2px solid ${tabColor}`,
                         background:
-                          index === 0 ? "rgba(10, 131, 202, 0.08)" : "#fff",
+                          index === 0 ? `${tabColor}14` : "#fff",
                         color:
-                          index === 0 ? "rgba(10, 131, 202, 0.4)" : colors.blue,
+                          index === 0 ? `${tabColor}66` : tabColor,
                         fontSize: 14,
                         fontWeight: 700,
                         textTransform: "uppercase",
@@ -1211,7 +1221,7 @@ function Agenda() {
                         boxShadow:
                           index === 0
                             ? "none"
-                            : "0 8px 20px rgba(10, 131, 202, 0.15)",
+                            : `0 8px 20px ${tabColor}26`,
                       }}
                       aria-label="Voir le niveau précédent"
                     >
@@ -1234,12 +1244,12 @@ function Agenda() {
                         borderRadius: 12,
                         border:
                           index === scheduleLevels.length - 1
-                            ? "2px solid rgba(10, 131, 202, 0.2)"
+                            ? `2px solid ${tabColor}33`
                             : "2px solid transparent",
                         background:
                           index === scheduleLevels.length - 1
-                            ? "rgba(10, 131, 202, 0.15)"
-                            : "linear-gradient(135deg, #ff7d2d 0%, #d95e14 100%)",
+                            ? `${tabColor}26`
+                            : tabGradient,
                         color:
                           index === scheduleLevels.length - 1
                             ? "rgba(255,255,255,0.7)"
@@ -1261,7 +1271,7 @@ function Agenda() {
                         boxShadow:
                           index === scheduleLevels.length - 1
                             ? "none"
-                            : "0 10px 24px rgba(9, 83, 143, 0.3)",
+                            : `0 10px 24px ${tabColor}4d`,
                       }}
                       aria-label="Voir le niveau suivant"
                     >

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Parcours } from "../services/parcoursService";
 import { getCourseImageUrl } from "../services/baseApi";
+import { getParcoursColorBySlug } from "../utils/parcoursColors";
 
 interface CourseCardProps {
   course: Parcours;
@@ -11,6 +12,8 @@ const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
     e.preventDefault();
     window.location.hash = path;
   };
+
+  const pc = getParcoursColorBySlug(course.slug);
 
   // Special mapping for vitrine pages
   const getLink = () => {
@@ -36,7 +39,12 @@ const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
             handleNav(e, link);
         }
       }}
-      className="block bg-white rounded-2xl shadow-sm hover:shadow-xl border border-transparent hover:border-[#e13734]/50 transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group"
+      className="block bg-white rounded-2xl shadow-sm hover:shadow-xl border border-transparent transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group"
+      style={{
+        ['--hover-border' as string]: pc.primary,
+      }}
+      onMouseEnter={e => (e.currentTarget.style.borderColor = pc.primary)}
+      onMouseLeave={e => (e.currentTarget.style.borderColor = 'transparent')}
     >
       <div className="aspect-video overflow-hidden bg-slate-200 flex items-center justify-center">
         {course.photo ? (
@@ -81,7 +89,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
               {course.modules?.length || 0} Modules
             </span>
           </div>
-          <div className="text-[#e13734] font-semibold text-xs sm:text-sm">En savoir plus →</div>
+          <div className="text-[#ff7d2d] font-semibold text-xs sm:text-sm" style={{ color: pc.primary }}>En savoir plus →</div>
         </div>
       </div>
     </a>

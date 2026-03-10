@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../store';
 import { fetchSessions, createSession, updateSession, deleteSession } from '../store/slices/agendaSlice';
 import { fetchAllParcours, updateParcours } from '../store/slices/parcoursSlice';
+import { getParcoursColorBySlug, hexAlpha } from '../utils/parcoursColors';
 import AdminLayout from '../components/admin/AdminLayout';
 import { FaPlus, FaCheck, FaTimes, FaEdit, FaTrash, FaChevronLeft, FaChevronRight, FaCalendarAlt, FaFileExcel } from 'react-icons/fa';
 import { ParcoursSession } from '../services/agendaService';
@@ -401,35 +402,45 @@ const AdminAgendaPage: React.FC = () => {
       
       {/* Parcours Selection Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        {parcoursList.map((parcours) => (
-          <div 
-            key={parcours.id}
-            onClick={() => setSelectedParcoursId(selectedParcoursId === parcours.id ? null : parcours.id)}
-            className={`
-              cursor-pointer rounded-xl p-6 transition-all duration-200 border-2
-              ${selectedParcoursId === parcours.id 
-                ? 'border-[#0a83ca] bg-[#f0f9ff] shadow-md transform scale-[1.02]' 
-                : 'border-transparent bg-white shadow-sm hover:shadow-md hover:border-slate-200'
-              }
-            `}
-          >
-            <h3 className={`text-xl font-bold mb-2 ${selectedParcoursId === parcours.id ? 'text-[#0a83ca]' : 'text-slate-800'}`}>
-              {parcours.title}
-            </h3>
-            <p className="text-slate-500 text-sm mb-4 line-clamp-2">
-              {parcours.description || 'Aucune description'}
-            </p>
-            <div className="flex justify-between items-center text-sm">
-              <span className="font-medium text-slate-600">{parcours.modules?.length || 0} sessions</span>
-              <span className={`
-                px-3 py-1 rounded-full text-xs font-bold uppercase
-                ${selectedParcoursId === parcours.id ? 'bg-[#0a83ca] text-white' : 'bg-slate-100 text-slate-500'}
-              `}>
-                {selectedParcoursId === parcours.id ? 'Sélectionné' : 'Voir le calendrier'}
-              </span>
+        {parcoursList.map((parcours) => {
+          const pc = getParcoursColorBySlug(parcours.slug);
+          const isSelected = selectedParcoursId === parcours.id;
+          return (
+            <div
+              key={parcours.id}
+              onClick={() => setSelectedParcoursId(isSelected ? null : parcours.id)}
+              style={isSelected ? {
+                borderColor: pc.primary,
+                backgroundColor: pc.soft,
+                boxShadow: `0 4px 20px ${hexAlpha(pc.primary, 0.18)}`,
+              } : {}}
+              className={`cursor-pointer rounded-xl p-6 transition-all duration-200 border-2 ${
+                isSelected ? 'transform scale-[1.02]' : 'border-transparent bg-white shadow-sm hover:shadow-md hover:border-slate-200'
+              }`}
+            >
+              {/* colored top stripe */}
+              <div className="h-1 rounded-full mb-4" style={{ background: pc.gradient }} />
+              <h3 className="text-xl font-bold mb-2" style={{ color: isSelected ? pc.primary : '' }}>
+                {!isSelected && <span className="text-slate-800">{parcours.title}</span>}
+                {isSelected && parcours.title}
+              </h3>
+              <p className="text-slate-500 text-sm mb-4 line-clamp-2">
+                {parcours.description || 'Aucune description'}
+              </p>
+              <div className="flex justify-between items-center text-sm">
+                <span className="font-medium text-slate-600">{parcours.modules?.length || 0} sessions</span>
+                <span
+                  className="px-3 py-1 rounded-full text-xs font-bold uppercase"
+                  style={isSelected
+                    ? { backgroundColor: pc.primary, color: '#fff' }
+                    : { backgroundColor: '#f1f5f9', color: '#64748b' }}
+                >
+                  {isSelected ? 'Sélectionné' : 'Voir le calendrier'}
+                </span>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       {/* Calendar View */}
@@ -468,9 +479,11 @@ const AdminAgendaPage: React.FC = () => {
             </div>
           </div>
 
-          {displayedParcours.map((parcours) => (
+          {displayedParcours.map((parcours) => {
+            const pc = getParcoursColorBySlug(parcours.slug);
+            return (
             <div key={parcours.id} className="mb-12">
-              <div className="bg-[#0a83ca] text-white px-6 py-3 rounded-t-xl flex justify-between items-center">
+              <div className="text-white px-6 py-3 rounded-t-xl flex justify-between items-center" style={{ background: pc.gradient }}>
                 <h3 className="font-bold text-lg text-white">{parcours.title}</h3>
               </div>
               
@@ -478,13 +491,13 @@ const AdminAgendaPage: React.FC = () => {
                 <table className="w-full border-collapse min-w-[1000px]">
                   <thead>
                     <tr>
-                      <th className="text-left p-4 min-w-[250px] bg-[#0a83ca] text-white border-r border-white/20">SESSION</th>
-                      <th className="p-3 bg-[#e8f4fd] text-[#0776bb] text-xs font-bold uppercase border border-[#dde7f1]">JOURS</th>
-                      <th className="p-3 bg-[#e8f4fd] text-[#0776bb] text-xs font-bold uppercase border border-[#dde7f1]">HORAIRES</th>
-                      <th className="p-3 bg-[#e8f4fd] text-[#0776bb] text-xs font-bold uppercase border border-[#dde7f1] min-w-[180px]">PRÉREQUIS</th>
-                      <th className="p-3 bg-[#e8f4fd] text-[#0776bb] text-xs font-bold uppercase border border-[#dde7f1] min-w-[180px]">TARIF</th>
+                      <th className="text-left p-4 min-w-[250px] border-r border-white/20 text-white" style={{ backgroundColor: pc.primary }}>SESSION</th>
+                      <th className="p-3 text-xs font-bold uppercase border" style={{ backgroundColor: pc.soft, color: pc.softText, borderColor: pc.border }}>JOURS</th>
+                      <th className="p-3 text-xs font-bold uppercase border" style={{ backgroundColor: pc.soft, color: pc.softText, borderColor: pc.border }}>HORAIRES</th>
+                      <th className="p-3 text-xs font-bold uppercase border min-w-[180px]" style={{ backgroundColor: pc.soft, color: pc.softText, borderColor: pc.border }}>PRÉREQUIS</th>
+                      <th className="p-3 text-xs font-bold uppercase border min-w-[180px]" style={{ backgroundColor: pc.soft, color: pc.softText, borderColor: pc.border }}>TARIF</th>
                       {monthHeaders.map((header, index) => (
-                        <th key={index} className="p-3 min-w-[80px] bg-[#f5fbff] text-[#0776bb] text-xs font-bold uppercase border border-[#dde7f1]">
+                        <th key={index} className="p-3 min-w-[80px] text-xs font-bold uppercase border" style={{ backgroundColor: hexAlpha(pc.primary, 0.06), color: pc.softText, borderColor: pc.border }}>
                           {editingHeaderIndex === index ? (
                             <input
                               type="month"
@@ -498,7 +511,8 @@ const AdminAgendaPage: React.FC = () => {
                           ) : (
                             <span 
                               onClick={() => setEditingHeaderIndex(index)}
-                              className="cursor-pointer hover:text-[#0a83ca] hover:underline block w-full h-full"
+                              className="cursor-pointer hover:underline block w-full h-full"
+                              style={{ color: pc.softText }}
                               title="Cliquez pour changer le mois"
                             >
                               {header.label}
@@ -512,38 +526,53 @@ const AdminAgendaPage: React.FC = () => {
                     {parcours.modules?.map((module, idx) => (
                       <tr key={module.id} className="hover:bg-slate-50">
                         <td 
-                          className="p-4 border border-[#dde7f1] cursor-pointer hover:bg-blue-50 transition-colors group relative"
+                          className="p-4 border cursor-pointer transition-colors group relative"
+                          style={{ borderColor: pc.border }}
                           onClick={() => handleModuleClick(parcours.id, module)}
+                          onMouseEnter={e => (e.currentTarget.style.backgroundColor = pc.soft)}
+                          onMouseLeave={e => (e.currentTarget.style.backgroundColor = '')}
                         >
-                          <div className="text-xs font-bold text-[#0a83ca] mb-1">
+                          <div className="text-xs font-bold mb-1" style={{ color: pc.primary }}>
                             {`Module ${idx + 1}`} {module.subtitle ? ` • ${module.subtitle}` : ''}
                           </div>
                           <div className="font-bold text-slate-800 text-sm">
                             {module.title}
                           </div>
-                          <FaEdit className="absolute right-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 text-[#0a83ca]" />
+                          <FaEdit className="absolute right-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100" style={{ color: pc.primary }} />
                         </td>
                         <td 
-                          className="p-3 text-center border border-[#dde7f1] text-sm cursor-pointer hover:bg-blue-50"
+                          className="p-3 text-center border text-sm cursor-pointer"
+                          style={{ borderColor: pc.border }}
                           onClick={() => handleModuleClick(parcours.id, module)}
+                          onMouseEnter={e => (e.currentTarget.style.backgroundColor = pc.soft)}
+                          onMouseLeave={e => (e.currentTarget.style.backgroundColor = '')}
                         >
                           {module.duration || '-'}
                         </td>
                         <td 
-                          className="p-3 text-center border border-[#dde7f1] text-sm cursor-pointer hover:bg-blue-50"
+                          className="p-3 text-center border text-sm cursor-pointer"
+                          style={{ borderColor: pc.border }}
                           onClick={() => handleModuleClick(parcours.id, module)}
+                          onMouseEnter={e => (e.currentTarget.style.backgroundColor = pc.soft)}
+                          onMouseLeave={e => (e.currentTarget.style.backgroundColor = '')}
                         >
                           {module.horaires || '-'}
                         </td>
                         <td 
-                          className="p-3 text-center border border-[#dde7f1] text-sm cursor-pointer hover:bg-blue-50 min-w-[180px]"
+                          className="p-3 text-center border text-sm cursor-pointer min-w-[180px]"
+                          style={{ borderColor: pc.border }}
                           onClick={() => handleModuleClick(parcours.id, module)}
+                          onMouseEnter={e => (e.currentTarget.style.backgroundColor = pc.soft)}
+                          onMouseLeave={e => (e.currentTarget.style.backgroundColor = '')}
                         >
                           {module.prerequis || '-'}
                         </td>
                         <td 
-                          className="p-3 text-center border border-[#dde7f1] text-sm font-bold text-slate-700 cursor-pointer hover:bg-blue-50 min-w-[180px]"
+                          className="p-3 text-center border text-sm font-bold text-slate-700 cursor-pointer min-w-[180px]"
+                          style={{ borderColor: pc.border }}
                           onClick={() => handleModuleClick(parcours.id, module)}
+                          onMouseEnter={e => (e.currentTarget.style.backgroundColor = pc.soft)}
+                          onMouseLeave={e => (e.currentTarget.style.backgroundColor = '')}
                         >
                           {formatPrice(module.price, '-')}
                         </td>
@@ -554,11 +583,14 @@ const AdminAgendaPage: React.FC = () => {
                             <td
                               key={header.key}
                               onClick={() => handleCellClick(module.id!, header)}
-                              className={`border border-[#dde7f1] cursor-pointer transition-colors text-center text-xs font-bold ${
-                                session
-                                  ? 'bg-[#fff4b8] hover:bg-[#ffe88a] text-slate-900'
-                                  : 'hover:bg-slate-100'
-                              }`}
+                              className="border cursor-pointer transition-colors text-center text-xs font-bold"
+                              style={{
+                                borderColor: pc.border,
+                                backgroundColor: session ? pc.checkBg : undefined,
+                                color: session ? pc.primaryDark : undefined,
+                              }}
+                              onMouseEnter={e => (e.currentTarget.style.backgroundColor = session ? pc.soft : '#f8fafc')}
+                              onMouseLeave={e => (e.currentTarget.style.backgroundColor = session ? pc.checkBg : '')}
                             >
                               {session ? (
                                 <div className="flex justify-center items-center h-full py-2">
@@ -571,10 +603,13 @@ const AdminAgendaPage: React.FC = () => {
                       </tr>
                     ))}
                     <tr>
-                      <td colSpan={5 + monthHeaders.length} className="p-2 border border-[#dde7f1]">
+                      <td colSpan={5 + monthHeaders.length} className="p-2 border" style={{ borderColor: pc.border }}>
                         <button
                           onClick={() => handleAddModule(parcours.id)}
-                          className="flex items-center gap-2 text-[#0a83ca] hover:text-[#086ba6] font-medium text-sm px-2 py-1 rounded hover:bg-blue-50 w-full justify-center"
+                          className="flex items-center gap-2 font-medium text-sm px-2 py-1 rounded w-full justify-center transition-colors"
+                          style={{ color: pc.primary }}
+                          onMouseEnter={e => (e.currentTarget.style.backgroundColor = pc.soft)}
+                          onMouseLeave={e => (e.currentTarget.style.backgroundColor = '')}
                         >
                           <FaPlus /> Ajouter une session
                         </button>
@@ -584,7 +619,8 @@ const AdminAgendaPage: React.FC = () => {
                 </table>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       ) : (
         <div className="text-center py-12 bg-white rounded-xl shadow-sm border border-slate-200">
@@ -665,7 +701,7 @@ const AdminAgendaPage: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => setDeleteId(editingSession.id)}
-                    className="px-5 py-2.5 text-red-600 hover:bg-red-50 rounded-xl font-semibold mr-auto transition-colors flex items-center gap-2"
+                    className="px-5 py-2.5 text-red-600 hover:bg-orange-50 rounded-xl font-semibold mr-auto transition-colors flex items-center gap-2"
                   >
                     <FaTrash className="text-sm" /> Supprimer
                   </button>
@@ -778,7 +814,7 @@ const AdminAgendaPage: React.FC = () => {
                   <button
                     type="button"
                     onClick={handleDeleteModule}
-                    className="px-5 py-2.5 text-red-600 hover:bg-red-50 rounded-xl font-semibold mr-auto transition-colors flex items-center gap-2"
+                    className="px-5 py-2.5 text-red-600 hover:bg-orange-50 rounded-xl font-semibold mr-auto transition-colors flex items-center gap-2"
                   >
                     <FaTrash className="text-sm" /> Supprimer
                   </button>

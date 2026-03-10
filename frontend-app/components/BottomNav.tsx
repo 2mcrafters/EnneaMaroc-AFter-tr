@@ -55,7 +55,7 @@ const NavLink: React.FC<NavLinkProps> = ({
       href={href}
       onClick={handleNav}
       className={`flex flex-col items-center justify-center w-full pt-2 pb-1 text-center transition-colors duration-300 ${
-        isActive ? "text-[#e13734]" : "text-slate-500 hover:text-[#e13734]"
+        isActive ? "text-[#ff7d2d]" : "text-slate-500 hover:text-[#ff7d2d]"
       }`}
     >
       {icon}
@@ -148,7 +148,7 @@ const BottomNav: React.FC = () => {
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleLinkClick(e, link.href)}
-                  className="block w-full text-left px-3 py-2 text-sm text-slate-700 rounded-md hover:bg-[#e13734] hover:text-white font-medium transition-colors"
+                  className="block w-full text-left px-3 py-2 text-sm text-slate-700 rounded-md hover:bg-[#ff7d2d] hover:text-white font-medium transition-colors"
                 >
                   {link.label}
                 </a>
@@ -160,8 +160,8 @@ const BottomNav: React.FC = () => {
           onClick={() => handleMenuToggle(menuKey)}
           className={`flex flex-col items-center justify-center w-full pt-2 pb-1 text-center transition-colors duration-300 ${
             isActive || isOpen
-              ? "text-[#e13734]"
-              : "text-slate-500 hover:text-[#e13734]"
+              ? "text-[#ff7d2d]"
+              : "text-slate-500 hover:text-[#ff7d2d]"
           }`}
         >
           {icon}

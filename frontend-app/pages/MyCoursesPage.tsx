@@ -611,7 +611,7 @@ const MyCoursesPage: React.FC = () => {
                 className={`w-full py-2 px-4 rounded-lg font-medium transition-colors ${
                   popup.type === "success"
                     ? "bg-green-600 hover:bg-green-700 text-white"
-                    : "bg-red-600 hover:bg-red-700 text-white"
+                    : "bg-red-600 hover:bg-[#e06520] text-white"
                 }`}
               >
                 Fermer

@@ -53,7 +53,7 @@ const RefreshButton: React.FC<RefreshButtonProps> = ({
   
   let buttonClasses = `inline-flex items-center justify-center rounded-md transition-all 
     ${compact ? 'p-1' : 'px-3 py-2'} 
-    ${isRefreshing ? 'opacity-70 cursor-not-allowed' : 'hover:bg-[#e13734] hover:text-white active:bg-[#c12e2c]'} 
+    ${isRefreshing ? 'opacity-70 cursor-not-allowed' : 'hover:bg-[#ff7d2d] hover:text-white active:bg-[#e06520]'} 
     ${lastRefreshResult === 'success' ? 'bg-green-100 text-green-800' : ''} 
     ${lastRefreshResult === 'error' ? 'bg-red-100 text-red-800' : ''} 
     ${!lastRefreshResult ? 'bg-slate-100 text-slate-700' : ''}

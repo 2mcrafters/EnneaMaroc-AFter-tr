@@ -4,7 +4,7 @@ import AuthButtons from "./AuthButtons";
 import { UserCircleIcon } from "./icons/UserCircleIcon";
 
 const navLinkClass =
-  "text-[#2790d0] hover:text-[#e13734] transition-colors relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-[#e13734] after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left";
+  "text-[#2790d0] hover:text-[#ff7d2d] transition-colors relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-[#ff7d2d] after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left";
 
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -99,7 +99,7 @@ const Header: React.FC = () => {
           <a
             href={getProfilePath()}
             onClick={(e) => handleNav(e, getProfilePath())}
-            className="lg:hidden inline-flex items-center justify-center text-slate-600 hover:text-[#e13734] transition-colors"
+            className="lg:hidden inline-flex items-center justify-center text-slate-600 hover:text-[#ff7d2d] transition-colors"
             aria-label="Aller au profil"
           >
             <UserCircleIcon className="w-7 h-7" />
@@ -113,7 +113,7 @@ const Header: React.FC = () => {
           {/* Mobile Menu Button */}
           <button
             type="button"
-            className="lg:hidden p-2 text-slate-700 hover:text-[#e13734] transition-colors"
+            className="lg:hidden p-2 text-slate-700 hover:text-[#ff7d2d] transition-colors"
             onClick={toggleMobileMenu}
             aria-label="Menu"
           >
@@ -158,21 +158,21 @@ const Header: React.FC = () => {
           <button
             type="button"
             onClick={() => goToVitrine("/")}
-            className="text-left text-slate-700 hover:text-[#e13734] font-semibold"
+            className="text-left text-slate-700 hover:text-[#ff7d2d] font-semibold"
           >
             Accueil
           </button>
           <button
             type="button"
             onClick={() => goToVitrine("/#enneagramme-section")}
-            className="text-left text-slate-700 hover:text-[#e13734] font-semibold"
+            className="text-left text-slate-700 hover:text-[#ff7d2d] font-semibold"
           >
             Ennéagramme
           </button>
           <button
             type="button"
             onClick={() => goToVitrine("/ecole")}
-            className="text-left text-slate-700 hover:text-[#e13734] font-semibold"
+            className="text-left text-slate-700 hover:text-[#ff7d2d] font-semibold"
           >
             École
           </button>
@@ -180,21 +180,21 @@ const Header: React.FC = () => {
           <button
             type="button"
             onClick={() => goToVitrine("/agenda")}
-            className="text-left text-slate-700 hover:text-[#e13734] font-semibold"
+            className="text-left text-slate-700 hover:text-[#ff7d2d] font-semibold"
           >
             Agenda
           </button>
           <a
             href="#/courses"
             onClick={(e) => handleNav(e, "#/courses")}
-            className="text-left text-slate-700 hover:text-[#e13734] font-semibold"
+            className="text-left text-slate-700 hover:text-[#ff7d2d] font-semibold"
           >
             Parcours
           </a>
           <button
             type="button"
             onClick={() => goToVitrine("/contact")}
-            className="text-left text-slate-700 hover:text-[#e13734] font-semibold"
+            className="text-left text-slate-700 hover:text-[#ff7d2d] font-semibold"
           >
             Contact
           </button>

@@ -274,7 +274,7 @@ const AdminProfilePage: React.FC = () => {
               <button
                 onClick={handleSaveAll}
                 disabled={savingProfile}
-                className="px-5 py-2 text-sm font-semibold text-white bg-[#e13734] rounded-full hover:bg-[#c92a28] disabled:opacity-60"
+                className="px-5 py-2 text-sm font-semibold text-white bg-[#ff7d2d] rounded-full hover:bg-[#e06520] disabled:opacity-60"
               >
                 {savingProfile
                   ? "Enregistrement…"

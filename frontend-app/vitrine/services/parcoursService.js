@@ -21,8 +21,8 @@ class ParcoursService {
       if (!response.ok) throw new Error('Failed to fetch parcours');
       return await response.json();
     } catch (error) {
-      console.error('Erreur lors de la récupération des parcours:', error);
-      throw error;
+      console.warn('API non disponible, utilisation des données statiques:', error.message);
+      return null;
     }
   }
 
@@ -38,8 +38,8 @@ class ParcoursService {
       if (!response.ok) throw new Error('Failed to fetch parcours');
       return await response.json();
     } catch (error) {
-      console.error('Erreur lors de la récupération du parcours:', error);
-      throw error;
+      console.warn('API non disponible, utilisation des données statiques:', error.message);
+      return null;
     }
   }
 
@@ -57,8 +57,8 @@ class ParcoursService {
       if (!response.ok) throw new Error('Failed to fetch parcours');
       return await response.json();
     } catch (error) {
-      console.error('Erreur lors de la récupération du parcours:', error);
-      throw error;
+      console.warn('API non disponible, utilisation des données statiques:', error.message);
+      return null;
     }
   }
 
@@ -142,6 +142,7 @@ class ParcoursService {
   async search(query) {
     try {
       const allParcours = await this.getAll();
+      if (!allParcours) return { data: [] };
       const filteredParcours = allParcours.data.filter(parcours =>
         parcours.titre.toLowerCase().includes(query.toLowerCase()) ||
         parcours.description.toLowerCase().includes(query.toLowerCase())
@@ -149,8 +150,8 @@ class ParcoursService {
 
       return { data: filteredParcours };
     } catch (error) {
-      console.error('Erreur lors de la recherche:', error);
-      throw error;
+      console.warn('Erreur lors de la recherche:', error.message);
+      return { data: [] };
     }
   }
 }

@@ -100,7 +100,7 @@ const AuthButtons: React.FC = () => {
     <button
       onClick={handleLogoutClick}
       disabled={isLoggingOut}
-      className="px-5 py-2 text-sm font-semibold text-white bg-[#e13734] rounded-full hover:bg-red-700 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed"
+      className="px-5 py-2 text-sm font-semibold text-white bg-[#ff7d2d] rounded-full hover:bg-[#e06520] shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed"
     >
       {isLoggingOut ? "Déconnexion..." : "Se déconnecter"}
     </button>
@@ -141,7 +141,7 @@ const AuthButtons: React.FC = () => {
                   <button
                     onClick={handleLogoutConfirm}
                     disabled={isLoggingOut}
-                    className="px-4 py-2 text-sm font-medium rounded-full bg-[#e13734] hover:bg-red-700 text-white disabled:opacity-70"
+                    className="px-4 py-2 text-sm font-medium rounded-full bg-[#ff7d2d] hover:bg-[#e06520] text-white disabled:opacity-70"
                   >
                     {isLoggingOut ? "Déconnexion..." : "Se déconnecter"}
                   </button>
@@ -193,7 +193,7 @@ const AuthButtons: React.FC = () => {
                   <button
                     onClick={handleLogoutConfirm}
                     disabled={isLoggingOut}
-                    className="px-4 py-2 text-sm font-medium rounded-full bg-[#e13734] hover:bg-red-700 text-white disabled:opacity-70"
+                    className="px-4 py-2 text-sm font-medium rounded-full bg-[#ff7d2d] hover:bg-[#e06520] text-white disabled:opacity-70"
                   >
                     {isLoggingOut ? "Déconnexion..." : "Se déconnecter"}
                   </button>
@@ -245,7 +245,7 @@ const AuthButtons: React.FC = () => {
                   <button
                     onClick={handleLogoutConfirm}
                     disabled={isLoggingOut}
-                    className="px-4 py-2 text-sm font-medium rounded-full bg-[#e13734] hover:bg-red-700 text-white disabled:opacity-70"
+                    className="px-4 py-2 text-sm font-medium rounded-full bg-[#ff7d2d] hover:bg-[#e06520] text-white disabled:opacity-70"
                   >
                     {isLoggingOut ? "Déconnexion..." : "Se déconnecter"}
                   </button>
@@ -289,7 +289,7 @@ const AuthButtons: React.FC = () => {
                 <button
                   onClick={handleLogoutConfirm}
                   disabled={isLoggingOut}
-                  className="px-4 py-2 text-sm font-medium rounded-full bg-[#e13734] hover:bg-red-700 text-white disabled:opacity-70"
+                  className="px-4 py-2 text-sm font-medium rounded-full bg-[#ff7d2d] hover:bg-[#e06520] text-white disabled:opacity-70"
                 >
                   {isLoggingOut ? "Déconnexion..." : "Se déconnecter"}
                 </button>
@@ -306,7 +306,7 @@ const AuthButtons: React.FC = () => {
       <a
         href="#/login"
         onClick={(e) => handleNav(e, "#/login")}
-        className="text-sm font-semibold text-[#2790d0] hover:text-[#e13734] transition-colors relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-[#e13734] after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
+        className="text-sm font-semibold text-[#2790d0] hover:text-[#ff7d2d] transition-colors relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-[#ff7d2d] after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
       >
         Connexion
       </a>

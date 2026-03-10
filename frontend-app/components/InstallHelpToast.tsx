@@ -205,13 +205,13 @@ const InstallHelpToast: React.FC = () => {
           </div>
 
           <div className="flex flex-col items-end gap-2">
-            <button onClick={() => setExpanded(e => !e)} className="px-3 py-1 text-pistachio-dark font-medium hover:text-[#e13734] transition-colors">
+            <button onClick={() => setExpanded(e => !e)} className="px-3 py-1 text-pistachio-dark font-medium hover:text-[#ff7d2d] transition-colors">
               {expanded ? 'Réduire' : 'Développer'}
             </button>
-            <button onClick={tryPrompt} className="px-3 py-1 bg-pistachio-dark text-white rounded hover:bg-[#e13734] transition-colors">Installer maintenant</button>
-            <button onClick={dismiss} className="px-2 py-1 text-slate-500 hover:text-[#e13734] transition-colors">Ignorer</button>
-            <button onClick={toggleForce} className="px-2 py-1 text-xs text-slate-600 hover:text-[#e13734] transition-colors">Forcer le débogage</button>
-            <button onClick={resetPWAState} className="px-2 py-1 text-xs text-red-600 hover:text-[#e13734] transition-colors">Réinitialiser l'état PWA</button>
+            <button onClick={tryPrompt} className="px-3 py-1 bg-pistachio-dark text-white rounded hover:bg-[#ff7d2d] transition-colors">Installer maintenant</button>
+            <button onClick={dismiss} className="px-2 py-1 text-slate-500 hover:text-[#ff7d2d] transition-colors">Ignorer</button>
+            <button onClick={toggleForce} className="px-2 py-1 text-xs text-slate-600 hover:text-[#ff7d2d] transition-colors">Forcer le débogage</button>
+            <button onClick={resetPWAState} className="px-2 py-1 text-xs text-red-600 hover:text-[#ff7d2d] transition-colors">Réinitialiser l'état PWA</button>
           </div>
         </div>
       </div>

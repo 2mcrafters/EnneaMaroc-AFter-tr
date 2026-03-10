@@ -7,6 +7,7 @@ import { FaEdit, FaPlus, FaTrash } from 'react-icons/fa';
 import ConfirmationModal from '../components/ConfirmationModal';
 import StatusModal from '../components/StatusModal';
 import { getCourseImageUrl } from '../services/baseApi';
+import { getParcoursColorBySlug } from '../utils/parcoursColors';
 
 const AdminParcoursListPage: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -98,8 +99,12 @@ const AdminParcoursListPage: React.FC = () => {
       {error && <p className="text-red-500">{error}</p>}
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {items.map((parcours) => (
+        {items.map((parcours) => {
+          const pc = getParcoursColorBySlug(parcours.slug);
+          return (
           <div key={parcours.id} className="bg-white rounded-xl shadow-md overflow-hidden border border-slate-100 hover:shadow-lg transition-shadow">
+            {/* colored top stripe */}
+            <div className="h-1.5" style={{ background: pc.gradient }} />
             <div className="h-48 overflow-hidden bg-slate-200 flex items-center justify-center">
               {parcours.photo ? (
                 <img 
@@ -122,7 +127,7 @@ const AdminParcoursListPage: React.FC = () => {
               )}
             </div>
             <div className="p-6">
-              <h2 className="text-xl font-bold text-slate-800 mb-2">{parcours.title}</h2>
+              <h2 className="text-xl font-bold mb-2" style={{ color: pc.primary }}>{parcours.title}</h2>
               <p className="text-sm text-slate-500 mb-4">{parcours.description}</p>
               
               <div className="space-y-2 mb-6">
@@ -142,7 +147,10 @@ const AdminParcoursListPage: React.FC = () => {
 
               <button
                 onClick={() => handleEdit(parcours.slug)}
-                className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-[#0a83ca] text-white rounded-lg hover:bg-[#0869a1] transition-colors mb-2"
+                className="w-full flex items-center justify-center gap-2 px-4 py-2 text-white rounded-lg transition-colors mb-2"
+                style={{ backgroundColor: pc.primary }}
+                onMouseEnter={e => (e.currentTarget.style.backgroundColor = pc.primaryDark)}
+                onMouseLeave={e => (e.currentTarget.style.backgroundColor = pc.primary)}
               >
                 <FaEdit /> Modifier
               </button>
@@ -155,7 +163,8 @@ const AdminParcoursListPage: React.FC = () => {
               </button>
             </div>
           </div>
-        ))}
+          );
+        })}
       </div>
 
       <ConfirmationModal

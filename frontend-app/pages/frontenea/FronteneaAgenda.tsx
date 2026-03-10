@@ -5,11 +5,12 @@ import { fetchAllParcours } from '../../store/slices/parcoursSlice';
 import { Link } from 'react-router-dom';
 import { FaLayerGroup, FaArrowRight, FaCheck } from 'react-icons/fa';
 import { FaCalendarDays, FaPeopleArrows } from 'react-icons/fa6';
+import { getParcoursColorBySlug } from '../../utils/parcoursColors';
 
 const colors = {
-  blue: "#0a83ca",
-  deepBlue: "#0776bb",
-  red: "#e13734",
+  blue: "#64508d",
+  deepBlue: "#4e3d73",
+  red: "#ff7d2d",
   softBlue: "#e8f4fd",
   softWhite: "#f5fbff",
   slate: "#1d1c1a",
@@ -302,24 +303,28 @@ const FronteneaAgenda: React.FC = () => {
             {/* Tabs */}
             <div className="flex justify-center mb-12 overflow-x-auto">
               <div className="inline-flex bg-slate-100 p-1 rounded-xl">
-                {parcoursList.map((parcours, index) => (
-                  <button
-                    key={parcours.id}
-                    onClick={() => setActiveTab(index)}
-                    className={`px-6 py-3 rounded-lg text-sm font-bold transition-all duration-200 whitespace-nowrap ${
-                      activeTab === index
-                        ? 'bg-white text-[#0a83ca] shadow-sm'
-                        : 'text-slate-500 hover:text-slate-700'
-                    }`}
-                  >
-                    {parcours.title}
-                  </button>
-                ))}
+                {parcoursList.map((parcours, index) => {
+                  const pc = getParcoursColorBySlug(parcours.slug);
+                  return (
+                    <button
+                      key={parcours.id}
+                      onClick={() => setActiveTab(index)}
+                      className="px-6 py-3 rounded-lg text-sm font-bold transition-all duration-200 whitespace-nowrap"
+                      style={activeTab === index
+                        ? { backgroundColor: '#fff', color: pc.primary, boxShadow: `0 2px 8px ${pc.primary}28` }
+                        : { color: '#64748b' }}
+                    >
+                      {parcours.title}
+                    </button>
+                  );
+                })}
               </div>
             </div>
 
             {/* Content */}
-            {parcoursList.map((parcours, index) => (
+            {parcoursList.map((parcours, index) => {
+              const pc = getParcoursColorBySlug(parcours.slug);
+              return (
               <div
                 key={parcours.id}
                 style={{ display: activeTab === index ? "block" : "none" }}
@@ -329,7 +334,7 @@ const FronteneaAgenda: React.FC = () => {
                 <div
                   className="level-header"
                   style={{
-                    background: colors.blue,
+                    background: pc.gradient,
                     borderRadius: "16px 16px 0 0",
                     padding: "24px 32px",
                     display: "flex",
@@ -355,11 +360,11 @@ const FronteneaAgenda: React.FC = () => {
                   <table>
                     <thead>
                       <tr>
-                        <th style={{ textAlign: "left", paddingLeft: 32, minWidth: 250, background: colors.blue, color: '#fff' }}>MODULE</th>
-                        <th style={{ background: colors.softBlue, color: colors.deepBlue }}>JOURS</th>
-                        <th style={{ background: colors.softBlue, color: colors.deepBlue }}>HORAIRES</th>
-                        <th style={{ background: colors.softBlue, color: colors.deepBlue }}>PRÉREQUIS</th>
-                        <th style={{ background: colors.softBlue, color: colors.deepBlue, minWidth: 150 }}>TARIF</th>
+                        <th style={{ textAlign: "left", paddingLeft: 32, minWidth: 250, backgroundColor: pc.primary, color: '#fff' }}>MODULE</th>
+                        <th style={{ backgroundColor: pc.soft, color: pc.softText }}>JOURS</th>
+                        <th style={{ backgroundColor: pc.soft, color: pc.softText }}>HORAIRES</th>
+                        <th style={{ backgroundColor: pc.soft, color: pc.softText }}>PRÉREQUIS</th>
+                        <th style={{ backgroundColor: pc.soft, color: pc.softText, minWidth: 150 }}>TARIF</th>
                         {monthHeaders.map((header) => (
                           <th key={header.key} style={{ minWidth: 80 }}>{header.label}</th>
                         ))}
@@ -369,7 +374,7 @@ const FronteneaAgenda: React.FC = () => {
                       {parcours.modules?.map((module, idx) => (
                         <tr key={module.id}>
                           <td className="module-cell" style={{ paddingLeft: 32 }}>
-                            <div style={{ fontSize: 13, color: colors.blue, fontWeight: 700, marginBottom: 4 }}>
+                            <div style={{ fontSize: 13, color: pc.primary, fontWeight: 700, marginBottom: 4 }}>
                               {`Module ${idx + 1}`} {module.subtitle ? ` • ${module.subtitle}` : ''}
                             </div>
                             <div style={{ fontWeight: 800, fontSize: 15, color: colors.slate }}>
@@ -387,12 +392,11 @@ const FronteneaAgenda: React.FC = () => {
                             return (
                               <td
                                 key={header.key}
-                                className={active ? "check-cell" : ""}
-                                style={{ background: active ? colors.softBlue : "transparent" }}
+                                style={{ backgroundColor: active ? pc.checkBg : 'transparent' }}
                               >
                                 {active && (
                                   <div style={{ display: "flex", justifyContent: "center" }}>
-                                    <FaCheck style={{ color: colors.blue }} />
+                                    <FaCheck style={{ color: pc.primary }} />
                                   </div>
                                 )}
                               </td>
@@ -404,7 +408,8 @@ const FronteneaAgenda: React.FC = () => {
                   </table>
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </section>
       </div>

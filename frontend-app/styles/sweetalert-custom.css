@@ -24,7 +24,7 @@
 
 /* Button styling */
 .swal2-confirm {
-  background-color: #e13734 !important;
+  background-color: #ff7d2d !important;
   border: none !important;
   border-radius: 9999px !important;
   padding: 0.5rem 1.5rem !important;
@@ -34,7 +34,7 @@
 }
 
 .swal2-confirm:hover {
-  background-color: #c12e2c !important;
+  background-color: #e06520 !important;
   transform: translateY(-1px) !important;
 }
 
@@ -75,7 +75,7 @@
 
 /* Progress bar styling for timer */
 .swal2-timer-progress-bar {
-  background-color: #e13734 !important;
+  background-color: #ff7d2d !important;
 }
 
 /* Backdrop styling */

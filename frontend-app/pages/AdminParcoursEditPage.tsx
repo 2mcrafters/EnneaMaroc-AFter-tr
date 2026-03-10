@@ -594,7 +594,7 @@ const AdminParcoursEditPage: React.FC = () => {
                       <button
                         type="button"
                         onClick={() => confirmDeleteModule(index)}
-                        className="p-2 text-red-500 hover:bg-red-50 rounded-full transition-colors"
+                        className="p-2 text-red-500 hover:bg-orange-50 rounded-full transition-colors"
                         title="Supprimer"
                       >
                         <FaTrash />

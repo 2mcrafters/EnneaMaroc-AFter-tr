@@ -60,7 +60,7 @@ body {
 
 /* Better focus ring for accessibility */
 :focus-visible {
-  outline: 2px solid #0a83ca;
+  outline: 2px solid #64508d;
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -99,11 +99,11 @@ img {
   padding-right: max(1rem, env(safe-area-inset-right));
 }
 
-/* Global hover effects using brand color #e13734 */
+/* Global hover effects using brand color #ff7d2d */
 
 /* Button hover effects */
 .btn-hover:hover {
-  background-color: #e13734 !important;
+  background-color: #ff7d2d !important;
   color: white !important;
   transform: translateY(-1px);
   transition: all 0.2s ease;
@@ -111,40 +111,40 @@ img {
 
 /* Text hover effects */
 .text-hover:hover {
-  color: #e13734 !important;
+  color: #ff7d2d !important;
   transition: color 0.2s ease;
 }
 
 /* Background hover effects */
 .bg-hover:hover {
-  background-color: rgba(225, 55, 52, 0.1) !important;
+  background-color: rgba(255, 125, 45, 0.1) !important;
   transition: background-color 0.2s ease;
 }
 
 /* Border hover effects */
 .border-hover:hover {
-  border-color: #e13734 !important;
+  border-color: #ff7d2d !important;
   transition: border-color 0.2s ease;
 }
 
 /* Custom utility classes for consistent brand hover effects */
 .hover-brand:hover {
-  background-color: #e13734 !important;
+  background-color: #ff7d2d !important;
   color: white !important;
 }
 
 .hover-brand-text:hover {
-  color: #e13734 !important;
+  color: #ff7d2d !important;
 }
 
 .hover-brand-bg:hover {
-  background-color: rgba(225, 55, 52, 0.1) !important;
+  background-color: rgba(255, 125, 45, 0.1) !important;
 }
 
 /* Focus ring using brand color */
 .focus-brand:focus {
   outline: none;
-  box-shadow: 0 0 0 2px rgba(225, 55, 52, 0.5);
+  box-shadow: 0 0 0 2px rgba(255, 125, 45, 0.5);
 }
 
 /* Scale effect on hover */
@@ -157,7 +157,7 @@ img {
 .card-hover:hover {
   transform: translateY(-2px) scale(1.02);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  border-color: rgba(225, 55, 52, 0.5);
+  border-color: rgba(255, 125, 45, 0.5);
   transition: all 0.3s ease;
 }
 

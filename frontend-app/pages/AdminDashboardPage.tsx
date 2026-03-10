@@ -858,7 +858,7 @@ const AdminDashboardPage: React.FC = () => {
             </h1>
             <div className="flex items-center gap-3">
               <RefreshButton
-                className="px-4 py-2 !bg-[#e13734] !text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400 flex items-center gap-2"
+                className="px-4 py-2 !bg-[#ff7d2d] !text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 flex items-center gap-2"
                 showText={true}
                 onRefreshComplete={(success) => {
                   // Afficher un toast de confirmation
@@ -1273,7 +1273,7 @@ const AdminDashboardPage: React.FC = () => {
                           onClick={() =>
                             setConfirmAction({ type: "delete", session })
                           }
-                          className="ml-2 p-1 text-red-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-all duration-200 opacity-0 group-hover:opacity-100"
+                          className="ml-2 p-1 text-red-400 hover:text-red-600 hover:bg-orange-50 rounded-lg transition-all duration-200 opacity-0 group-hover:opacity-100"
                           title="Supprimer l'annulation"
                         >
                           <svg
@@ -1468,7 +1468,7 @@ const AdminDashboardPage: React.FC = () => {
                 className={`flex-1 px-4 py-2 text-sm font-medium text-white rounded-lg transition-colors ${
                   confirmAction.type === "reactivate"
                     ? "bg-green-600 hover:bg-green-700"
-                    : "bg-red-600 hover:bg-red-700"
+                    : "bg-red-600 hover:bg-[#e06520]"
                 }`}
               >
                 {confirmAction.type === "reactivate"

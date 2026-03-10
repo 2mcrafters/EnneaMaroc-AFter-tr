@@ -146,7 +146,7 @@ const ProfilePage: React.FC = () => {
                     <img 
                         src={getProfileImageUrl(currentUser.profilePicture)} 
                         alt="Profil" 
-                        className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover mb-3 sm:mb-0 border-4 border-[#e13734] shadow-md" 
+                        className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover mb-3 sm:mb-0 border-4 border-[#ff7d2d] shadow-md" 
                     />
                 </div>
                 <div className="text-center sm:text-left flex-grow min-w-0">
@@ -164,7 +164,7 @@ const ProfilePage: React.FC = () => {
                            {!isEditing && (
                                 <button 
                                     onClick={() => setIsEditing(true)} 
-                                    className="text-sm font-semibold text-[#e13734] hover:text-[#c42e2b]"
+                                    className="text-sm font-semibold text-[#ff7d2d] hover:text-[#e06520]"
                                     disabled={isUpdating}
                                 >
                                     Modifier
@@ -232,14 +232,14 @@ const ProfilePage: React.FC = () => {
                                 <div className="space-y-2 pt-4">
                                     <button
                                         onClick={() => setIsEmailModalOpen(true)}
-                                        className="w-full text-left px-3 py-2 text-sm text-[#e13734] hover:bg-red-50 rounded-lg transition-colors"
+                                        className="w-full text-left px-3 py-2 text-sm text-[#ff7d2d] hover:bg-orange-50 rounded-lg transition-colors"
                                         disabled={isUpdating}
                                     >
                                         🔧 Changer l'Adresse E-mail
                                     </button>
                                     <button
                                         onClick={() => setIsPasswordModalOpen(true)}
-                                        className="w-full text-left px-3 py-2 text-sm text-[#e13734] hover:bg-red-50 rounded-lg transition-colors"
+                                        className="w-full text-left px-3 py-2 text-sm text-[#ff7d2d] hover:bg-orange-50 rounded-lg transition-colors"
                                         disabled={isUpdating}
                                     >
                                         🔒 Changer le Mot de Passe
@@ -258,7 +258,7 @@ const ProfilePage: React.FC = () => {
                                      </button>
                                      <button 
                                          onClick={handleSave} 
-                                         className="px-4 py-2 text-sm font-semibold text-white bg-[#e13734] rounded-full hover:bg-[#c42e2b] disabled:opacity-50"
+                                         className="px-4 py-2 text-sm font-semibold text-white bg-[#ff7d2d] rounded-full hover:bg-[#e06520] disabled:opacity-50"
                                          disabled={isUpdating}
                                      >
                                          {isUpdating ? 'Sauvegarde...' : 'Enregistrer'}

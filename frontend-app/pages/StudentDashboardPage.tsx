@@ -1013,7 +1013,7 @@ const StudentDashboardPage: React.FC = () => {
                           <a
                             href="#/monthly-payments"
                             onClick={(e) => handleNav(e, "#/monthly-payments")}
-                            className="flex items-center justify-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-brand-dark rounded-full hover:bg-[#e13734] transition-colors w-full sm:w-auto"
+                            className="flex items-center justify-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-brand-dark rounded-full hover:bg-[#ff7d2d] transition-colors w-full sm:w-auto"
                           >
                             <ClockIcon className="w-4 h-4" />
                             Gérer les Paiements Mensuels
@@ -1059,7 +1059,7 @@ const StudentDashboardPage: React.FC = () => {
                   href={upcomingSession.meetingLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto text-center px-6 py-3 font-semibold text-white bg-brand-dark rounded-full hover:bg-[#e13734] transition-colors shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+                  className="w-full sm:w-auto text-center px-6 py-3 font-semibold text-white bg-brand-dark rounded-full hover:bg-[#ff7d2d] transition-colors shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
                 >
                   Rejoindre la Session
                 </a>
@@ -1142,7 +1142,7 @@ const StudentDashboardPage: React.FC = () => {
                           href={item.meetingLink}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-block mt-1 text-xs font-semibold px-3 py-1.5 rounded-full bg-brand-dark text-white hover:bg-[#e13734] transition-colors shadow-sm"
+                          className="inline-block mt-1 text-xs font-semibold px-3 py-1.5 rounded-full bg-brand-dark text-white hover:bg-[#ff7d2d] transition-colors shadow-sm"
                         >
                           Rejoindre la Session
                         </a>
@@ -1200,7 +1200,7 @@ const StudentDashboardPage: React.FC = () => {
             <a
               href="#/my-courses"
               onClick={(e) => handleNav(e, "#/my-courses")}
-              className="text-sm font-semibold text-brand-dark hover:text-[#e13734]"
+              className="text-sm font-semibold text-brand-dark hover:text-[#ff7d2d]"
             >
               Voir Tout &rarr;
             </a>
@@ -1245,7 +1245,7 @@ const StudentDashboardPage: React.FC = () => {
             <a
               href="#/monthly-payments"
               onClick={(e) => handleNav(e, "#/monthly-payments")}
-              className="w-full block text-center px-5 py-3 text-sm font-semibold text-white bg-brand-dark rounded-full hover:bg-[#e13734] transition-colors"
+              className="w-full block text-center px-5 py-3 text-sm font-semibold text-white bg-brand-dark rounded-full hover:bg-[#ff7d2d] transition-colors"
             >
               Gérer Tous les Paiements
             </a>

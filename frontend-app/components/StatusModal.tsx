@@ -50,7 +50,7 @@ const StatusModal: React.FC<StatusModalProps> = ({ isOpen, onClose, type, title,
               className={`px-6 py-2.5 rounded-lg font-semibold transition-colors ${
                 type === 'success'
                   ? 'bg-green-600 hover:bg-green-700 text-white'
-                  : 'bg-red-600 hover:bg-red-700 text-white'
+                  : 'bg-red-600 hover:bg-[#e06520] text-white'
               }`}
             >
               OK

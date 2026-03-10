@@ -11,17 +11,17 @@ export default {
     extend: {
       colors: {
         brand: {
-          light: "#fecaca", // red-200 equivalent for light tints
-          DEFAULT: "#e13734", // primary red
-          dark: "#0a83ca", // primary blue
+          light: "#e8e0f5", // light purple tints
+          DEFAULT: "#ff7d2d", // primary orange
+          dark: "#64508d", // primary purple
         },
-        brandRed: "#e13734",
-        brandBlue: "#0a83ca",
+        brandRed: "#ff7d2d",
+        brandBlue: "#64508d",
         // Backwards-compatibility: keep `pistachio` token name used across the codebase
         pistachio: {
-          light: "#fecaca", // light red for backgrounds
-          DEFAULT: "#e13734", // main red color
-          dark: "#0a83ca", // main blue color for dark elements
+          light: "#e8e0f5", // light purple for backgrounds
+          DEFAULT: "#ff7d2d", // main orange color
+          dark: "#64508d", // main purple color for dark elements
         },
       },
       fontFamily: {
