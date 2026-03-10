@@ -456,9 +456,9 @@ const MyCoursesPage: React.FC = () => {
   const isLoading = coursesLoading || enrollmentsLoading;
 
   return (
-    <div className="container mx-auto px-6 pt-32 pb-12">
-      <div className="flex justify-between items-center mb-8">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 text-center flex-grow">
+    <div className="container mx-auto px-4 sm:px-6 pt-6 sm:pt-8 pb-8 sm:pb-12">
+      <div className="flex justify-between items-center mb-6 sm:mb-8">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 flex-grow">
           Mes Inscriptions
         </h1>
         <RefreshButton

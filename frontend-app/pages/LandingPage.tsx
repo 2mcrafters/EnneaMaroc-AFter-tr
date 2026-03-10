@@ -9,12 +9,12 @@ const LandingPage: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto px-6 pt-32 pb-8">
-      <div className="mt-12 text-center">
-        <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 mb-4 landing-hero-title">
+    <div className="container mx-auto px-4 sm:px-6 pt-24 sm:pt-28 md:pt-32 pb-8 sm:pb-12">
+      <div className="mt-8 sm:mt-12 text-center">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-3 sm:mb-4 landing-hero-title">
           Développez Vos Compétences
         </h1>
-        <p className="max-w-2xl mx-auto text-lg text-slate-600 mb-8 landing-hero-subtitle">
+        <p className="max-w-2xl mx-auto text-base sm:text-lg text-slate-600 mb-6 sm:mb-8 landing-hero-subtitle">
           Découvrez nos parcours de formation et commencez votre voyage dès
           aujourd'hui.
         </p>

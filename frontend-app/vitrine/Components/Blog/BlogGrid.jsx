@@ -30,8 +30,15 @@ const useMediaQuery = (query) => {
 
 const cardShadow = "0 6px 24px rgba(0,0,0,.08), 0 2px 8px rgba(0,0,0,.06)";
 
+const PARCOURS_COLORS = {
+  "Découvrir": "#2d969a",
+  "Approfondir": "#64508d",
+  "Transmettre": "#ff7d2d",
+};
+
 const BlogCard = ({ blog }) => {
   const isMobile = useMediaQuery("(max-width: 576px)");
+  const parcourColor = PARCOURS_COLORS[blog.category] || "#ff7d2d";
 
   const btnBase = {
     display: "grid",
@@ -41,7 +48,7 @@ const BlogCard = ({ blog }) => {
     padding: isMobile ? "8px 12px" : "10px 14px",
     textAlign: "center",
     marginTop: "16px",
-    backgroundColor: "#ff7d2d",
+    backgroundColor: parcourColor,
     color: "#fff",
     borderRadius: "15px",
     textDecoration: "none",
@@ -88,6 +95,7 @@ const BlogCard = ({ blog }) => {
             fontWeight: 600,
             textAlign: "center",
             lineHeight: 1.2,
+            color: parcourColor,
           }}
         >
           {blog.category}
@@ -126,6 +134,7 @@ const BlogCard = ({ blog }) => {
               lineHeight: 1.4,
               wordBreak: "break-word",
               fontWeight: 500,
+              color: parcourColor,
             }}
           >
             {blog.title}
@@ -159,10 +168,10 @@ const BlogCard = ({ blog }) => {
             to={toPath(blog.link)}
             style={{ ...btnBase, marginTop: "auto" }}
             onMouseEnter={(e) =>
-              (e.currentTarget.style.backgroundColor = "#dc3545")
+              (e.currentTarget.style.backgroundColor = parcourColor + "cc")
             }
             onMouseLeave={(e) =>
-              (e.currentTarget.style.backgroundColor = "#ff7d2d")
+              (e.currentTarget.style.backgroundColor = parcourColor)
             }
           >
             <span style={{ gridColumn: 2, justifySelf: "center" }}>
@@ -490,7 +499,7 @@ const BlogGrid = () => {
               ? "18px 20px"
               : "24px 28px",
             borderRadius: isMobile ? 20 : 28,
-            background: "rgba(6, 32, 73, 0.35)",
+          background: "#64508d",
             border: "1px solid rgba(255, 255, 255, 0.18)",
             boxShadow: "0 24px 60px rgba(4, 20, 45, 0.45)",
           }}

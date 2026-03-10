@@ -857,15 +857,15 @@ const StudentDashboardPage: React.FC = () => {
   }, [userEnrollments]);
 
   return (
-    <div className="w-full px-6 py-12">
+    <div className="w-full px-4 sm:px-6 py-6 sm:py-10">
       <div className="w-full">
-        <div className="mb-12">
+        <div className="mb-8 sm:mb-10">
           <div className="flex justify-between items-center">
             <div>
-              <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-2">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 mb-1 sm:mb-2">
                 Bienvenue, {currentUser.firstName}!
               </h1>
-              <p className="text-lg text-slate-600">
+              <p className="text-base sm:text-lg text-slate-600">
                 Voici un résumé de vos activités.
               </p>
             </div>
@@ -1192,9 +1192,9 @@ const StudentDashboardPage: React.FC = () => {
           </div>
         </div>
 
-        <div className="bg-white p-8 rounded-xl shadow-lg">
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="text-2xl font-bold text-slate-800">
+        <div className="bg-white p-5 sm:p-8 rounded-xl shadow-lg">
+          <div className="flex justify-between items-center mb-5 sm:mb-6">
+            <h2 className="text-xl sm:text-2xl font-bold text-slate-800">
               Inscriptions Actives
             </h2>
             <a

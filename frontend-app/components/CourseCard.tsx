@@ -68,20 +68,20 @@ const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
           </div>
         )}
       </div>
-      <div className="p-6">
-        <h3 className="text-xl font-bold text-slate-900 mb-2 truncate">
+      <div className="p-4 sm:p-6">
+        <h3 className="text-base sm:text-xl font-bold text-slate-900 mb-2 line-clamp-2">
           {course.title}
         </h3>
-        <p className="text-slate-600 leading-relaxed mb-4 text-sm h-20 overflow-hidden line-clamp-3">
+        <p className="text-slate-600 leading-relaxed mb-3 sm:mb-4 text-sm line-clamp-3">
           {course.description || "Aucune description disponible."}
         </p>
-        <div className="flex items-center justify-between text-sm text-slate-500 pt-4 border-t border-slate-100">
+        <div className="flex items-center justify-between text-sm text-slate-500 pt-3 sm:pt-4 border-t border-slate-100">
           <div className="flex items-center">
             <span className="font-medium text-slate-700">
               {course.modules?.length || 0} Modules
             </span>
           </div>
-          <div className="text-[#e13734] font-semibold">En savoir plus →</div>
+          <div className="text-[#e13734] font-semibold text-xs sm:text-sm">En savoir plus →</div>
         </div>
       </div>
     </a>

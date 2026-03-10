@@ -433,7 +433,7 @@ const TestimonialComponent = () => {
                 style={{
                   margin: "0 0 14px 0",
                   fontSize: "12px",
-                  color: "rgba(255,255,255,0.6)",
+                  color: "#ffffff",
                   fontWeight: 700,
                   lineHeight: 1.4,
                   textTransform: "uppercase",
@@ -449,7 +449,7 @@ const TestimonialComponent = () => {
                   display: "flex",
                   flexDirection: "column",
                   gap: "8px",
-                  color: "rgba(255,255,255,0.88)",
+                  color: "#ffffff",
                   fontSize: "15px",
                   lineHeight: "1.75",
                   textAlign: "justify",
@@ -458,8 +458,8 @@ const TestimonialComponent = () => {
                   margin: "0 auto",
                 }}
               >
-                <p style={{ margin: 0 }}>C'est une carte vivante des dynamiques humaines, un miroir qui révèle nos forces, nos fragilités, et les chemins d'évolution possibles.</p>
-                <p style={{ margin: 0 }}>L'Ennéagramme nous aide à passer de la survie automatique à la présence consciente, en ouvrant un espace de liberté intérieure.</p>
+                <p style={{ margin: 0, color: "#ffffff" }}>C'est une carte vivante des dynamiques humaines, un miroir qui révèle nos forces, nos fragilités, et les chemins d'évolution possibles.</p>
+                <p style={{ margin: 0, color: "#ffffff" }}>L'Ennéagramme nous aide à passer de la survie automatique à la présence consciente, en ouvrant un espace de liberté intérieure.</p>
               </div>
             </div>
           </div>
@@ -742,7 +742,7 @@ const TestimonialComponent = () => {
                   minWidth: "180px",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = "rgba(10, 131, 202, 0.9)";
+                  e.currentTarget.style.background = "rgba(255, 125, 45, 0.9)";
                   e.currentTarget.style.transform = "translateY(-2px)";
                 }}
                 onMouseLeave={(e) => {
@@ -774,7 +774,7 @@ const TestimonialComponent = () => {
                   minWidth: "180px",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = "rgba(10, 131, 202, 0.9)";
+                  e.currentTarget.style.background = "rgba(255, 125, 45, 0.9)";
                   e.currentTarget.style.transform = "translateY(-2px)";
                 }}
                 onMouseLeave={(e) => {

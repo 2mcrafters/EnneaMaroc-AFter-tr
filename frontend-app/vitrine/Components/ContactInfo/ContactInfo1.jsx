@@ -17,16 +17,13 @@ const ContactInfo1 = () => {
         `}
       </style>
 
-      <div className="p-top-left wow slideInLeft">
-        <img src="/assets/images/contact/shape01.png" alt="Forme décorative" />
-      </div>
       <div className="container">
         <div className="row">
           {/* Formulaire */}
           <div className="col-lg-6">
             <div className="appointment-form">
               <div className="header">
-                <h2 className="title">Prendre un rendez-vous</h2>
+                <h2 className="title" style={{ fontWeight: 600, color: "#64508d" }}>Prendre un rendez-vous</h2>
                 <span
                   className="availability"
                   style={{ color: "var(--theme-color1)" }}

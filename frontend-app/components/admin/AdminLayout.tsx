@@ -138,12 +138,12 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children, title }) => {
       </div>
 
       {/* ── Page body ── */}
-      <div className="px-4 md:px-6 pt-4 pb-12">
-        <div className="mb-6 text-center">
-          <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-1">
+      <div className="px-3 sm:px-4 md:px-6 pt-4 pb-12">
+        <div className="mb-5 sm:mb-6 text-center">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 mb-1">
             {title || "Administration"}
           </h1>
-          <p className="text-slate-600">Bienvenue, {adminUser.firstName}.</p>
+          <p className="text-slate-500 text-sm sm:text-base">Bienvenue, {adminUser.firstName}.</p>
         </div>
         <div className="flex flex-col lg:flex-row gap-8">
           <aside

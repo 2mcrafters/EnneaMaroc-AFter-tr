@@ -252,7 +252,7 @@ const About1 = ({
             width: 36px;
             height: 36px;
             border-radius: 50%;
-            background: #ff7d2d;
+            background: #64508d;
             color: #ffffff;
             display: inline-flex;
             align-items: center;
@@ -267,7 +267,7 @@ const About1 = ({
             display: flex;
             align-items: center;
             gap: 12px;
-            color: #ff7d2d;
+            color: #64508d;
             flex-wrap: wrap;
           }
 
@@ -275,7 +275,7 @@ const About1 = ({
             font-size: clamp(48px, 6vw, 76px);
             line-height: 0.9;
             font-weight: 800;
-            -webkit-text-stroke: 3px #ff7d2d;
+            -webkit-text-stroke: 3px #64508d;
             color: transparent;
           }
 
@@ -290,7 +290,7 @@ const About1 = ({
             display: inline-block;
             padding: 3px 10px;
             border-radius: 10px;
-            background: #ff7d2d;
+            background: #64508d;
             color: #ffffff;
             font-weight: 700;
             margin-bottom: 6px;

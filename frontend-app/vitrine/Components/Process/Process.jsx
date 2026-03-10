@@ -7,8 +7,9 @@ const Process = () => {
 
   return (
     <section
-      className="process-section space bg-white overflow-hidden"
+      className="process-section bg-white"
       id="enneagramme-section"
+      style={{ padding: "80px 0" }}
     >
       <div className="container">
         <div className="title-area three text-left">
@@ -48,15 +49,15 @@ const Process = () => {
           marginTop: "32px",
           padding: "20px 36px",
           borderRadius: "16px",
-          background: "linear-gradient(120deg, rgba(10,131,202,0.07), rgba(7,60,134,0.05))",
-          border: "1.5px solid rgba(10,131,202,0.18)",
+          background: "#64508d",
+          border: "none",
           textAlign: "center",
         }}>
           <p style={{
             margin: 0,
             fontSize: "clamp(15px, 1.4vw, 18px)",
             fontWeight: 500,
-            color: "#ff7d2d",
+            color: "#ffffff",
             lineHeight: 1.7,
             fontStyle: "italic",
           }}>

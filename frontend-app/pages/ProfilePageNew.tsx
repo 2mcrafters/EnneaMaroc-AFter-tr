@@ -140,27 +140,27 @@ const ProfilePage: React.FC = () => {
     }
 
     return (
-        <div className="container mx-auto px-6 pt-32 pb-12">
-            <div className="flex flex-col sm:flex-row items-center sm:items-start sm:space-x-8 mb-12 max-w-5xl mx-auto">
-                <div className="relative">
+        <div className="container mx-auto px-4 sm:px-6 pt-6 sm:pt-8 pb-8 sm:pb-12">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start sm:space-x-6 mb-8 sm:mb-10 max-w-5xl mx-auto bg-white rounded-2xl shadow-sm border border-slate-100 p-5 sm:p-6">
+                <div className="relative flex-shrink-0">
                     <img 
                         src={getProfileImageUrl(currentUser.profilePicture)} 
                         alt="Profil" 
-                        className="w-32 h-32 rounded-full object-cover mb-4 sm:mb-0 border-4 border-[#e13734] shadow-md" 
+                        className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover mb-3 sm:mb-0 border-4 border-[#e13734] shadow-md" 
                     />
                 </div>
-                <div className="text-center sm:text-left flex-grow">
-                    <h1 className="text-4xl font-bold text-slate-900">Bon retour, {currentUser.firstName}!</h1>
-                    <p className="text-slate-600 mt-1">Voici votre tableau de bord personnel.</p>
+                <div className="text-center sm:text-left flex-grow min-w-0">
+                    <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 truncate">Bon retour, {currentUser.firstName}!</h1>
+                    <p className="text-slate-500 mt-1 text-sm sm:text-base">Voici votre tableau de bord personnel.</p>
                 </div>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-8 max-w-5xl mx-auto">
                 {/* Left Column: Profile Info */}
                 <div className="lg:col-span-1">
-                     <div className="bg-white rounded-xl shadow-lg p-8 h-full flex flex-col">
-                        <div className="flex justify-between items-center mb-6">
-                           <h2 className="text-2xl font-bold text-slate-800">Informations Personnelles</h2>
+                     <div className="bg-white rounded-xl shadow-lg p-5 sm:p-8 h-full flex flex-col">
+                        <div className="flex justify-between items-center mb-5 sm:mb-6">
+                           <h2 className="text-lg sm:text-2xl font-bold text-slate-800">Informations Personnelles</h2>
                            {!isEditing && (
                                 <button 
                                     onClick={() => setIsEditing(true)} 
@@ -281,10 +281,10 @@ const ProfilePage: React.FC = () => {
 
                 {/* Right Column: Dashboard Widgets */}
                 <div className="lg:col-span-2 space-y-8">
-                    <div className="bg-white rounded-xl shadow-lg p-8">
-                        <div className="flex items-center gap-3 mb-6">
+                    <div className="bg-white rounded-xl shadow-lg p-5 sm:p-8">
+                        <div className="flex items-center gap-3 mb-5 sm:mb-6">
                             <CreditCardIcon className="w-6 h-6 text-slate-500" />
-                            <h2 className="text-2xl font-bold text-slate-800">Historique des Paiements</h2>
+                            <h2 className="text-lg sm:text-2xl font-bold text-slate-800">Historique des Paiements</h2>
                             <span className="ml-auto text-xs font-medium text-slate-500">{confirmedPayments.length} confirmés · {pendingPayments.length} en attente</span>
                         </div>
                         {recentDisplayPayments.length > 0 ? (

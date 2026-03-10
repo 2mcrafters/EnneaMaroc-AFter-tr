@@ -66,8 +66,8 @@ const CoursesListPage: React.FC = () => {
   }
 
   return (
-    <div className="container mx-auto px-6 pt-32 pb-12">
-      <div className="relative mb-8 flex justify-center items-center">
+      <div className="container mx-auto px-4 sm:px-6 pt-24 sm:pt-28 md:pt-32 pb-12">
+      <div className="relative mb-6 sm:mb-8 flex justify-center items-center">
         <a
           href="#/"
           onClick={(e) => handleNav(e, "#/")}
@@ -76,12 +76,11 @@ const CoursesListPage: React.FC = () => {
         >
           <BackArrowIcon className="w-6 h-6" />
         </a>
-        <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 text-center">
-          Nos Parcours
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 text-center">
         </h1>
       </div>
 
-      <div className="mb-10 max-w-lg mx-auto">
+      <div className="mb-7 sm:mb-10 max-w-lg mx-auto">
         <div className="relative">
           <span className="absolute inset-y-0 left-0 flex items-center pl-4">
             <svg
@@ -109,7 +108,7 @@ const CoursesListPage: React.FC = () => {
       </div>
 
       {filteredParcours.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-7 lg:gap-8">
           {filteredParcours.map((parcours) => (
             <CourseCard key={parcours.id} course={parcours} />
           ))}

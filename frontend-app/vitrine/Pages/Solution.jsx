@@ -233,7 +233,7 @@ export default function Solution() {
                       width: 70,
                       height: 70,
                       borderRadius: 12,
-                      background: `linear-gradient(135deg, ${C.blue} 0%, #0c6ea0 100%)`,
+                      background: "linear-gradient(135deg, #ff7d2d 0%, #ffa55a 100%)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -293,7 +293,7 @@ export default function Solution() {
                       transition: "all 0.3s",
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.background = "#0c6ea0";
+                      e.currentTarget.style.background = "#e06520";
                     }}
                     onMouseLeave={(e) => {
                       e.currentTarget.style.background = C.blue;
@@ -338,7 +338,7 @@ export default function Solution() {
                       width: 70,
                       height: 70,
                       borderRadius: 12,
-                      background: `linear-gradient(135deg, ${C.red} 0%, #c12d2a 100%)`,
+                      background: "linear-gradient(135deg, #64508d 0%, #9b7fc7 100%)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -384,7 +384,7 @@ export default function Solution() {
                   <a
                     href="#jeunes"
                     style={{
-                      background: C.red,
+                      background: "#64508d",
                       color: C.white,
                       padding: "14px 28px",
                       borderRadius: 8,
@@ -398,10 +398,10 @@ export default function Solution() {
                       transition: "all 0.3s",
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.background = "#c12d2a";
+                      e.currentTarget.style.background = "#4e3d73";
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.background = C.red;
+                      e.currentTarget.style.background = "#64508d";
                     }}
                   >
                     En savoir plus
@@ -440,7 +440,7 @@ export default function Solution() {
                       width: 70,
                       height: 70,
                       borderRadius: 12,
-                      background: `linear-gradient(135deg, ${C.green} 0%, #1e8e3e 100%)`,
+                      background: "linear-gradient(135deg, #28a745 0%, #1e8e3e 100%)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",

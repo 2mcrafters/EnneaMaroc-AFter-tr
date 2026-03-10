@@ -96,7 +96,7 @@ const Home = () => {
               left: 0,
               width: "100%",
               height: "100%",
-              backgroundColor: "rgba(10, 131, 202, 0.6)",
+              backgroundColor: "rgba(100, 80, 141, 0.6)",
               pointerEvents: "none",
             }}
           />

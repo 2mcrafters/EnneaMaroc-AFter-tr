@@ -117,10 +117,10 @@ const Process3 = () => {
         backdropFilter: isActive ? "none" : "blur(4px)",
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.backgroundColor = colors.danger;
-        e.currentTarget.style.borderColor = colors.danger;
+        e.currentTarget.style.backgroundColor = "#64508d";
+        e.currentTarget.style.borderColor = "#64508d";
         e.currentTarget.style.color = "#fff";
-        e.currentTarget.style.boxShadow = "0 8px 22px rgba(220,53,69,.25)";
+        e.currentTarget.style.boxShadow = "0 8px 22px rgba(100,80,141,.35)";
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.backgroundColor = isActive
@@ -151,7 +151,7 @@ const Process3 = () => {
         }
       }
     `}</style>
-    <section style={{ background: colors.bg, padding: "80px 0" }}>
+    <section style={{ background: colors.bg, padding: "72px 0" }}>
       <div style={{ maxWidth: 1160, margin: "0 auto", padding: "0 16px" }}>
         {/* Hero Image with Overlay */}
         <div

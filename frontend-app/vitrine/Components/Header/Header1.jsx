@@ -61,9 +61,9 @@ export default function Header1({ variant = "" }) {
       type: "select",
       label: "Parcours",
       options: [
-        { label: "Découvrir", to: "/découvrir" },
-        { label: "Approfondir", to: "/approfondir" },
-        { label: "Transmettre", to: "/transmettre" },
+        { label: "Découvrir", to: "/découvrir", color: "#2d969a" },
+        { label: "Approfondir", to: "/approfondir", color: "#64508d" },
+        { label: "Transmettre", to: "/transmettre", color: "#ff7d2d" },
       ],
     },
     { type: "link", label: "Solution", to: "/solution" },
@@ -341,7 +341,7 @@ export default function Header1({ variant = "" }) {
                 </span>
                 <button
                   type="button"
-                  className="nav-dropdown-button"
+                  className={`nav-dropdown-button${isParcoursActive ? " is-active" : ""}`}
                   aria-haspopup="true"
                   aria-expanded={isOpen}
                   aria-controls={dropdownId}
@@ -367,17 +367,17 @@ export default function Header1({ variant = "" }) {
                     backgroundColor: isMobileView
                       ? "transparent"
                       : isParcoursActive
-                      ? "#ff7d2d"
+                      ? selectedOption.color
                       : "#F0F9FA",
-                    color: isParcoursActive ? "#ff7d2d" : "#007A80",
+                    color: isParcoursActive ? "#ffffff" : "#007A80",
                     padding: "6px 12px",
                     borderRadius: "9999px",
                     fontSize: "17px",
                     fontWeight: 600,
                     border: isMobileView
-                      ? "1px solid #B2EBF2"
+                      ? `1px solid ${isParcoursActive ? selectedOption.color : "#B2EBF2"}`
                       : isParcoursActive
-                      ? "1px solid #ff7d2d"
+                      ? `1px solid ${selectedOption.color}`
                       : "1px solid #B2EBF2",
                     cursor: "pointer",
                     width: isMobileView ? "100%" : "auto",
@@ -517,7 +517,7 @@ export default function Header1({ variant = "" }) {
                       padding: "8px 12px",
                       borderRadius: "8px",
                       color: isActive ? "#ffffff" : "#334155",
-                      backgroundColor: isActive ? "#ff7d2d" : "transparent",
+                      backgroundColor: isActive ? opt.color : "transparent",
                       fontWeight: isActive ? "bold" : "normal",
                       textDecoration: "none",
                       transition: "all 0.2s",
@@ -702,7 +702,7 @@ export default function Header1({ variant = "" }) {
                         width: 40,
                         height: 40,
                         borderRadius: "50%",
-                        background: "#ff8f42",
+                        background: "#64508d",
                         color: "#fff",
                         border: "none",
                         display: "inline-flex",

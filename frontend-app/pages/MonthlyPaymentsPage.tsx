@@ -138,9 +138,9 @@ const MonthlyPaymentsPage: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto px-6 py-12">
-      <div className="flex justify-between items-center mb-8">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 text-center flex-grow">
+    <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-10">
+      <div className="flex flex-wrap justify-between items-center gap-3 mb-6 sm:mb-8">
+        <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
           Gérer les Paiements Mensuels
         </h1>
         <RefreshButton onRefreshComplete={() => loadData()} />

@@ -235,8 +235,8 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="container mx-auto px-6 py-12 flex items-center justify-center min-h-[calc(100vh-120px)]">
-      <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-xl shadow-lg">
+    <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 flex items-center justify-center min-h-[calc(100vh-100px)]">
+      <div className="w-full max-w-md p-5 sm:p-8 space-y-5 sm:space-y-6 bg-white rounded-2xl shadow-xl border border-slate-100">
         {isEnrollmentFlow && (
           <div className="text-center p-4 bg-pistachio-light rounded-lg border border-pistachio-dark/20">
             <h3 className="font-semibold text-slate-800 mb-2">
